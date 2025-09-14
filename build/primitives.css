@@ -1,319 +1,285 @@
+/* =========================================================
+   PRIMITIVE TOKENS
+   Generated from Tokens Studio exports (Flattened)
+   ========================================================= */
+
+/* Light Theme */
 [data-theme="light"] {
-  /* RED */
-  --color-red-50: {'value': '#ffe7ec', 'type': 'color'};
-  --color-red-100: {'value': '#ffd7df', 'type': 'color'};
-  --color-red-200: {'value': '#ffc3cf', 'type': 'color'};
-  --color-red-300: {'value': '#ffafbf', 'type': 'color'};
-  --color-red-400: {'value': '#ff9baf', 'type': 'color'};
-  --color-red-500: {'value': '#ff879f', 'type': 'color'};
-  --color-red-600: {'value': '#e57a8f', 'type': 'color'};
-  --color-red-700: {'value': '#b86172', 'type': 'color'};
-  --color-red-800: {'value': '#8f4c59', 'type': 'color'};
-  --color-red-900: {'value': '#6e3a44', 'type': 'color'};
-  --color-red-950: {'value': '#4d2930', 'type': 'color'};
+  /* Red */
+  --color-red-50: #ffe7ec;
+  --color-red-100: #fecdd6;
+  --color-red-200: #fda4af;
+  --color-red-300: #fb7185;
+  --color-red-400: #f43f5e;
+  --color-red-500: #e11d48;
+  --color-red-600: #be123c;
+  --color-red-700: #9f1239;
+  --color-red-800: #881337;
+  --color-red-900: #701a34;
+  --color-red-950: #450a1a;
 
-  /* ORANGE */
-  --color-orange-50: {'value': '#ffeee2', 'type': 'color'};
-  --color-orange-100: {'value': '#ffe2cf', 'type': 'color'};
-  --color-orange-200: {'value': '#ffd4b7', 'type': 'color'};
-  --color-orange-300: {'value': '#ffc6a0', 'type': 'color'};
-  --color-orange-400: {'value': '#ffb788', 'type': 'color'};
-  --color-orange-500: {'value': '#ffa970', 'type': 'color'};
-  --color-orange-600: {'value': '#d48d5d', 'type': 'color'};
-  --color-orange-700: {'value': '#aa714b', 'type': 'color'};
-  --color-orange-800: {'value': '#805538', 'type': 'color'};
-  --color-orange-900: {'value': '#553825', 'type': 'color'};
-  --color-orange-950: {'value': '#332216', 'type': 'color'};
+  /* Orange */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
 
-  /* YELLOW */
-  --color-yellow-50: {'value': '#fcfce6', 'type': 'color'};
-  --color-yellow-100: {'value': '#fafad5', 'type': 'color'};
-  --color-yellow-200: {'value': '#f7f7c0', 'type': 'color'};
-  --color-yellow-300: {'value': '#f5f5ab', 'type': 'color'};
-  --color-yellow-400: {'value': '#f2f296', 'type': 'color'};
-  --color-yellow-500: {'value': '#f0f081', 'type': 'color'};
-  --color-yellow-600: {'value': '#d6d673', 'type': 'color'};
-  --color-yellow-700: {'value': '#b5b561', 'type': 'color'};
-  --color-yellow-800: {'value': '#91914e', 'type': 'color'};
-  --color-yellow-900: {'value': '#6b6b3a', 'type': 'color'};
-  --color-yellow-950: {'value': '#3d3d21', 'type': 'color'};
+  /* Yellow */
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
 
-  /* GREEN */
-  --color-green-50: {'value': '#e7fbef', 'type': 'color'};
-  --color-green-100: {'value': '#d6f9e5', 'type': 'color'};
-  --color-green-200: {'value': '#c2f6d7', 'type': 'color'};
-  --color-green-300: {'value': '#aef3ca', 'type': 'color'};
-  --color-green-400: {'value': '#99f0bd', 'type': 'color'};
-  --color-green-500: {'value': '#85edb0', 'type': 'color'};
-  --color-green-600: {'value': '#6fc593', 'type': 'color'};
-  --color-green-700: {'value': '#599e75', 'type': 'color'};
-  --color-green-800: {'value': '#437758', 'type': 'color'};
-  --color-green-900: {'value': '#2c4f3b', 'type': 'color'};
-  --color-green-950: {'value': '#1b2f23', 'type': 'color'};
+  /* Green */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
 
-  /* PINK */
-  --color-pink-50: {'value': '#fcf2fc', 'type': 'color'};
-  --color-pink-100: {'value': '#fae3fa', 'type': 'color'};
-  --color-pink-200: {'value': '#f7d4f7', 'type': 'color'};
-  --color-pink-300: {'value': '#f5c6f5', 'type': 'color'};
-  --color-pink-400: {'value': '#f2b8f2', 'type': 'color'};
-  --color-pink-500: {'value': '#f0aaf0', 'type': 'color'};
-  --color-pink-600: {'value': '#c88ec8', 'type': 'color'};
-  --color-pink-700: {'value': '#a071a0', 'type': 'color'};
-  --color-pink-800: {'value': '#785578', 'type': 'color'};
-  --color-pink-900: {'value': '#503950', 'type': 'color'};
-  --color-pink-950: {'value': '#302230', 'type': 'color'};
+  /* Pink */
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
+  --color-pink-950: #500724;
 
-  /* PURPLE */
-  --color-purple-50: {'value': '#f5ebfd', 'type': 'color'};
-  --color-purple-100: {'value': '#eeddfc', 'type': 'color'};
-  --color-purple-200: {'value': '#e5ccfa', 'type': 'color'};
-  --color-purple-300: {'value': '#dcbcf8', 'type': 'color'};
-  --color-purple-400: {'value': '#d4abf7', 'type': 'color'};
-  --color-purple-500: {'value': '#cb9af5', 'type': 'color'};
-  --color-purple-600: {'value': '#a980cc', 'type': 'color'};
-  --color-purple-700: {'value': '#8767a3', 'type': 'color'};
-  --color-purple-800: {'value': '#664d7b', 'type': 'color'};
-  --color-purple-900: {'value': '#443352', 'type': 'color'};
-  --color-purple-950: {'value': '#291f31', 'type': 'color'};
+  /* Cobalt (Info) */
+  --color-cobalt-50: #eff6ff;
+  --color-cobalt-100: #dbeafe;
+  --color-cobalt-200: #bfdbfe;
+  --color-cobalt-300: #93c5fd;
+  --color-cobalt-400: #60a5fa;
+  --color-cobalt-500: #3b82f6;
+  --color-cobalt-600: #2563eb;
+  --color-cobalt-700: #1d4ed8;
+  --color-cobalt-800: #1e40af;
+  --color-cobalt-900: #1e3a8a;
+  --color-cobalt-950: #172554;
 
-  /* COBALT */
-  --color-cobalt-50: {'value': '#d8e6fc', 'type': 'color'};
-  --color-cobalt-100: {'value': '#bdd6fb', 'type': 'color'};
-  --color-cobalt-200: {'value': '#9cc1f8', 'type': 'color'};
-  --color-cobalt-300: {'value': '#7cadf6', 'type': 'color'};
-  --color-cobalt-400: {'value': '#5b98f4', 'type': 'color'};
-  --color-cobalt-500: {'value': '#3a84f2', 'type': 'color'};
-  --color-cobalt-600: {'value': '#306eca', 'type': 'color'};
-  --color-cobalt-700: {'value': '#2758a1', 'type': 'color'};
-  --color-cobalt-800: {'value': '#1d4279', 'type': 'color'};
-  --color-cobalt-900: {'value': '#132c51', 'type': 'color'};
-  --color-cobalt-950: {'value': '#0c1a30', 'type': 'color'};
+  /* Sky (Tertiary) */
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+  --color-sky-950: #082f49;
 
-  /* SKY */
-  --color-sky-50: {'value': '#e6fbfc', 'type': 'color'};
-  --color-sky-100: {'value': '#d6f8fb', 'type': 'color'};
-  --color-sky-200: {'value': '#c1f4f8', 'type': 'color'};
-  --color-sky-300: {'value': '#acf0f6', 'type': 'color'};
-  --color-sky-400: {'value': '#98edf4', 'type': 'color'};
-  --color-sky-500: {'value': '#83e9f2', 'type': 'color'};
-  --color-sky-600: {'value': '#6dc2ca', 'type': 'color'};
-  --color-sky-700: {'value': '#579ba1', 'type': 'color'};
-  --color-sky-800: {'value': '#427579', 'type': 'color'};
-  --color-sky-900: {'value': '#2c4e51', 'type': 'color'};
-  --color-sky-950: {'value': '#1a2f30', 'type': 'color'};
+  /* Grayscale */
+  --color-grayscale-0: #ffffff;
+  --color-grayscale-50: #f9fafb;
+  --color-grayscale-100: #f3f4f6;
+  --color-grayscale-200: #e5e7eb;
+  --color-grayscale-300: #d1d5db;
+  --color-grayscale-400: #9ca3af;
+  --color-grayscale-500: #6b7280;
+  --color-grayscale-600: #4b5563;
+  --color-grayscale-700: #374151;
+  --color-grayscale-800: #1f2937;
+  --color-grayscale-900: #111827;
+  --color-grayscale-950: #0c0d0d;
+  --color-grayscale-999: #000000;
 
-  /* GRAYSCALE */
-  --color-grayscale-0: {'value': '#f9fafa', 'type': 'color'};
-  --color-grayscale-50: {'value': '#f1f2f2', 'type': 'color'};
-  --color-grayscale-100: {'value': '#e8eaea', 'type': 'color'};
-  --color-grayscale-200: {'value': '#dddfdf', 'type': 'color'};
-  --color-grayscale-300: {'value': '#d2d4d4', 'type': 'color'};
-  --color-grayscale-400: {'value': '#c6caca', 'type': 'color'};
-  --color-grayscale-500: {'value': '#bbbfbf', 'type': 'color'};
-  --color-grayscale-600: {'value': '#9c9f9f', 'type': 'color'};
-  --color-grayscale-700: {'value': '#7d7f7f', 'type': 'color'};
-  --color-grayscale-800: {'value': '#5e6060', 'type': 'color'};
-  --color-grayscale-900: {'value': '#3e4040', 'type': 'color'};
-  --color-grayscale-950: {'value': '#252626', 'type': 'color'};
-  --color-grayscale-999: {'value': '#0c0d0d', 'type': 'color'};
-  --color-grayscale-white: {'value': '#f9fafa', 'type': 'color'};
-  --color-grayscale-black: {'value': '#0c0d0d', 'type': 'color'};
-
-  /* OTHER */
-  --color-opacity-white: {'50%': {'value': '#f9fafa80', 'type': 'color'}, '40%': {'value': '#f9fafa66', 'type': 'color'}, '20%': {'value': '#f9fafa33', 'type': 'color'}, '30%': {'value': '#f9fafa4d', 'type': 'color'}, '15%': {'value': '#f9fafa26', 'type': 'color'}, '5%': {'value': '#f9fafa0d', 'type': 'color'}, '95%': {'value': '#f9fafaf2', 'type': 'color'}, '90%': {'value': '#f9fafae6', 'type': 'color'}, '1%': {'value': '#f9fafa03', 'type': 'color'}, '10%': {'value': '#f9fafa1a', 'type': 'color'}, '70%': {'value': '#f9fafab3', 'type': 'color'}, '60%': {'value': '#f9fafa99', 'type': 'color'}, '80%': {'value': '#f9fafacc', 'type': 'color'}, '0%': {'value': '#f9fafa00', 'type': 'color'}};
-  --color-opacity-dark: {'0%': {'value': '#0c0d0d00', 'type': 'color'}, '1%': {'value': '#0c0d0d03', 'type': 'color'}, '5%': {'value': '#0c0d0d0d', 'type': 'color'}, '10%': {'value': '#0c0d0d1a', 'type': 'color'}, '15%': {'value': '#0c0d0d26', 'type': 'color'}, '20%': {'value': '#0c0d0d33', 'type': 'color'}, '30%': {'value': '#0c0d0d4d', 'type': 'color'}, '40%': {'value': '#0c0d0d66', 'type': 'color'}, '50%': {'value': '#0c0d0d80', 'type': 'color'}, '60%': {'value': '#0c0d0d99', 'type': 'color'}, '70%': {'value': '#0c0d0db3', 'type': 'color'}, '80%': {'value': '#0c0d0dcc', 'type': 'color'}, '90%': {'value': '#0c0d0de6', 'type': 'color'}, '95%': {'value': '#0c0d0df2', 'type': 'color'}};
-  --color-opacity-yellow: {'30': {'value': '#fafad573', 'type': 'color'}, '50': {'value': '#fafad599', 'type': 'color'}, '80': {'value': '#f5f5abbf', 'type': 'color'}};
-  --color-opacity-pink: {'30': {'value': '#f0aaf04d', 'type': 'color'}, '50': {'value': '#f0aaf080', 'type': 'color'}, '80': {'value': '#f0aaf0cc', 'type': 'color'}};
-
+  /* Opacity */
+  --color-opacity-white-30: #f9fafa4d;
+  --color-opacity-white-50: #f9fafa80;
+  --color-opacity-white-80: #f9fafacc;
+  --color-opacity-dark-30: #0c0d0d4d;
+  --color-opacity-dark-50: #0c0d0d80;
+  --color-opacity-dark-80: #0c0d0dcc;
+  --color-opacity-yellow-30: #fef08a4d;
+  --color-opacity-yellow-50: #fef08a80;
+  --color-opacity-yellow-80: #fef08acc;
+  --color-opacity-pink-30: #fbcfe84d;
+  --color-opacity-pink-50: #fbcfe880;
+  --color-opacity-pink-80: #fbcfe8cc;
 }
+
+/* Dark Theme */
 [data-theme="dark"] {
-  /* RED */
-  --color-red-50: {'value': '#4d2930', 'type': 'color'};
-  --color-red-100: {'value': '#6e3a44', 'type': 'color'};
-  --color-red-200: {'value': '#8f4c59', 'type': 'color'};
-  --color-red-300: {'value': '#b86172', 'type': 'color'};
-  --color-red-400: {'value': '#e57a8f', 'type': 'color'};
-  --color-red-500: {'value': '#ff879f', 'type': 'color'};
-  --color-red-600: {'value': '#ff9baf', 'type': 'color'};
-  --color-red-700: {'value': '#ffafbf', 'type': 'color'};
-  --color-red-800: {'value': '#ffc3cf', 'type': 'color'};
-  --color-red-900: {'value': '#ffd7df', 'type': 'color'};
-  --color-red-950: {'value': '#ffe7ec', 'type': 'color'};
+  /* Red */
+  --color-red-50: #ffe7ec;
+  --color-red-100: #fecdd6;
+  --color-red-200: #fda4af;
+  --color-red-300: #fb7185;
+  --color-red-400: #f43f5e;
+  --color-red-500: #e11d48;
+  --color-red-600: #be123c;
+  --color-red-700: #9f1239;
+  --color-red-800: #881337;
+  --color-red-900: #701a34;
+  --color-red-950: #450a1a;
 
-  /* ORANGE */
-  --color-orange-50: {'value': '#332216', 'type': 'color'};
-  --color-orange-100: {'value': '#553825', 'type': 'color'};
-  --color-orange-200: {'value': '#805538', 'type': 'color'};
-  --color-orange-300: {'value': '#aa714b', 'type': 'color'};
-  --color-orange-400: {'value': '#d48d5d', 'type': 'color'};
-  --color-orange-500: {'value': '#ffa970', 'type': 'color'};
-  --color-orange-600: {'value': '#ffb788', 'type': 'color'};
-  --color-orange-700: {'value': '#ffc6a0', 'type': 'color'};
-  --color-orange-800: {'value': '#ffd4b7', 'type': 'color'};
-  --color-orange-900: {'value': '#ffe2cf', 'type': 'color'};
-  --color-orange-950: {'value': '#ffeee2', 'type': 'color'};
+  /* Orange */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
 
-  /* YELLOW */
-  --color-yellow-50: {'value': '#3d3d21', 'type': 'color'};
-  --color-yellow-100: {'value': '#6b6b3a', 'type': 'color'};
-  --color-yellow-200: {'value': '#91914e', 'type': 'color'};
-  --color-yellow-300: {'value': '#b5b561', 'type': 'color'};
-  --color-yellow-400: {'value': '#d6d673', 'type': 'color'};
-  --color-yellow-500: {'value': '#f0f081', 'type': 'color'};
-  --color-yellow-600: {'value': '#f2f296', 'type': 'color'};
-  --color-yellow-700: {'value': '#f5f5ab', 'type': 'color'};
-  --color-yellow-800: {'value': '#f7f7c0', 'type': 'color'};
-  --color-yellow-900: {'value': '#fafad5', 'type': 'color'};
-  --color-yellow-950: {'value': '#fcfce6', 'type': 'color'};
+  /* Yellow */
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
 
-  /* GREEN */
-  --color-green-50: {'value': '#1b2f23', 'type': 'color'};
-  --color-green-100: {'value': '#2c4f3b', 'type': 'color'};
-  --color-green-200: {'value': '#437758', 'type': 'color'};
-  --color-green-300: {'value': '#599e75', 'type': 'color'};
-  --color-green-400: {'value': '#6fc593', 'type': 'color'};
-  --color-green-500: {'value': '#85edb0', 'type': 'color'};
-  --color-green-600: {'value': '#99f0bd', 'type': 'color'};
-  --color-green-700: {'value': '#aef3ca', 'type': 'color'};
-  --color-green-800: {'value': '#c2f6d7', 'type': 'color'};
-  --color-green-900: {'value': '#d6f9e5', 'type': 'color'};
-  --color-green-950: {'value': '#e7fbef', 'type': 'color'};
+  /* Green */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
 
-  /* PINK */
-  --color-pink-50: {'value': '#302230', 'type': 'color'};
-  --color-pink-100: {'value': '#503950', 'type': 'color'};
-  --color-pink-200: {'value': '#785578', 'type': 'color'};
-  --color-pink-300: {'value': '#a071a0', 'type': 'color'};
-  --color-pink-400: {'value': '#c88ec8', 'type': 'color'};
-  --color-pink-500: {'value': '#f0aaf0', 'type': 'color'};
-  --color-pink-600: {'value': '#f2b8f2', 'type': 'color'};
-  --color-pink-700: {'value': '#f5c6f5', 'type': 'color'};
-  --color-pink-800: {'value': '#f7d4f7', 'type': 'color'};
-  --color-pink-900: {'value': '#fae3fa', 'type': 'color'};
-  --color-pink-950: {'value': '#fceefc', 'type': 'color'};
+  /* Pink */
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
+  --color-pink-950: #500724;
 
-  /* PURPLE */
-  --color-purple-50: {'value': '#f5ebfd', 'type': 'color'};
-  --color-purple-100: {'value': '#eeddfc', 'type': 'color'};
-  --color-purple-200: {'value': '#664d7b', 'type': 'color'};
-  --color-purple-300: {'value': '#8767a3', 'type': 'color'};
-  --color-purple-400: {'value': '#a980cc', 'type': 'color'};
-  --color-purple-500: {'value': '#cb9af5', 'type': 'color'};
-  --color-purple-600: {'value': '#d4abf7', 'type': 'color'};
-  --color-purple-700: {'value': '#dcbcf8', 'type': 'color'};
-  --color-purple-800: {'value': '#e5ccfa', 'type': 'color'};
-  --color-purple-900: {'value': '#eeddfc', 'type': 'color'};
-  --color-purple-950: {'value': '#f5ebfd', 'type': 'color'};
+  /* Cobalt (Info) */
+  --color-cobalt-50: #eff6ff;
+  --color-cobalt-100: #dbeafe;
+  --color-cobalt-200: #bfdbfe;
+  --color-cobalt-300: #93c5fd;
+  --color-cobalt-400: #60a5fa;
+  --color-cobalt-500: #3b82f6;
+  --color-cobalt-600: #2563eb;
+  --color-cobalt-700: #1d4ed8;
+  --color-cobalt-800: #1e40af;
+  --color-cobalt-900: #1e3a8a;
+  --color-cobalt-950: #172554;
 
-  /* COBALT */
-  --color-cobalt-50: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-100: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-200: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-300: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-400: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-500: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-600: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-700: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-800: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-900: {'value': '#ffffff', 'type': 'color'};
-  --color-cobalt-950: {'value': '#ffffff', 'type': 'color'};
+  /* Sky (Tertiary) */
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+  --color-sky-950: #082f49;
 
-  /* SKY */
-  --color-sky-50: {'value': '#1a2f30', 'type': 'color'};
-  --color-sky-100: {'value': '#2c4e51', 'type': 'color'};
-  --color-sky-200: {'value': '#427579', 'type': 'color'};
-  --color-sky-300: {'value': '#579ba1', 'type': 'color'};
-  --color-sky-400: {'value': '#6dc2ca', 'type': 'color'};
-  --color-sky-500: {'value': '#83e9f2', 'type': 'color'};
-  --color-sky-600: {'value': '#98edf4', 'type': 'color'};
-  --color-sky-700: {'value': '#acf0f6', 'type': 'color'};
-  --color-sky-800: {'value': '#c1f4f8', 'type': 'color'};
-  --color-sky-900: {'value': '#d6f8fb', 'type': 'color'};
-  --color-sky-950: {'value': '#e6fbfc', 'type': 'color'};
+  /* Grayscale */
+  --color-grayscale-0: #ffffff;
+  --color-grayscale-50: #f9fafb;
+  --color-grayscale-100: #f3f4f6;
+  --color-grayscale-200: #e5e7eb;
+  --color-grayscale-300: #d1d5db;
+  --color-grayscale-400: #9ca3af;
+  --color-grayscale-500: #6b7280;
+  --color-grayscale-600: #4b5563;
+  --color-grayscale-700: #374151;
+  --color-grayscale-800: #1f2937;
+  --color-grayscale-900: #111827;
+  --color-grayscale-950: #0c0d0d;
+  --color-grayscale-999: #000000;
 
-  /* GRAYSCALE */
-  --color-grayscale-0: {'value': '#0c0d0d', 'type': 'color'};
-  --color-grayscale-50: {'value': '#252626', 'type': 'color'};
-  --color-grayscale-100: {'value': '#3e4040', 'type': 'color'};
-  --color-grayscale-200: {'value': '#5e6060', 'type': 'color'};
-  --color-grayscale-300: {'value': '#7d7f7f', 'type': 'color'};
-  --color-grayscale-400: {'value': '#9c9f9f', 'type': 'color'};
-  --color-grayscale-500: {'value': '#bbbfbf', 'type': 'color'};
-  --color-grayscale-600: {'value': '#c6caca', 'type': 'color'};
-  --color-grayscale-700: {'value': '#d2d4d4', 'type': 'color'};
-  --color-grayscale-800: {'value': '#dddfdf', 'type': 'color'};
-  --color-grayscale-900: {'value': '#e8eaea', 'type': 'color'};
-  --color-grayscale-950: {'value': '#f1f2f2', 'type': 'color'};
-  --color-grayscale-999: {'value': '#f9fafa', 'type': 'color'};
-  --color-grayscale-white: {'value': '#f9fafa', 'type': 'color'};
-  --color-grayscale-black: {'value': '#0c0d0d', 'type': 'color'};
-
-  /* OTHER */
-  --color-opacity-white: {'50%': {'value': '#0c0d0d80', 'type': 'color'}, '40%': {'value': '#0c0d0d66', 'type': 'color'}, '20%': {'value': '#0c0d0d33', 'type': 'color'}, '30%': {'value': '#0c0d0d4d', 'type': 'color'}, '15%': {'value': '#0c0d0d26', 'type': 'color'}, '5%': {'value': '#0c0d0d0d', 'type': 'color'}, '95%': {'value': '#0c0d0df2', 'type': 'color'}, '90%': {'value': '#0c0d0de6', 'type': 'color'}, '1%': {'value': '#0c0d0d03', 'type': 'color'}, '10%': {'value': '#0c0d0d1a', 'type': 'color'}, '70%': {'value': '#0c0d0db3', 'type': 'color'}, '60%': {'value': '#0c0d0d99', 'type': 'color'}, '80%': {'value': '#0c0d0dcc', 'type': 'color'}, '0%': {'value': '#0c0d0d00', 'type': 'color'}};
-  --color-opacity-dark: {'0%': {'value': '#f9fafa00', 'type': 'color'}, '1%': {'value': '#f9fafa03', 'type': 'color'}, '5%': {'value': '#f9fafa0d', 'type': 'color'}, '10%': {'value': '#f9fafa1a', 'type': 'color'}, '15%': {'value': '#f9fafa26', 'type': 'color'}, '20%': {'value': '#f9fafa33', 'type': 'color'}, '30%': {'value': '#f9fafa4d', 'type': 'color'}, '40%': {'value': '#f9fafa66', 'type': 'color'}, '50%': {'value': '#f9fafa80', 'type': 'color'}, '60%': {'value': '#f9fafa99', 'type': 'color'}, '70%': {'value': '#f9fafab3', 'type': 'color'}, '80%': {'value': '#f9fafacc', 'type': 'color'}, '90%': {'value': '#f9fafae6', 'type': 'color'}, '95%': {'value': '#f9fafaf2', 'type': 'color'}};
-  --color-opacity-yellow: {'30': {'value': '#fafad54d', 'type': 'color'}, '50': {'value': '#fafad580', 'type': 'color'}, '80': {'value': '#f5f5abcc', 'type': 'color'}};
-  --color-opacity-pink: {'30': {'value': '#f0aaf04d', 'type': 'color'}, '50': {'value': '#f0aaf080', 'type': 'color'}, '80': {'value': '#f0aaf0cc', 'type': 'color'}};
-
+  /* Opacity */
+  --color-opacity-white-30: #f9fafa4d;
+  --color-opacity-white-50: #f9fafa80;
+  --color-opacity-white-80: #f9fafacc;
+  --color-opacity-dark-30: #0c0d0d4d;
+  --color-opacity-dark-50: #0c0d0d80;
+  --color-opacity-dark-80: #0c0d0dcc;
+  --color-opacity-yellow-30: #fef08a4d;
+  --color-opacity-yellow-50: #fef08a80;
+  --color-opacity-yellow-80: #fef08acc;
+  --color-opacity-pink-30: #fbcfe84d;
+  --color-opacity-pink-50: #fbcfe880;
+  --color-opacity-pink-80: #fbcfe8cc;
 }
+
+/* Shared Primitives */
 :root {
-  /* SPACING */
-  --spacing-0: 0rem;
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
-  --spacing-8: 2rem;
-  --spacing-9: 2.25rem;
-  --spacing-10: 2.5rem;
-  --spacing-11: 2.75rem;
-  --spacing-12: 3rem;
-  --spacing-14: 3.5rem;
-  --spacing-16: 4rem;
-  --spacing-18: 4.5rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
-  --spacing-28: 7rem;
-  --spacing-32: 8rem;
-  --spacing-36: 9rem;
-  --spacing-40: 10rem;
-  --spacing-44: 11rem;
-  --spacing-48: 12rem;
-  --spacing-52: 13rem;
-  --spacing-56: 14rem;
-  --spacing-60: 15rem;
-  --spacing-64: 16rem;
-  --spacing-72: 18rem;
-  --spacing-80: 20rem;
-  --spacing-96: 24rem;
-  --spacing-1-5: 0.375rem;
-  --spacing-2-5: 0.625rem;
+  /* Spacing */
+  --space-0: 0rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
-  /* RADIUS */
-  --radius-FULL: 624.938rem;
-  --radius-2xl: 0.75rem;
-  --radius-xl: 0.5rem;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.375rem;
-  --radius-3xl: 1rem;
-  --radius-sm: 0.125rem;
-  --radius-4xl: 1.5rem;
+  /* Radii */
   --radius-none: 0rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
 
-  /* FONT-SIZE */
-
-  /* LINE-HEIGHT */
-
-  /* LETTER-SPACING */
-
-  /* STROKE-WIDTH */
-  --stroke-width-XL: 0.5rem;
-  --stroke-width-md: 0.125rem;
-  --stroke-width-sm: 0.062rem;
-  --stroke-width-lg: 0.25rem;
-  --stroke-width-xs: 0.031rem;
-
+  /* Stroke Widths */
+  --stroke-0: 0px;
+  --stroke-1: 1px;
+  --stroke-2: 2px;
+  --stroke-4: 4px;
+  --stroke-8: 8px;
 }
