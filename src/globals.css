@@ -4,11 +4,11 @@
    ========================================================= */
 
 /* Token Layers */
-@import "./primitives.css";
-@import "./alias.css";
-@import "./semantic.css";
-@import "./typography.css";
-@import "./effects.css";
+@import "./build/primitives.css";
+@import "./build/alias.css";
+@import "./build/semantic.css";
+@import "./build/typography.css";
+@import "./build/effects.css";
 
 /* =========================================================
    Base Reset

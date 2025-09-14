@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp add figma:*)",
+      "Bash(claude mcp:*)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "Bash(npx figma-developer-mcp:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
