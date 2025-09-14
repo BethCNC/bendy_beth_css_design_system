@@ -1,0 +1,319 @@
+[data-theme="light"] {
+  /* RED */
+  --color-red-50: {'value': '#ffe7ec', 'type': 'color'};
+  --color-red-100: {'value': '#ffd7df', 'type': 'color'};
+  --color-red-200: {'value': '#ffc3cf', 'type': 'color'};
+  --color-red-300: {'value': '#ffafbf', 'type': 'color'};
+  --color-red-400: {'value': '#ff9baf', 'type': 'color'};
+  --color-red-500: {'value': '#ff879f', 'type': 'color'};
+  --color-red-600: {'value': '#e57a8f', 'type': 'color'};
+  --color-red-700: {'value': '#b86172', 'type': 'color'};
+  --color-red-800: {'value': '#8f4c59', 'type': 'color'};
+  --color-red-900: {'value': '#6e3a44', 'type': 'color'};
+  --color-red-950: {'value': '#4d2930', 'type': 'color'};
+
+  /* ORANGE */
+  --color-orange-50: {'value': '#ffeee2', 'type': 'color'};
+  --color-orange-100: {'value': '#ffe2cf', 'type': 'color'};
+  --color-orange-200: {'value': '#ffd4b7', 'type': 'color'};
+  --color-orange-300: {'value': '#ffc6a0', 'type': 'color'};
+  --color-orange-400: {'value': '#ffb788', 'type': 'color'};
+  --color-orange-500: {'value': '#ffa970', 'type': 'color'};
+  --color-orange-600: {'value': '#d48d5d', 'type': 'color'};
+  --color-orange-700: {'value': '#aa714b', 'type': 'color'};
+  --color-orange-800: {'value': '#805538', 'type': 'color'};
+  --color-orange-900: {'value': '#553825', 'type': 'color'};
+  --color-orange-950: {'value': '#332216', 'type': 'color'};
+
+  /* YELLOW */
+  --color-yellow-50: {'value': '#fcfce6', 'type': 'color'};
+  --color-yellow-100: {'value': '#fafad5', 'type': 'color'};
+  --color-yellow-200: {'value': '#f7f7c0', 'type': 'color'};
+  --color-yellow-300: {'value': '#f5f5ab', 'type': 'color'};
+  --color-yellow-400: {'value': '#f2f296', 'type': 'color'};
+  --color-yellow-500: {'value': '#f0f081', 'type': 'color'};
+  --color-yellow-600: {'value': '#d6d673', 'type': 'color'};
+  --color-yellow-700: {'value': '#b5b561', 'type': 'color'};
+  --color-yellow-800: {'value': '#91914e', 'type': 'color'};
+  --color-yellow-900: {'value': '#6b6b3a', 'type': 'color'};
+  --color-yellow-950: {'value': '#3d3d21', 'type': 'color'};
+
+  /* GREEN */
+  --color-green-50: {'value': '#e7fbef', 'type': 'color'};
+  --color-green-100: {'value': '#d6f9e5', 'type': 'color'};
+  --color-green-200: {'value': '#c2f6d7', 'type': 'color'};
+  --color-green-300: {'value': '#aef3ca', 'type': 'color'};
+  --color-green-400: {'value': '#99f0bd', 'type': 'color'};
+  --color-green-500: {'value': '#85edb0', 'type': 'color'};
+  --color-green-600: {'value': '#6fc593', 'type': 'color'};
+  --color-green-700: {'value': '#599e75', 'type': 'color'};
+  --color-green-800: {'value': '#437758', 'type': 'color'};
+  --color-green-900: {'value': '#2c4f3b', 'type': 'color'};
+  --color-green-950: {'value': '#1b2f23', 'type': 'color'};
+
+  /* PINK */
+  --color-pink-50: {'value': '#fcf2fc', 'type': 'color'};
+  --color-pink-100: {'value': '#fae3fa', 'type': 'color'};
+  --color-pink-200: {'value': '#f7d4f7', 'type': 'color'};
+  --color-pink-300: {'value': '#f5c6f5', 'type': 'color'};
+  --color-pink-400: {'value': '#f2b8f2', 'type': 'color'};
+  --color-pink-500: {'value': '#f0aaf0', 'type': 'color'};
+  --color-pink-600: {'value': '#c88ec8', 'type': 'color'};
+  --color-pink-700: {'value': '#a071a0', 'type': 'color'};
+  --color-pink-800: {'value': '#785578', 'type': 'color'};
+  --color-pink-900: {'value': '#503950', 'type': 'color'};
+  --color-pink-950: {'value': '#302230', 'type': 'color'};
+
+  /* PURPLE */
+  --color-purple-50: {'value': '#f5ebfd', 'type': 'color'};
+  --color-purple-100: {'value': '#eeddfc', 'type': 'color'};
+  --color-purple-200: {'value': '#e5ccfa', 'type': 'color'};
+  --color-purple-300: {'value': '#dcbcf8', 'type': 'color'};
+  --color-purple-400: {'value': '#d4abf7', 'type': 'color'};
+  --color-purple-500: {'value': '#cb9af5', 'type': 'color'};
+  --color-purple-600: {'value': '#a980cc', 'type': 'color'};
+  --color-purple-700: {'value': '#8767a3', 'type': 'color'};
+  --color-purple-800: {'value': '#664d7b', 'type': 'color'};
+  --color-purple-900: {'value': '#443352', 'type': 'color'};
+  --color-purple-950: {'value': '#291f31', 'type': 'color'};
+
+  /* COBALT */
+  --color-cobalt-50: {'value': '#d8e6fc', 'type': 'color'};
+  --color-cobalt-100: {'value': '#bdd6fb', 'type': 'color'};
+  --color-cobalt-200: {'value': '#9cc1f8', 'type': 'color'};
+  --color-cobalt-300: {'value': '#7cadf6', 'type': 'color'};
+  --color-cobalt-400: {'value': '#5b98f4', 'type': 'color'};
+  --color-cobalt-500: {'value': '#3a84f2', 'type': 'color'};
+  --color-cobalt-600: {'value': '#306eca', 'type': 'color'};
+  --color-cobalt-700: {'value': '#2758a1', 'type': 'color'};
+  --color-cobalt-800: {'value': '#1d4279', 'type': 'color'};
+  --color-cobalt-900: {'value': '#132c51', 'type': 'color'};
+  --color-cobalt-950: {'value': '#0c1a30', 'type': 'color'};
+
+  /* SKY */
+  --color-sky-50: {'value': '#e6fbfc', 'type': 'color'};
+  --color-sky-100: {'value': '#d6f8fb', 'type': 'color'};
+  --color-sky-200: {'value': '#c1f4f8', 'type': 'color'};
+  --color-sky-300: {'value': '#acf0f6', 'type': 'color'};
+  --color-sky-400: {'value': '#98edf4', 'type': 'color'};
+  --color-sky-500: {'value': '#83e9f2', 'type': 'color'};
+  --color-sky-600: {'value': '#6dc2ca', 'type': 'color'};
+  --color-sky-700: {'value': '#579ba1', 'type': 'color'};
+  --color-sky-800: {'value': '#427579', 'type': 'color'};
+  --color-sky-900: {'value': '#2c4e51', 'type': 'color'};
+  --color-sky-950: {'value': '#1a2f30', 'type': 'color'};
+
+  /* GRAYSCALE */
+  --color-grayscale-0: {'value': '#f9fafa', 'type': 'color'};
+  --color-grayscale-50: {'value': '#f1f2f2', 'type': 'color'};
+  --color-grayscale-100: {'value': '#e8eaea', 'type': 'color'};
+  --color-grayscale-200: {'value': '#dddfdf', 'type': 'color'};
+  --color-grayscale-300: {'value': '#d2d4d4', 'type': 'color'};
+  --color-grayscale-400: {'value': '#c6caca', 'type': 'color'};
+  --color-grayscale-500: {'value': '#bbbfbf', 'type': 'color'};
+  --color-grayscale-600: {'value': '#9c9f9f', 'type': 'color'};
+  --color-grayscale-700: {'value': '#7d7f7f', 'type': 'color'};
+  --color-grayscale-800: {'value': '#5e6060', 'type': 'color'};
+  --color-grayscale-900: {'value': '#3e4040', 'type': 'color'};
+  --color-grayscale-950: {'value': '#252626', 'type': 'color'};
+  --color-grayscale-999: {'value': '#0c0d0d', 'type': 'color'};
+  --color-grayscale-white: {'value': '#f9fafa', 'type': 'color'};
+  --color-grayscale-black: {'value': '#0c0d0d', 'type': 'color'};
+
+  /* OTHER */
+  --color-opacity-white: {'50%': {'value': '#f9fafa80', 'type': 'color'}, '40%': {'value': '#f9fafa66', 'type': 'color'}, '20%': {'value': '#f9fafa33', 'type': 'color'}, '30%': {'value': '#f9fafa4d', 'type': 'color'}, '15%': {'value': '#f9fafa26', 'type': 'color'}, '5%': {'value': '#f9fafa0d', 'type': 'color'}, '95%': {'value': '#f9fafaf2', 'type': 'color'}, '90%': {'value': '#f9fafae6', 'type': 'color'}, '1%': {'value': '#f9fafa03', 'type': 'color'}, '10%': {'value': '#f9fafa1a', 'type': 'color'}, '70%': {'value': '#f9fafab3', 'type': 'color'}, '60%': {'value': '#f9fafa99', 'type': 'color'}, '80%': {'value': '#f9fafacc', 'type': 'color'}, '0%': {'value': '#f9fafa00', 'type': 'color'}};
+  --color-opacity-dark: {'0%': {'value': '#0c0d0d00', 'type': 'color'}, '1%': {'value': '#0c0d0d03', 'type': 'color'}, '5%': {'value': '#0c0d0d0d', 'type': 'color'}, '10%': {'value': '#0c0d0d1a', 'type': 'color'}, '15%': {'value': '#0c0d0d26', 'type': 'color'}, '20%': {'value': '#0c0d0d33', 'type': 'color'}, '30%': {'value': '#0c0d0d4d', 'type': 'color'}, '40%': {'value': '#0c0d0d66', 'type': 'color'}, '50%': {'value': '#0c0d0d80', 'type': 'color'}, '60%': {'value': '#0c0d0d99', 'type': 'color'}, '70%': {'value': '#0c0d0db3', 'type': 'color'}, '80%': {'value': '#0c0d0dcc', 'type': 'color'}, '90%': {'value': '#0c0d0de6', 'type': 'color'}, '95%': {'value': '#0c0d0df2', 'type': 'color'}};
+  --color-opacity-yellow: {'30': {'value': '#fafad573', 'type': 'color'}, '50': {'value': '#fafad599', 'type': 'color'}, '80': {'value': '#f5f5abbf', 'type': 'color'}};
+  --color-opacity-pink: {'30': {'value': '#f0aaf04d', 'type': 'color'}, '50': {'value': '#f0aaf080', 'type': 'color'}, '80': {'value': '#f0aaf0cc', 'type': 'color'}};
+
+}
+[data-theme="dark"] {
+  /* RED */
+  --color-red-50: {'value': '#4d2930', 'type': 'color'};
+  --color-red-100: {'value': '#6e3a44', 'type': 'color'};
+  --color-red-200: {'value': '#8f4c59', 'type': 'color'};
+  --color-red-300: {'value': '#b86172', 'type': 'color'};
+  --color-red-400: {'value': '#e57a8f', 'type': 'color'};
+  --color-red-500: {'value': '#ff879f', 'type': 'color'};
+  --color-red-600: {'value': '#ff9baf', 'type': 'color'};
+  --color-red-700: {'value': '#ffafbf', 'type': 'color'};
+  --color-red-800: {'value': '#ffc3cf', 'type': 'color'};
+  --color-red-900: {'value': '#ffd7df', 'type': 'color'};
+  --color-red-950: {'value': '#ffe7ec', 'type': 'color'};
+
+  /* ORANGE */
+  --color-orange-50: {'value': '#332216', 'type': 'color'};
+  --color-orange-100: {'value': '#553825', 'type': 'color'};
+  --color-orange-200: {'value': '#805538', 'type': 'color'};
+  --color-orange-300: {'value': '#aa714b', 'type': 'color'};
+  --color-orange-400: {'value': '#d48d5d', 'type': 'color'};
+  --color-orange-500: {'value': '#ffa970', 'type': 'color'};
+  --color-orange-600: {'value': '#ffb788', 'type': 'color'};
+  --color-orange-700: {'value': '#ffc6a0', 'type': 'color'};
+  --color-orange-800: {'value': '#ffd4b7', 'type': 'color'};
+  --color-orange-900: {'value': '#ffe2cf', 'type': 'color'};
+  --color-orange-950: {'value': '#ffeee2', 'type': 'color'};
+
+  /* YELLOW */
+  --color-yellow-50: {'value': '#3d3d21', 'type': 'color'};
+  --color-yellow-100: {'value': '#6b6b3a', 'type': 'color'};
+  --color-yellow-200: {'value': '#91914e', 'type': 'color'};
+  --color-yellow-300: {'value': '#b5b561', 'type': 'color'};
+  --color-yellow-400: {'value': '#d6d673', 'type': 'color'};
+  --color-yellow-500: {'value': '#f0f081', 'type': 'color'};
+  --color-yellow-600: {'value': '#f2f296', 'type': 'color'};
+  --color-yellow-700: {'value': '#f5f5ab', 'type': 'color'};
+  --color-yellow-800: {'value': '#f7f7c0', 'type': 'color'};
+  --color-yellow-900: {'value': '#fafad5', 'type': 'color'};
+  --color-yellow-950: {'value': '#fcfce6', 'type': 'color'};
+
+  /* GREEN */
+  --color-green-50: {'value': '#1b2f23', 'type': 'color'};
+  --color-green-100: {'value': '#2c4f3b', 'type': 'color'};
+  --color-green-200: {'value': '#437758', 'type': 'color'};
+  --color-green-300: {'value': '#599e75', 'type': 'color'};
+  --color-green-400: {'value': '#6fc593', 'type': 'color'};
+  --color-green-500: {'value': '#85edb0', 'type': 'color'};
+  --color-green-600: {'value': '#99f0bd', 'type': 'color'};
+  --color-green-700: {'value': '#aef3ca', 'type': 'color'};
+  --color-green-800: {'value': '#c2f6d7', 'type': 'color'};
+  --color-green-900: {'value': '#d6f9e5', 'type': 'color'};
+  --color-green-950: {'value': '#e7fbef', 'type': 'color'};
+
+  /* PINK */
+  --color-pink-50: {'value': '#302230', 'type': 'color'};
+  --color-pink-100: {'value': '#503950', 'type': 'color'};
+  --color-pink-200: {'value': '#785578', 'type': 'color'};
+  --color-pink-300: {'value': '#a071a0', 'type': 'color'};
+  --color-pink-400: {'value': '#c88ec8', 'type': 'color'};
+  --color-pink-500: {'value': '#f0aaf0', 'type': 'color'};
+  --color-pink-600: {'value': '#f2b8f2', 'type': 'color'};
+  --color-pink-700: {'value': '#f5c6f5', 'type': 'color'};
+  --color-pink-800: {'value': '#f7d4f7', 'type': 'color'};
+  --color-pink-900: {'value': '#fae3fa', 'type': 'color'};
+  --color-pink-950: {'value': '#fceefc', 'type': 'color'};
+
+  /* PURPLE */
+  --color-purple-50: {'value': '#f5ebfd', 'type': 'color'};
+  --color-purple-100: {'value': '#eeddfc', 'type': 'color'};
+  --color-purple-200: {'value': '#664d7b', 'type': 'color'};
+  --color-purple-300: {'value': '#8767a3', 'type': 'color'};
+  --color-purple-400: {'value': '#a980cc', 'type': 'color'};
+  --color-purple-500: {'value': '#cb9af5', 'type': 'color'};
+  --color-purple-600: {'value': '#d4abf7', 'type': 'color'};
+  --color-purple-700: {'value': '#dcbcf8', 'type': 'color'};
+  --color-purple-800: {'value': '#e5ccfa', 'type': 'color'};
+  --color-purple-900: {'value': '#eeddfc', 'type': 'color'};
+  --color-purple-950: {'value': '#f5ebfd', 'type': 'color'};
+
+  /* COBALT */
+  --color-cobalt-50: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-100: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-200: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-300: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-400: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-500: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-600: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-700: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-800: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-900: {'value': '#ffffff', 'type': 'color'};
+  --color-cobalt-950: {'value': '#ffffff', 'type': 'color'};
+
+  /* SKY */
+  --color-sky-50: {'value': '#1a2f30', 'type': 'color'};
+  --color-sky-100: {'value': '#2c4e51', 'type': 'color'};
+  --color-sky-200: {'value': '#427579', 'type': 'color'};
+  --color-sky-300: {'value': '#579ba1', 'type': 'color'};
+  --color-sky-400: {'value': '#6dc2ca', 'type': 'color'};
+  --color-sky-500: {'value': '#83e9f2', 'type': 'color'};
+  --color-sky-600: {'value': '#98edf4', 'type': 'color'};
+  --color-sky-700: {'value': '#acf0f6', 'type': 'color'};
+  --color-sky-800: {'value': '#c1f4f8', 'type': 'color'};
+  --color-sky-900: {'value': '#d6f8fb', 'type': 'color'};
+  --color-sky-950: {'value': '#e6fbfc', 'type': 'color'};
+
+  /* GRAYSCALE */
+  --color-grayscale-0: {'value': '#0c0d0d', 'type': 'color'};
+  --color-grayscale-50: {'value': '#252626', 'type': 'color'};
+  --color-grayscale-100: {'value': '#3e4040', 'type': 'color'};
+  --color-grayscale-200: {'value': '#5e6060', 'type': 'color'};
+  --color-grayscale-300: {'value': '#7d7f7f', 'type': 'color'};
+  --color-grayscale-400: {'value': '#9c9f9f', 'type': 'color'};
+  --color-grayscale-500: {'value': '#bbbfbf', 'type': 'color'};
+  --color-grayscale-600: {'value': '#c6caca', 'type': 'color'};
+  --color-grayscale-700: {'value': '#d2d4d4', 'type': 'color'};
+  --color-grayscale-800: {'value': '#dddfdf', 'type': 'color'};
+  --color-grayscale-900: {'value': '#e8eaea', 'type': 'color'};
+  --color-grayscale-950: {'value': '#f1f2f2', 'type': 'color'};
+  --color-grayscale-999: {'value': '#f9fafa', 'type': 'color'};
+  --color-grayscale-white: {'value': '#f9fafa', 'type': 'color'};
+  --color-grayscale-black: {'value': '#0c0d0d', 'type': 'color'};
+
+  /* OTHER */
+  --color-opacity-white: {'50%': {'value': '#0c0d0d80', 'type': 'color'}, '40%': {'value': '#0c0d0d66', 'type': 'color'}, '20%': {'value': '#0c0d0d33', 'type': 'color'}, '30%': {'value': '#0c0d0d4d', 'type': 'color'}, '15%': {'value': '#0c0d0d26', 'type': 'color'}, '5%': {'value': '#0c0d0d0d', 'type': 'color'}, '95%': {'value': '#0c0d0df2', 'type': 'color'}, '90%': {'value': '#0c0d0de6', 'type': 'color'}, '1%': {'value': '#0c0d0d03', 'type': 'color'}, '10%': {'value': '#0c0d0d1a', 'type': 'color'}, '70%': {'value': '#0c0d0db3', 'type': 'color'}, '60%': {'value': '#0c0d0d99', 'type': 'color'}, '80%': {'value': '#0c0d0dcc', 'type': 'color'}, '0%': {'value': '#0c0d0d00', 'type': 'color'}};
+  --color-opacity-dark: {'0%': {'value': '#f9fafa00', 'type': 'color'}, '1%': {'value': '#f9fafa03', 'type': 'color'}, '5%': {'value': '#f9fafa0d', 'type': 'color'}, '10%': {'value': '#f9fafa1a', 'type': 'color'}, '15%': {'value': '#f9fafa26', 'type': 'color'}, '20%': {'value': '#f9fafa33', 'type': 'color'}, '30%': {'value': '#f9fafa4d', 'type': 'color'}, '40%': {'value': '#f9fafa66', 'type': 'color'}, '50%': {'value': '#f9fafa80', 'type': 'color'}, '60%': {'value': '#f9fafa99', 'type': 'color'}, '70%': {'value': '#f9fafab3', 'type': 'color'}, '80%': {'value': '#f9fafacc', 'type': 'color'}, '90%': {'value': '#f9fafae6', 'type': 'color'}, '95%': {'value': '#f9fafaf2', 'type': 'color'}};
+  --color-opacity-yellow: {'30': {'value': '#fafad54d', 'type': 'color'}, '50': {'value': '#fafad580', 'type': 'color'}, '80': {'value': '#f5f5abcc', 'type': 'color'}};
+  --color-opacity-pink: {'30': {'value': '#f0aaf04d', 'type': 'color'}, '50': {'value': '#f0aaf080', 'type': 'color'}, '80': {'value': '#f0aaf0cc', 'type': 'color'}};
+
+}
+:root {
+  /* SPACING */
+  --spacing-0: 0rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-18: 4.5rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
+  --spacing-1-5: 0.375rem;
+  --spacing-2-5: 0.625rem;
+
+  /* RADIUS */
+  --radius-FULL: 624.938rem;
+  --radius-2xl: 0.75rem;
+  --radius-xl: 0.5rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-3xl: 1rem;
+  --radius-sm: 0.125rem;
+  --radius-4xl: 1.5rem;
+  --radius-none: 0rem;
+
+  /* FONT-SIZE */
+
+  /* LINE-HEIGHT */
+
+  /* LETTER-SPACING */
+
+  /* STROKE-WIDTH */
+  --stroke-width-XL: 0.5rem;
+  --stroke-width-md: 0.125rem;
+  --stroke-width-sm: 0.062rem;
+  --stroke-width-lg: 0.25rem;
+  --stroke-width-xs: 0.031rem;
+
+}
