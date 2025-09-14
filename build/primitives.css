@@ -235,6 +235,10 @@
   --color-grayscale-999: #000000;
 
   /* Opacity */
+  --color-opacity-white-0: #f9fafa00;
+  --color-opacity-white-20: #f9fafa33;
+  --color-opacity-dark-0: #0c0d0d00;
+  --color-opacity-dark-20: #0c0d0d33;
   --color-opacity-white-30: #f9fafa4d;
   --color-opacity-white-50: #f9fafa80;
   --color-opacity-white-80: #f9fafacc;
