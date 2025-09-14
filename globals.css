@@ -1,9 +1,3 @@
-/* ===================================================================
-   GLOBALS.CSS — PRIMITIVE TOKENS LAYER
-   Source: tokens.json (exported via Token Studio)
-   Authoritative source: Primitives only (no semantic meaning yet)
-=================================================================== */
-
 :root {
   /* ---------------------------- */
   /* 🎨 COLOR PRIMITIVES         */
@@ -26,7 +20,7 @@
   --color-orange-50: #ffeee2;
   --color-orange-100: #ffe2cf;
   --color-orange-200: #ffd4b7;
-  --color-orange‑300: #ffc6a0;
+  --color-orange-300: #ffc6a0;
   --color-orange-400: #ffb788;
   --color-orange-500: #ffa970;
   --color-orange-600: #d48d5d;
@@ -48,21 +42,55 @@
   --color-yellow-900: #6b6b3a;
   --color-yellow-950: #3d3d21;
 
-  /* GRAYSCALE */
-  --color-gray-0: #f9fafa;
-  --color-gray-50: #f1f2f2;
-  --color-gray-100: #e8eaea;
-  --color-gray-200: #dddfdf;
-  --color-gray-300: #d2d4d4;
-  --color-gray-400: #c6caca;
-  --color-gray-500: #bbbfbf;
-  --color-gray-600: #9c9f9f;
-  --color-gray-700: #7d7f7f;
-  --color-gray-800: #5e6060;
-  --color-gray-900: #3e4040;
-  --color-gray-950: #252626;
-  --color-white: #f9fafa;
-  --color-black: #0c0d0d;
+  /* GREEN */
+  --color-green-50: #e7fbef;
+  --color-green-100: #d6f9e5;
+  --color-green-200: #c2f6d7;
+  --color-green-300: #aef3ca;
+  --color-green-400: #99f0bd;
+  --color-green-500: #85edb0;
+  --color-green-600: #6fc593;
+  --color-green-700: #599e75;
+  --color-green-800: #437758;
+  --color-green-900: #2c4f3b;
+  --color-green-950: #1b2f23;
+
+  /* BLUE (COBALT) */
+  --color-cobalt-50: #d8e6fc;
+  --color-cobalt-100: #bdd6fb;
+  --color-cobalt-200: #9cc1f8;
+  --color-cobalt-300: #7cadf6;
+  --color-cobalt-400: #5b98f4;
+  --color-cobalt-500: #3a84f2;
+  --color-cobalt-600: #306eca;
+  --color-cobalt-700: #2758a1;
+  --color-cobalt-800: #1d4279;
+  --color-cobalt-900: #132c51;
+  --color-cobalt-950: #0c1a30;
+
+  /* INDIGO (SKY) */
+  --color-sky-50: #e6f9fc;
+  --color-sky-100: #ccf3fa;
+  --color-sky-200: #99e7f5;
+  --color-sky-300: #66dff0;
+  --color-sky-400: #33d7eb;
+  --color-sky-500: #83e9f2;
+  --color-sky-600: #67b6c8;
+  --color-sky-700: #4d8d9d;
+  --color-sky-800: #366575;
+  --color-sky-900: #1f3d4c;
+
+  /* VIOLET (PURPLE) */
+  --color-purple-50: #f3e9fc;
+  --color-purple-100: #e6d3f9;
+  --color-purple-200: #cca7f2;
+  --color-purple-300: #b17ae9;
+  --color-purple-400: #9960e3;
+  --color-purple-500: #cb9af5;
+  --color-purple-600: #9f71c1;
+  --color-purple-700: #7a5390;
+  --color-purple-800: #54386a;
+  --color-purple-900: #342248;
 
   /* PINK */
   --color-pink-50: #ffe5f5;
@@ -76,58 +104,36 @@
   --color-pink-800: #804d70;
   --color-pink-900: #552f50;
 
-  /* GREEN */
-  --color-green-50: #e6f9eb;
-  --color-green-100: #cff2d7;
-  --color-green-200: #9fe3af;
-  --color-green-300: #6fd68c;
-  --color-green-400: #3fc86a;
-  --color-green-500: #85edb0;
-  --color-green-600: #5fb78a;
-  --color-green-700: #478c6b;
-  --color-green-800: #31614f;
-  --color-green-900: #1b382f;
+  /* GRAYSCALE */
+  --color-grayscale-0: #f9fafa;
+  --color-grayscale-50: #f1f2f2;
+  --color-grayscale-100: #e8eaea;
+  --color-grayscale-200: #dddfdf;
+  --color-grayscale-300: #d2d4d4;
+  --color-grayscale-400: #c6caca;
+  --color-grayscale-500: #bbbfbf;
+  --color-grayscale-600: #9c9f9f;
+  --color-grayscale-700: #7d7f7f;
+  --color-grayscale-800: #5e6060;
+  --color-grayscale-900: #3e4040;
+  --color-grayscale-950: #252626;
+  --color-grayscale-999: #0c0d0d;
+  --color-grayscale-black: #0c0d0d;
+  --color-grayscale-white: #f9fafa;
 
-  /* SKY */
-  --color-sky-50: #e6f9fc;
-  --color-sky-100: #ccf3fa;
-  --color-sky-200: #99e7f5;
-  --color-sky-300: #66dff0;
-  --color-sky-400: #33d7eb;
-  --color-sky-500: #83e9f2;
-  --color-sky-600: #67b6c8;
-  --color-sky-700: #4d8d9d;
-  --color-sky-800: #366575;
-  --color-sky-900: #1f3d4c;
-
-  /* PURPLE */
-  --color-purple-50: #f3e9fc;
-  --color-purple-100: #e6d3f9;
-  --color-purple-200: #cca7f2;
-  --color-purple-300: #b17ae9;
-  --color-purple-400: #9960e3;
-  --color-purple-500: #cb9af5;
-  --color-purple-600: #9f71c1;
-  --color-purple-700: #7a5390;
-  --color-purple-800: #54386a;
-  --color-purple-900: #342248;
-
-  /* COBALT */
-  --color-cobalt-50: #e6ecfb;
-  --color-cobalt-100: #ccd9f8;
-  --color-cobalt-200: #99b3f1;
-  --color-cobalt-300: #668cee;
-  --color-cobalt-400: #3366eb;
-  --color-cobalt-500: #3a84f2;
-  --color-cobalt-600: #2d68c1;
-  --color-cobalt-700: #214e90;
-  --color-cobalt-800: #163660;
-  --color-cobalt-900: #0b1f37;
+  /* OPACITY OVERLAYS */
+  --color-opacity-dark-0%: #0c0d0d00;
+  --color-opacity-dark-1%: #0c0d0d03;
+  --color-opacity-dark-5%: #0c0d0d0d;
+  --color-opacity-dark-10%: #0c0d0d1a;
+  --color-opacity-dark-15%: #0c0d0d26;
+  --color-opacity-dark-20%: #0c0d0d33;
+  --color-opacity-dark-30%: #0c0d0d4d;
+  --color-opacity-dark-40%: #0c0d0d66;
 
   /* ---------------------------- */
   /* 🔤 TYPOGRAPHY PRIMITIVES    */
   /* ---------------------------- */
-
   --font-family-display: 'Behind The Nineties', cursive;
   --font-family-title: 'Overused Grotesk', sans-serif;
   --font-family-body: 'Overused Grotesk', sans-serif;
@@ -142,7 +148,6 @@
   /* ---------------------------- */
   /* 🔠 FONT SIZES & LINE HEIGHTS*/
   /* ---------------------------- */
-
   --text-xs: clamp(0.65rem, 0.75vw, 0.75rem);
   --text-sm: clamp(0.75rem, 0.9vw, 0.875rem);
   --text-md: clamp(0.875rem, 1vw, 1rem);
@@ -174,7 +179,6 @@
   /* ---------------------------- */
   /* 📏 SPACING / SIZING         */
   /* ---------------------------- */
-
   --space-0: 0rem;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -207,7 +211,6 @@
   /* ---------------------------- */
   /* 🎯 RADIUS & BORDER          */
   /* ---------------------------- */
-
   --radius-none: 0rem;
   --radius-sm: 0.125rem;
   --radius-md: 0.25rem;
@@ -224,5 +227,3 @@
   --stroke-lg: 0.25rem;
   --stroke-xl: 0.5rem;
 }
-
-/* END globals.css */
