@@ -1,0 +1,70 @@
+{
+  "Button": {
+    "H-Padding": {
+      "value": "{spacing.4}",
+      "type": "dimension"
+    },
+    "V-Padding": {
+      "value": "0.625rem",
+      "type": "dimension"
+    },
+    "Spacing": {
+      "value": "{spacing.3}",
+      "type": "dimension"
+    },
+    "Radius": {
+      "value": "{radius.lg}",
+      "type": "dimension"
+    },
+    "Icon Size": {
+      "value": "{spacing.7}",
+      "type": "dimension"
+    },
+    "Icon Border Width": {
+      "value": "{stroke-width.md}",
+      "type": "dimension"
+    },
+    "Full Padding": {
+      "value": "0.625rem",
+      "type": "dimension"
+    }
+  },
+  "Chip": {
+    "H-Padding": {
+      "value": "0.75rem",
+      "type": "dimension"
+    },
+    "V-Padding": {
+      "value": "0.375rem",
+      "type": "dimension"
+    },
+    "Full Padding": {
+      "value": "0.625rem",
+      "type": "dimension"
+    },
+    "Spacing": {
+      "value": "0.5rem",
+      "type": "dimension"
+    },
+    "Radius": {
+      "value": "{radius.FULL}",
+      "type": "dimension"
+    },
+    "Icon Size": {
+      "value": "1rem",
+      "type": "dimension"
+    },
+    "Icon Border Width": {
+      "value": "{stroke-width.sm}",
+      "type": "dimension"
+    },
+    "Border Width": {
+      "value": "{stroke-width.sm}",
+      "type": "dimension"
+    },
+    "Focus border width": {
+      "value": "{stroke-width.md}",
+      "type": "dimension"
+    }
+  }
+}
