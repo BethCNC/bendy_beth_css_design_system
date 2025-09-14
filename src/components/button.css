@@ -51,3 +51,59 @@
   box-shadow: none;
   opacity: 0.8;
 }
+
+/* =========================================================
+   BUTTON COMPONENT — SIZE VARIANTS
+   ========================================================= */
+
+/* Small (SM) */
+.bb-button-sm {
+  font-size: var(--bb-text-body-md);
+  font-weight: var(--bb-font-weight-medium);
+  line-height: var(--bb-line-height-normal);
+
+  padding-inline: clamp(0.5rem, 1.5vw, 0.75rem); /* 8–12px fluid */
+  padding-block: clamp(0.25rem, 0.75vw, 0.5rem);  /* 4–8px fluid */
+
+  gap: var(--space-1-5, 0.375rem); /* 6px */
+  border-radius: var(--radius-sm);
+}
+
+/* Medium (MD) */
+.bb-button-md {
+  font-size: var(--bb-text-body-lg);
+  font-weight: var(--bb-font-weight-medium);
+  line-height: var(--bb-line-height-normal);
+
+  padding-inline: clamp(0.75rem, 2vw, 1rem);  /* 12–16px fluid */
+  padding-block: clamp(0.5rem, 1vw, 0.625rem); /* 8–10px fluid */
+
+  gap: var(--space-3); /* 12px */
+  border-radius: var(--radius-sm);
+}
+
+/* Large (LG) */
+.bb-button-lg {
+  font-size: var(--bb-text-title-xs);
+  font-weight: var(--bb-font-weight-medium);
+  line-height: var(--bb-line-height-tight);
+
+  padding-inline: clamp(1rem, 2.5vw, 1.25rem);   /* 16–20px fluid */
+  padding-block: clamp(0.625rem, 1.25vw, 0.75rem); /* 10–12px fluid */
+
+  gap: var(--space-3); /* 12px */
+  border-radius: var(--radius-sm);
+}
+
+/* Extra Large (XL) */
+.bb-button-xl {
+  font-size: var(--bb-text-title-sm);
+  font-weight: var(--bb-font-weight-medium);
+  line-height: var(--bb-line-height-tight);
+
+  padding-inline: clamp(1.25rem, 3vw, 1.5rem); /* 20–24px fluid */
+  padding-block: clamp(0.75rem, 1.5vw, 1rem);  /* 12–16px fluid */
+
+  gap: var(--space-4); /* 16px */
+  border-radius: var(--radius-sm);
+}
