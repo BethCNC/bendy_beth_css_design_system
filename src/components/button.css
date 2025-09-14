@@ -1,262 +1,134 @@
 /* =========================================================
-   BUTTON COMPONENT — BASE
-   Shared styles for all button variants
+   BUTTON.CSS — COMPONENT LAYER
    ========================================================= */
 
-.bb-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: var(--space-1-5, 0.375rem); /* fallback for 6px gap */
-
-  /* Essential base styles for visibility */
-  padding: 0.5rem 0.75rem; /* basic fallback padding */
-  border: none;
-  border-radius: 0.25rem; /* fallback radius */
-  cursor: pointer;
-  font-family: inherit;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-
-  /* Use semantic defaults — overridden by variants */
-  background-color: var(--bb-Surface-Neutral-card);
-  color: var(--bb-Text-Neutral-body);
-}
-
-/* State: hover */
-.bb-button:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-hover);
-  color: var(--bb-button-text-hover, var(--bb-button-text-default));
-}
-
-/* State: pressed/active */
-.bb-button:active:not(:disabled) {
-  background-color: var(--bb-button-bg-pressed);
-  color: var(--bb-button-text-pressed, var(--bb-button-text-default));
-  box-shadow: var(--bb-button-pressed-shadow, var(--bb-elevation-card));
-}
-
-/* State: focus-visible (for accessibility) */
-.bb-button:focus-visible {
-  outline: 2px solid var(--bb-color-info-500);
-  outline-offset: 2px;
-  border-radius: var(--bb-component-md-button-Radius);
-}
-
-/* State: disabled */
-.bb-button:disabled {
-  background-color: var(--bb-button-bg-disabled);
-  color: var(--bb-button-text-disabled);
-  cursor: not-allowed;
-  box-shadow: none;
-  opacity: 0.8;
-}
-
-/* =========================================================
-   BUTTON COMPONENT — SIZE VARIANTS
-   ========================================================= */
-
-/* Small (SM) */
-.bb-button-sm {
-  font-size: var(--bb-text-body-md);
-  font-weight: var(--bb-font-weight-medium);
-  line-height: var(--bb-line-height-normal);
-
-  padding-inline: var(--bb-component-sm-button-H-Padding);
-  padding-block: var(--bb-component-sm-button-V-Padding);
-
-  gap: var(--bb-component-sm-button-Spacing);
-  border-radius: var(--bb-component-sm-button-Radius);
-}
-
-/* Medium (MD) */
-.bb-button-md {
-  font-size: var(--bb-text-body-lg);
-  font-weight: var(--bb-font-weight-medium);
-  line-height: var(--bb-line-height-normal);
-
-  padding-inline: var(--bb-component-md-button-H-Padding);
-  padding-block: var(--bb-component-md-button-V-Padding);
-
-  gap: var(--bb-component-md-button-Spacing);
-  border-radius: var(--bb-component-md-button-Radius);
-}
-
-/* Large (LG) */
-.bb-button-lg {
-  font-size: var(--bb-text-title-xs);
-  font-weight: var(--bb-font-weight-medium);
-  line-height: var(--bb-line-height-tight);
-
-  padding-inline: var(--bb-component-lg-button-H-Padding);
-  padding-block: var(--bb-component-lg-button-V-Padding);
-
-  gap: var(--bb-component-lg-button-Spacing);
-  border-radius: var(--bb-component-lg-button-Radius);
-}
-
-/* Extra Large (XL) */
-.bb-button-xl {
-  font-size: var(--bb-text-title-sm);
-  font-weight: var(--bb-font-weight-medium);
-  line-height: var(--bb-line-height-tight);
-
-  padding-inline: var(--bb-component-xl-button-H-Padding);
-  padding-block: var(--bb-component-xl-button-V-Padding);
-
-  gap: var(--bb-component-xl-button-Spacing);
-  border-radius: var(--bb-component-xl-button-Radius);
-}
-
-/* =========================================================
-   BUTTON COMPONENT — STYLE VARIANTS
-   ========================================================= */
-
-/* Neutral */
-.bb-button-neutral {
-  background-color: var(--bb-Surface-Neutral-inverse);
-  color: var(--bb-Text-Neutral-inverse);
-}
-.bb-button-neutral:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-inverse-hover);
-}
-.bb-button-neutral:active:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-inverse-focus);
-}
-.bb-button-neutral:disabled {
-  background-color: var(--bb-Surface-Neutral-disabled);
-  color: var(--bb-Text-Neutral-disabled);
-}
-
-/* Primary */
-.bb-button-primary {
-  background-color: var(--bb-Surface-Primary-default);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-primary:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Primary-hover);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-primary:active:not(:disabled) {
-  background-color: var(--bb-Surface-Primary-hover);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-primary:disabled {
-  background-color: var(--bb-Surface-Primary-disabled);
-  color: var(--bb-Text-Primary-disabled);
-}
-
-/* Secondary */
-.bb-button-secondary {
-  background-color: var(--bb-Surface-Secondary-default);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-secondary:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Secondary-hover);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-secondary:active:not(:disabled) {
-  background-color: var(--bb-Surface-Secondary-hover);
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-secondary:disabled {
-  background-color: var(--bb-Surface-Secondary-disabled);
-  color: var(--bb-Text-Neutral-disabled);
-}
-
-/* Destructive */
-.bb-button-destructive {
-  background-color: var(--bb-Surface-Error-default);
-  color: var(--bb-Text-Neutral-inverse);
-}
-.bb-button-destructive:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Error-hover);
-}
-.bb-button-destructive:active:not(:disabled) {
-  background-color: var(--bb-Surface-Error-hover);
-}
-.bb-button-destructive:disabled {
-  background-color: var(--bb-Surface-Error-disabled);
-  color: var(--bb-Text-Neutral-disabled);
-}
-
-/* Outline */
-.bb-button-outline {
-  background-color: transparent;
-  color: var(--bb-Text-Neutral-display);
-  border: 1px solid var(--bb-Text-Neutral-display);
-}
-.bb-button-outline:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-focus);
-}
-.bb-button-outline:active:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-elevated);
-}
-.bb-button-outline:disabled {
-  color: var(--bb-Text-Neutral-disabled);
-  border-color: var(--bb-Text-Neutral-disabled);
-}
-
-/* Ghost */
-.bb-button-ghost {
-  background-color: transparent;
-  color: var(--bb-Text-Neutral-display);
-}
-.bb-button-ghost:hover:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-hover);
-}
-.bb-button-ghost:active:not(:disabled) {
-  background-color: var(--bb-Surface-Neutral-focus);
-}
-.bb-button-ghost:disabled {
-  color: var(--bb-Text-Neutral-disabled);
-}
-
-/* Link */
-.bb-button-link {
-  background-color: transparent;
-  color: var(--bb-Text-Neutral-display);
-  text-decoration: underline;
-}
-.bb-button-link:hover:not(:disabled) {
-  color: var(--bb-Text-Neutral-title);
-}
-.bb-button-link:active:not(:disabled) {
-  color: var(--bb-Text-Neutral-heading);
-}
-.bb-button-link:disabled {
-  color: var(--bb-Text-Neutral-disabled);
-  text-decoration: none;
-}
-
-/* =========================================================
-   BUTTON ICON SUPPORT
-   ========================================================= */
-
-/* Button icons should inherit the button text color */
-.bb-button .bb-icon {
-  color: inherit;
-  flex-shrink: 0;
-}
-
-/* Icon-only buttons (no text, just icon) */
-.bb-button-icon-only {
-  padding-inline: var(--bb-component-md-button-V-Padding);
-  aspect-ratio: 1;
-}
-
-.bb-button-icon-only.bb-button-sm {
-  padding-inline: var(--bb-component-sm-button-V-Padding);
-}
-
-.bb-button-icon-only.bb-button-lg {
-  padding-inline: var(--bb-component-lg-button-V-Padding);
-}
-
-.bb-button-icon-only.bb-button-xl {
-  padding-inline: var(--bb-component-xl-button-V-Padding);
-}
+   .bb-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--bb-font-body);
+    font-size: var(--bb-text-body-md);
+    font-weight: var(--bb-font-weight-medium);
+    line-height: var(--bb-line-height-normal);
+    border-radius: var(--bb-component-md-button-Radius);
+    gap: var(--bb-component-md-button-Spacing);
+    padding-inline: var(--bb-component-md-button-H-Padding);
+    padding-block: var(--bb-component-md-button-V-Padding);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: none;
+  }
+  
+  /* Sizes */
+  .bb-button-sm {
+    font-size: var(--bb-text-body-sm);
+    padding-inline: var(--bb-component-sm-button-H-Padding);
+    padding-block: var(--bb-component-sm-button-V-Padding);
+    border-radius: var(--bb-component-sm-button-Radius);
+    gap: var(--bb-component-sm-button-Spacing);
+  }
+  
+  .bb-button-md { /* default */ }
+  
+  .bb-button-lg {
+    font-size: var(--bb-text-body-lg);
+    padding-inline: var(--bb-component-lg-button-H-Padding);
+    padding-block: var(--bb-component-lg-button-V-Padding);
+    border-radius: var(--bb-component-lg-button-Radius);
+    gap: var(--bb-component-lg-button-Spacing);
+  }
+  
+  .bb-button-xl {
+    font-size: var(--bb-text-title-xs);
+    padding-inline: var(--bb-component-xl-button-H-Padding);
+    padding-block: var(--bb-component-xl-button-V-Padding);
+    border-radius: var(--bb-component-xl-button-Radius);
+    gap: var(--bb-component-xl-button-Spacing);
+  }
+  
+  /* Variants */
+  .bb-button-neutral {
+    background-color: var(--bb-Surface-Neutral-inverse);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-button-neutral:hover {
+    background-color: var(--bb-Surface-Neutral-inverse-hover);
+  }
+  .bb-button-neutral:disabled {
+    background-color: var(--bb-Surface-Neutral-disabled);
+    color: var(--bb-Text-Neutral-disabled);
+    cursor: not-allowed;
+  }
+  
+  .bb-button-destructive {
+    background-color: var(--bb-Surface-Error-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-button-destructive:hover {
+    background-color: var(--bb-Surface-Error-hover);
+  }
+  .bb-button-destructive:disabled {
+    background-color: var(--bb-Surface-Error-disabled);
+    color: var(--bb-Text-Error-disabled);
+  }
+  
+  .bb-button-primary {
+    background-color: var(--bb-Surface-Primary-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-button-primary:hover {
+    background-color: var(--bb-Surface-Primary-hover);
+  }
+  .bb-button-primary:disabled {
+    background-color: var(--bb-Surface-Primary-disabled);
+    color: var(--bb-Text-Primary-disabled);
+  }
+  
+  .bb-button-secondary {
+    background-color: var(--bb-Surface-Secondary-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-button-secondary:hover {
+    background-color: var(--bb-Surface-Secondary-hover);
+  }
+  .bb-button-secondary:disabled {
+    background-color: var(--bb-Surface-Secondary-disabled);
+    color: var(--bb-Text-Secondary-disabled);
+  }
+  
+  .bb-button-outline {
+    background-color: transparent;
+    border: var(--bb-stroke-width-sm) solid var(--bb-Border-Neutral-dark);
+    color: var(--bb-Text-Neutral-body);
+  }
+  .bb-button-outline:hover {
+    background-color: var(--bb-Surface-Neutral-hover);
+  }
+  .bb-button-outline:disabled {
+    border-color: var(--bb-Border-Neutral-disabled);
+    color: var(--bb-Text-Neutral-disabled);
+  }
+  
+  .bb-button-ghost {
+    background-color: transparent;
+    color: var(--bb-Text-Neutral-body);
+  }
+  .bb-button-ghost:hover {
+    background-color: var(--bb-Surface-Neutral-hover);
+  }
+  .bb-button-ghost:disabled {
+    color: var(--bb-Text-Neutral-disabled);
+  }
+  
+  /* Focus state */
+  .bb-button:focus-visible {
+    outline: var(--bb-stroke-width-md) solid var(--bb-Border-Focus Ring);
+    outline-offset: var(--bb-spacing-1);
+  }
+  
+  /* Icon-only button */
+  .bb-button-icon {
+    padding: var(--bb-component-md-button-Full Padding);
+    border-radius: var(--bb-component-md-button-Radius);
+    aspect-ratio: 1 / 1;
+  }

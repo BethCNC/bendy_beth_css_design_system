@@ -1,0 +1,138 @@
+/* =========================================================
+   CHIP.CSS — COMPONENT LAYER
+   ========================================================= */
+
+   .bb-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--bb-font-body);
+    font-size: var(--bb-text-body-sm);
+    font-weight: var(--bb-font-weight-medium);
+    line-height: var(--bb-line-height-normal);
+    border-radius: var(--bb-component-md-chip-Radius);
+    gap: var(--bb-component-md-chip-Spacing);
+    padding-inline: var(--bb-component-md-chip-H-Padding);
+    padding-block: var(--bb-component-md-chip-V-Padding);
+    cursor: default;
+    border: var(--bb-component-md-chip-Border Width) solid var(--bb-Border-Neutral-default);
+    background-color: var(--bb-Surface-Neutral-card);
+    color: var(--bb-Text-Neutral-body);
+  }
+  
+  /* Sizes */
+  .bb-chip-sm {
+    font-size: var(--bb-text-body-xs);
+    padding-inline: var(--bb-component-sm-chip-H-Padding);
+    padding-block: var(--bb-component-sm-chip-V-Padding);
+    border-radius: var(--bb-component-sm-chip-Radius);
+    gap: var(--bb-component-sm-chip-Spacing);
+    border: var(--bb-component-sm-chip-Border Width) solid var(--bb-Border-Neutral-default);
+  }
+  
+  .bb-chip-md { /* default */ }
+  
+  .bb-chip-lg {
+    font-size: var(--bb-text-body-md);
+    padding-inline: var(--bb-component-lg-chip-H-Padding);
+    padding-block: var(--bb-component-lg-chip-V-Padding);
+    border-radius: var(--bb-component-lg-chip-Radius);
+    gap: var(--bb-component-lg-chip-Spacing);
+    border: var(--bb-component-lg-chip-Border Width) solid var(--bb-Border-Neutral-default);
+  }
+  
+  .bb-chip-xl {
+    font-size: var(--bb-text-body-lg);
+    padding-inline: var(--bb-component-xl-chip-H-Padding);
+    padding-block: var(--bb-component-xl-chip-V-Padding);
+    border-radius: var(--bb-component-xl-chip-Radius);
+    gap: var(--bb-component-xl-chip-Spacing);
+    border: var(--bb-component-xl-chip-Border Width) solid var(--bb-Border-Neutral-default);
+  }
+  
+  /* Variants */
+  .bb-chip-neutral {
+    background-color: var(--bb-Surface-Neutral-card);
+    color: var(--bb-Text-Neutral-body);
+  }
+  .bb-chip-neutral:hover {
+    background-color: var(--bb-Surface-Neutral-hover);
+  }
+  .bb-chip-neutral:disabled {
+    background-color: var(--bb-Surface-Neutral-disabled);
+    color: var(--bb-Text-Neutral-disabled);
+  }
+  
+  .bb-chip-primary {
+    background-color: var(--bb-Surface-Primary-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-chip-primary:hover {
+    background-color: var(--bb-Surface-Primary-hover);
+  }
+  .bb-chip-primary:disabled {
+    background-color: var(--bb-Surface-Primary-disabled);
+    color: var(--bb-Text-Primary-disabled);
+  }
+  
+  .bb-chip-secondary {
+    background-color: var(--bb-Surface-Secondary-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-chip-secondary:hover {
+    background-color: var(--bb-Surface-Secondary-hover);
+  }
+  .bb-chip-secondary:disabled {
+    background-color: var(--bb-Surface-Secondary-disabled);
+    color: var(--bb-Text-Secondary-disabled);
+  }
+  
+  .bb-chip-destructive {
+    background-color: var(--bb-Surface-Error-default);
+    color: var(--bb-Text-Neutral-inverse);
+  }
+  .bb-chip-destructive:hover {
+    background-color: var(--bb-Surface-Error-hover);
+  }
+  .bb-chip-destructive:disabled {
+    background-color: var(--bb-Surface-Error-disabled);
+    color: var(--bb-Text-Error-disabled);
+  }
+  
+  /* Outline + Ghost */
+  .bb-chip-outline {
+    background-color: transparent;
+    border: var(--bb-component-md-chip-Border Width) solid var(--bb-Border-Neutral-dark);
+    color: var(--bb-Text-Neutral-body);
+  }
+  .bb-chip-outline:hover {
+    background-color: var(--bb-Surface-Neutral-hover);
+  }
+  .bb-chip-outline:disabled {
+    border-color: var(--bb-Border-Neutral-disabled);
+    color: var(--bb-Text-Neutral-disabled);
+  }
+  
+  .bb-chip-ghost {
+    background-color: transparent;
+    color: var(--bb-Text-Neutral-body);
+  }
+  .bb-chip-ghost:hover {
+    background-color: var(--bb-Surface-Neutral-hover);
+  }
+  .bb-chip-ghost:disabled {
+    color: var(--bb-Text-Neutral-disabled);
+  }
+  
+  /* Focus state */
+  .bb-chip:focus-visible {
+    outline: var(--bb-component-md-chip-Focus border width) solid var(--bb-Border-Focus Ring);
+    outline-offset: var(--bb-spacing-1);
+  }
+  
+  /* Icon support */
+  .bb-chip-icon {
+    width: var(--bb-component-md-chip-Icon Size);
+    height: var(--bb-component-md-chip-Icon Size);
+    flex-shrink: 0;
+  }

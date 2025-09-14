@@ -1,113 +1,35 @@
 /* =========================================================
-   GLOBALS
-   Imports token layers and applies base styles
+   GLOBALS.CSS — FOUNDATION LAYER
    ========================================================= */
 
-/* Token Layers */
-
+/* Import token layers (generated, read-only) */
 @import "../build/primitives.css";
 @import "../build/alias.css";
 @import "../build/semantic.css";
-@import "../build/components.css";
-@import "../build/typography.css";
 @import "../build/effects.css";
+@import "../build/typography.css";
+@import "../build/components.css";
 
-/* =========================================================
-   Base Reset
-   ========================================================= */
-
-*,
-*::before,
-*::after {
+/* Reset + base accessibility */
+*, *::before, *::after {
   box-sizing: border-box;
-}
-
-html,
-body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
-/* Use semantic background + text */
-body {
+:root {
   font-family: var(--bb-font-body);
   font-size: var(--bb-text-body-md);
-  font-weight: var(--bb-font-weight-regular);
   line-height: var(--bb-line-height-normal);
-  background-color: var(--bb-surface-default);
-  color: var(--bb-text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: var(--bb-Text-Neutral-body);
+  background-color: var(--bb-Surface-Neutral-page);
 }
 
-/* =========================================================
-   Headings
-   ========================================================= */
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 var(--space-4);
-  font-family: var(--bb-font-heading);
-  font-weight: var(--bb-font-weight-medium);
-  color: var(--bb-text-primary);
+:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-Icon-focus);
+  outline-offset: var(--bb-spacing-1);
 }
 
-h1 { font-size: var(--bb-text-h1); line-height: var(--bb-line-height-tight); }
-h2 { font-size: var(--bb-text-h2); line-height: var(--bb-line-height-snug); }
-h3 { font-size: var(--bb-text-h3); line-height: var(--bb-line-height-snug); }
-h4 { font-size: var(--bb-text-h4); line-height: var(--bb-line-height-snug); }
-h5 { font-size: var(--bb-text-h5); line-height: var(--bb-line-height-normal); }
-h6 { font-size: var(--bb-text-h6); line-height: var(--bb-line-height-normal); }
-
-/* =========================================================
-   Text Elements
-   ========================================================= */
-
-p {
-  margin: 0 0 var(--space-4);
-  font-size: var(--bb-text-body-md);
-  line-height: var(--bb-line-height-normal);
-}
-
-small {
-  font-size: var(--bb-text-body-sm);
-  line-height: var(--bb-line-height-snug);
-}
-
-strong, b {
-  font-weight: var(--bb-font-weight-bold);
-}
-
-/* =========================================================
-   Links & Interactive
-   ========================================================= */
-
-a {
-  color: var(--bb-text-link, var(--bb-color-primary-500));
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--bb-text-link-hover, var(--bb-color-primary-400));
-  text-decoration: underline;
-}
-
-button {
-  font-family: inherit;
-  font-size: var(--bb-text-body-md);
-  line-height: var(--bb-line-height-normal);
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: inherit;
-}
-
-/* =========================================================
-   Theme Support
-   ========================================================= */
-
-/* Light theme is default via [data-theme="light"] in primitives.css */
-[data-theme="dark"] body {
-  background-color: var(--bb-surface-default);
-  color: var(--bb-text-primary);
+[data-theme="dark"] {
+  /* Dark theme overrides already defined in token layers */
 }
