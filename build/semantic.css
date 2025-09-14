@@ -344,3 +344,146 @@
   --bb-border-info-disabled: var(--bb-color-info-600);
   --bb-border-info-hover: var(--bb-color-info-400);
 }
+
+/* =========================================================
+   BUTTON SEMANTIC TOKENS
+   ========================================================= */
+
+:root[data-theme="light"] {
+  /* Neutral */
+  --bb-button-bg-neutral-default: var(--color-neutral-200);
+  --bb-button-bg-neutral-hover: var(--color-neutral-300);
+  --bb-button-bg-neutral-pressed: var(--color-neutral-400);
+  --bb-button-bg-neutral-disabled: var(--color-neutral-100);
+
+  --bb-button-text-neutral-default: var(--color-neutral-900);
+  --bb-button-text-neutral-hover: var(--color-neutral-900);
+  --bb-button-text-neutral-pressed: var(--color-neutral-900);
+  --bb-button-text-neutral-disabled: var(--color-neutral-400);
+
+  /* Primary */
+  --bb-button-bg-primary-default: var(--color-primary-500);
+  --bb-button-bg-primary-hover: var(--color-primary-600);
+  --bb-button-bg-primary-pressed: var(--color-primary-700);
+  --bb-button-bg-primary-disabled: var(--color-neutral-200);
+
+  --bb-button-text-primary-default: var(--color-neutral-900);
+  --bb-button-text-primary-hover: var(--color-neutral-900);
+  --bb-button-text-primary-pressed: var(--color-neutral-900);
+  --bb-button-text-primary-disabled: var(--color-neutral-400);
+
+  /* Secondary */
+  --bb-button-bg-secondary-default: var(--color-secondary-500);
+  --bb-button-bg-secondary-hover: var(--color-secondary-600);
+  --bb-button-bg-secondary-pressed: var(--color-secondary-700);
+  --bb-button-bg-secondary-disabled: var(--color-neutral-200);
+
+  --bb-button-text-secondary-default: var(--color-neutral-900);
+  --bb-button-text-secondary-hover: var(--color-neutral-900);
+  --bb-button-text-secondary-pressed: var(--color-neutral-900);
+  --bb-button-text-secondary-disabled: var(--color-neutral-400);
+
+  /* Destructive */
+  --bb-button-bg-destructive-default: var(--color-destructive-500);
+  --bb-button-bg-destructive-hover: var(--color-destructive-600);
+  --bb-button-bg-destructive-pressed: var(--color-destructive-700);
+  --bb-button-bg-destructive-disabled: var(--color-neutral-200);
+
+  --bb-button-text-destructive-default: var(--color-neutral-900);
+  --bb-button-text-destructive-hover: var(--color-neutral-900);
+  --bb-button-text-destructive-pressed: var(--color-neutral-900);
+  --bb-button-text-destructive-disabled: var(--color-neutral-400);
+
+  /* Outline */
+  --bb-button-bg-outline-hover: var(--color-neutral-100);
+  --bb-button-bg-outline-pressed: var(--color-neutral-200);
+
+  --bb-button-text-outline-default: var(--color-neutral-900);
+  --bb-button-text-outline-disabled: var(--color-neutral-400);
+
+  --bb-button-border-outline: var(--color-neutral-500);
+  --bb-button-border-outline-disabled: var(--color-neutral-300);
+
+  /* Ghost */
+  --bb-button-bg-ghost-hover: var(--color-neutral-100);
+  --bb-button-bg-ghost-pressed: var(--color-neutral-200);
+
+  --bb-button-text-ghost-default: var(--color-neutral-900);
+  --bb-button-text-ghost-disabled: var(--color-neutral-400);
+
+  /* Link */
+  --bb-button-text-link-default: var(--color-primary-600);
+  --bb-button-text-link-hover: var(--color-primary-700);
+  --bb-button-text-link-pressed: var(--color-primary-800);
+  --bb-button-text-link-disabled: var(--color-neutral-400);
+}
+
+:root[data-theme="dark"] {
+  /* Neutral */
+  --bb-button-bg-neutral-default: var(--color-neutral-700);
+  --bb-button-bg-neutral-hover: var(--color-neutral-600);
+  --bb-button-bg-neutral-pressed: var(--color-neutral-500);
+  --bb-button-bg-neutral-disabled: var(--color-neutral-800);
+
+  --bb-button-text-neutral-default: var(--color-neutral-50);
+  --bb-button-text-neutral-hover: var(--color-neutral-50);
+  --bb-button-text-neutral-pressed: var(--color-neutral-50);
+  --bb-button-text-neutral-disabled: var(--color-neutral-500);
+
+  /* Primary */
+  --bb-button-bg-primary-default: var(--color-primary-400);
+  --bb-button-bg-primary-hover: var(--color-primary-500);
+  --bb-button-bg-primary-pressed: var(--color-primary-600);
+  --bb-button-bg-primary-disabled: var(--color-neutral-700);
+
+  --bb-button-text-primary-default: var(--color-neutral-900);
+  --bb-button-text-primary-hover: var(--color-neutral-900);
+  --bb-button-text-primary-pressed: var(--color-neutral-900);
+  --bb-button-text-primary-disabled: var(--color-neutral-500);
+
+  /* Secondary */
+  --bb-button-bg-secondary-default: var(--color-secondary-400);
+  --bb-button-bg-secondary-hover: var(--color-secondary-500);
+  --bb-button-bg-secondary-pressed: var(--color-secondary-600);
+  --bb-button-bg-secondary-disabled: var(--color-neutral-700);
+
+  --bb-button-text-secondary-default: var(--color-neutral-900);
+  --bb-button-text-secondary-hover: var(--color-neutral-900);
+  --bb-button-text-secondary-pressed: var(--color-neutral-900);
+  --bb-button-text-secondary-disabled: var(--color-neutral-500);
+
+  /* Destructive */
+  --bb-button-bg-destructive-default: var(--color-destructive-400);
+  --bb-button-bg-destructive-hover: var(--color-destructive-500);
+  --bb-button-bg-destructive-pressed: var(--color-destructive-600);
+  --bb-button-bg-destructive-disabled: var(--color-neutral-700);
+
+  --bb-button-text-destructive-default: var(--color-neutral-50);
+  --bb-button-text-destructive-hover: var(--color-neutral-50);
+  --bb-button-text-destructive-pressed: var(--color-neutral-50);
+  --bb-button-text-destructive-disabled: var(--color-neutral-500);
+
+  /* Outline */
+  --bb-button-bg-outline-hover: var(--color-neutral-800);
+  --bb-button-bg-outline-pressed: var(--color-neutral-700);
+
+  --bb-button-text-outline-default: var(--color-neutral-50);
+  --bb-button-text-outline-disabled: var(--color-neutral-500);
+
+  --bb-button-border-outline: var(--color-neutral-400);
+  --bb-button-border-outline-disabled: var(--color-neutral-600);
+
+  /* Ghost */
+  --bb-button-bg-ghost-hover: var(--color-neutral-800);
+  --bb-button-bg-ghost-pressed: var(--color-neutral-700);
+
+  --bb-button-text-ghost-default: var(--color-neutral-50);
+  --bb-button-text-ghost-disabled: var(--color-neutral-500);
+
+  /* Link */
+  --bb-button-text-link-default: var(--color-primary-400);
+  --bb-button-text-link-hover: var(--color-primary-500);
+  --bb-button-text-link-pressed: var(--color-primary-600);
+  --bb-button-text-link-disabled: var(--color-neutral-500);
+}
+
