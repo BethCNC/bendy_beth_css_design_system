@@ -1,0 +1,30 @@
+/* =========================================================
+   ICON SYSTEM
+   Standardizes Lucide icon sizes and stroke widths
+   ========================================================= */
+
+.bb-icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor; /* icon inherits text color */
+  fill: none;
+}
+
+/* Sizes (built from spacing + stroke tokens) */
+.bb-icon-sm {
+  width: var(--space-4);   /* 1rem = 16px */
+  height: var(--space-4);
+  stroke-width: var(--stroke-1);
+}
+
+.bb-icon-md {
+  width: var(--space-5);   /* 1.25rem = 20px */
+  height: var(--space-5);
+  stroke-width: var(--stroke-1);
+}
+
+.bb-icon-lg {
+  width: var(--space-6);   /* 1.5rem = 24px */
+  height: var(--space-6);
+  stroke-width: var(--stroke-2);
+}
