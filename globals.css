@@ -1,0 +1,228 @@
+/* ===================================================================
+   GLOBALS.CSS — PRIMITIVE TOKENS LAYER
+   Source: tokens.json (exported via Token Studio)
+   Authoritative source: Primitives only (no semantic meaning yet)
+=================================================================== */
+
+:root {
+  /* ---------------------------- */
+  /* 🎨 COLOR PRIMITIVES         */
+  /* ---------------------------- */
+
+  /* RED */
+  --color-red-50: #ffe7ec;
+  --color-red-100: #ffd7df;
+  --color-red-200: #ffc3cf;
+  --color-red-300: #ffafbf;
+  --color-red-400: #ff9baf;
+  --color-red-500: #ff879f;
+  --color-red-600: #e57a8f;
+  --color-red-700: #b86172;
+  --color-red-800: #8f4c59;
+  --color-red-900: #6e3a44;
+  --color-red-950: #4d2930;
+
+  /* ORANGE */
+  --color-orange-50: #ffeee2;
+  --color-orange-100: #ffe2cf;
+  --color-orange-200: #ffd4b7;
+  --color-orange‑300: #ffc6a0;
+  --color-orange-400: #ffb788;
+  --color-orange-500: #ffa970;
+  --color-orange-600: #d48d5d;
+  --color-orange-700: #aa714b;
+  --color-orange-800: #805538;
+  --color-orange-900: #553825;
+  --color-orange-950: #332216;
+
+  /* YELLOW */
+  --color-yellow-50: #fcfce6;
+  --color-yellow-100: #fafad5;
+  --color-yellow-200: #f7f7c0;
+  --color-yellow-300: #f5f5ab;
+  --color-yellow-400: #f2f296;
+  --color-yellow-500: #f0f081;
+  --color-yellow-600: #d6d673;
+  --color-yellow-700: #b5b561;
+  --color-yellow-800: #91914e;
+  --color-yellow-900: #6b6b3a;
+  --color-yellow-950: #3d3d21;
+
+  /* GRAYSCALE */
+  --color-gray-0: #f9fafa;
+  --color-gray-50: #f1f2f2;
+  --color-gray-100: #e8eaea;
+  --color-gray-200: #dddfdf;
+  --color-gray-300: #d2d4d4;
+  --color-gray-400: #c6caca;
+  --color-gray-500: #bbbfbf;
+  --color-gray-600: #9c9f9f;
+  --color-gray-700: #7d7f7f;
+  --color-gray-800: #5e6060;
+  --color-gray-900: #3e4040;
+  --color-gray-950: #252626;
+  --color-white: #f9fafa;
+  --color-black: #0c0d0d;
+
+  /* PINK */
+  --color-pink-50: #ffe5f5;
+  --color-pink-100: #ffcceb;
+  --color-pink-200: #ff99d6;
+  --color-pink-300: #ff66c2;
+  --color-pink-400: #ff33ad;
+  --color-pink-500: #f0aaf0;
+  --color-pink-600: #d082d0;
+  --color-pink-700: #aa6690;
+  --color-pink-800: #804d70;
+  --color-pink-900: #552f50;
+
+  /* GREEN */
+  --color-green-50: #e6f9eb;
+  --color-green-100: #cff2d7;
+  --color-green-200: #9fe3af;
+  --color-green-300: #6fd68c;
+  --color-green-400: #3fc86a;
+  --color-green-500: #85edb0;
+  --color-green-600: #5fb78a;
+  --color-green-700: #478c6b;
+  --color-green-800: #31614f;
+  --color-green-900: #1b382f;
+
+  /* SKY */
+  --color-sky-50: #e6f9fc;
+  --color-sky-100: #ccf3fa;
+  --color-sky-200: #99e7f5;
+  --color-sky-300: #66dff0;
+  --color-sky-400: #33d7eb;
+  --color-sky-500: #83e9f2;
+  --color-sky-600: #67b6c8;
+  --color-sky-700: #4d8d9d;
+  --color-sky-800: #366575;
+  --color-sky-900: #1f3d4c;
+
+  /* PURPLE */
+  --color-purple-50: #f3e9fc;
+  --color-purple-100: #e6d3f9;
+  --color-purple-200: #cca7f2;
+  --color-purple-300: #b17ae9;
+  --color-purple-400: #9960e3;
+  --color-purple-500: #cb9af5;
+  --color-purple-600: #9f71c1;
+  --color-purple-700: #7a5390;
+  --color-purple-800: #54386a;
+  --color-purple-900: #342248;
+
+  /* COBALT */
+  --color-cobalt-50: #e6ecfb;
+  --color-cobalt-100: #ccd9f8;
+  --color-cobalt-200: #99b3f1;
+  --color-cobalt-300: #668cee;
+  --color-cobalt-400: #3366eb;
+  --color-cobalt-500: #3a84f2;
+  --color-cobalt-600: #2d68c1;
+  --color-cobalt-700: #214e90;
+  --color-cobalt-800: #163660;
+  --color-cobalt-900: #0b1f37;
+
+  /* ---------------------------- */
+  /* 🔤 TYPOGRAPHY PRIMITIVES    */
+  /* ---------------------------- */
+
+  --font-family-display: 'Behind The Nineties', cursive;
+  --font-family-title: 'Overused Grotesk', sans-serif;
+  --font-family-body: 'Overused Grotesk', sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ---------------------------- */
+  /* 🔠 FONT SIZES & LINE HEIGHTS*/
+  /* ---------------------------- */
+
+  --text-xs: clamp(0.65rem, 0.75vw, 0.75rem);
+  --text-sm: clamp(0.75rem, 0.9vw, 0.875rem);
+  --text-md: clamp(0.875rem, 1vw, 1rem);
+  --text-lg: clamp(1rem, 1.2vw, 1.125rem);
+  --text-xl: clamp(1.125rem, 1.4vw, 1.25rem);
+  --text-2xl: clamp(1.25rem, 1.8vw, 1.5rem);
+  --text-3xl: clamp(1.5rem, 2.4vw, 1.875rem);
+  --text-4xl: clamp(1.875rem, 3vw, 2.25rem);
+  --text-5xl: clamp(2.25rem, 4vw, 3rem);
+  --text-6xl: clamp(3rem, 5vw, 3.75rem);
+  --text-7xl: clamp(3.75rem, 6vw, 4.5rem);
+  --text-8xl: clamp(4.5rem, 8vw, 6rem);
+  --text-9xl: clamp(6rem, 10vw, 8rem);
+
+  --leading-xs: clamp(1rem, 1.25vw, 1.25rem);
+  --leading-sm: clamp(1.125rem, 1.5vw, 1.5rem);
+  --leading-md: clamp(1.25rem, 1.75vw, 1.75rem);
+  --leading-lg: clamp(1.5rem, 2vw, 2rem);
+  --leading-xl: clamp(1.75rem, 2.5vw, 2.25rem);
+  --leading-2xl: clamp(2rem, 3vw, 2.5rem);
+  --leading-3xl: clamp(2.25rem, 3.5vw, 3rem);
+  --leading-4xl: clamp(2.5rem, 4vw, 3.75rem);
+  --leading-5xl: clamp(3rem, 4.5vw, 4.5rem);
+  --leading-6xl: clamp(3.5rem, 5.5vw, 6rem);
+  --leading-7xl: clamp(4rem, 6vw, 7rem);
+  --leading-8xl: clamp(5rem, 7vw, 8rem);
+  --leading-9xl: clamp(6rem, 8vw, 8.5rem);
+
+  /* ---------------------------- */
+  /* 📏 SPACING / SIZING         */
+  /* ---------------------------- */
+
+  --space-0: 0rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
+  --space-36: 9rem;
+  --space-40: 10rem;
+  --space-44: 11rem;
+  --space-48: 12rem;
+  --space-52: 13rem;
+  --space-56: 14rem;
+  --space-60: 15rem;
+  --space-64: 16rem;
+  --space-72: 18rem;
+  --space-80: 20rem;
+  --space-96: 24rem;
+
+  /* ---------------------------- */
+  /* 🎯 RADIUS & BORDER          */
+  /* ---------------------------- */
+
+  --radius-none: 0rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 1rem;
+  --radius-4xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --stroke-xs: 0.031rem;
+  --stroke-sm: 0.062rem;
+  --stroke-md: 0.125rem;
+  --stroke-lg: 0.25rem;
+  --stroke-xl: 0.5rem;
+}
+
+/* END globals.css */
