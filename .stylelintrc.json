@@ -1,0 +1,19 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-declaration-strict-value"],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": [
+      ["color", "background-color", "border-color", "fill", "stroke", "font-size", "margin", "padding", "border-radius", "gap"],
+      {
+        "ignoreKeywords": ["inherit", "initial", "transparent", "currentcolor", "none", "auto", "unset", "0"]
+      }
+    ],
+    "import-notation": null,
+    "declaration-block-single-line-max-declarations": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "no-descending-specificity": null,
+    "declaration-no-important": true,
+    "selector-max-id": 0
+  }
+}

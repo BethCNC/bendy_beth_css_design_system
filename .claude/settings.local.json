@@ -5,7 +5,11 @@
       "Bash(claude mcp:*)",
       "Bash(npm install:*)",
       "WebSearch",
-      "Bash(npx figma-developer-mcp:*)"
+      "Bash(npx figma-developer-mcp:*)",
+      "Bash(npx style-dictionary build:*)",
+      "Bash(jq:*)",
+      "Bash(npm run build:tokens:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

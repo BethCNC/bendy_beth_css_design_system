@@ -10,9 +10,12 @@
 
   gap: var(--space-1-5, 0.375rem); /* fallback for 6px gap */
 
+  /* Essential base styles for visibility */
+  padding: 0.5rem 0.75rem; /* basic fallback padding */
   border: none;
-  border-radius: var(--radius-sm); /* default, overridden by sizes */
+  border-radius: 0.25rem; /* fallback radius */
   cursor: pointer;
+  font-family: inherit;
 
   transition:
     background-color 0.2s ease,
@@ -20,8 +23,8 @@
     box-shadow 0.2s ease;
 
   /* Use semantic defaults — overridden by variants */
-  background-color: var(--bb-button-bg-default, transparent);
-  color: var(--bb-button-text-default, inherit);
+  background-color: var(--bb-Surface-Neutral-card);
+  color: var(--bb-Text-Neutral-body);
 }
 
 /* State: hover */
@@ -39,8 +42,9 @@
 
 /* State: focus-visible (for accessibility) */
 .bb-button:focus-visible {
-  outline: 2px solid var(--bb-border-focus);
+  outline: 2px solid var(--bb-color-info-500);
   outline-offset: 2px;
+  border-radius: var(--bb-component-md-button-Radius);
 }
 
 /* State: disabled */
@@ -62,11 +66,11 @@
   font-weight: var(--bb-font-weight-medium);
   line-height: var(--bb-line-height-normal);
 
-  padding-inline: clamp(0.5rem, 1.5vw, 0.75rem); /* 8–12px fluid */
-  padding-block: clamp(0.25rem, 0.75vw, 0.5rem);  /* 4–8px fluid */
+  padding-inline: var(--bb-component-sm-button-H-Padding);
+  padding-block: var(--bb-component-sm-button-V-Padding);
 
-  gap: var(--space-1-5, 0.375rem); /* 6px */
-  border-radius: var(--radius-sm);
+  gap: var(--bb-component-sm-button-Spacing);
+  border-radius: var(--bb-component-sm-button-Radius);
 }
 
 /* Medium (MD) */
@@ -75,11 +79,11 @@
   font-weight: var(--bb-font-weight-medium);
   line-height: var(--bb-line-height-normal);
 
-  padding-inline: clamp(0.75rem, 2vw, 1rem);  /* 12–16px fluid */
-  padding-block: clamp(0.5rem, 1vw, 0.625rem); /* 8–10px fluid */
+  padding-inline: var(--bb-component-md-button-H-Padding);
+  padding-block: var(--bb-component-md-button-V-Padding);
 
-  gap: var(--space-3); /* 12px */
-  border-radius: var(--radius-sm);
+  gap: var(--bb-component-md-button-Spacing);
+  border-radius: var(--bb-component-md-button-Radius);
 }
 
 /* Large (LG) */
@@ -88,11 +92,11 @@
   font-weight: var(--bb-font-weight-medium);
   line-height: var(--bb-line-height-tight);
 
-  padding-inline: clamp(1rem, 2.5vw, 1.25rem);   /* 16–20px fluid */
-  padding-block: clamp(0.625rem, 1.25vw, 0.75rem); /* 10–12px fluid */
+  padding-inline: var(--bb-component-lg-button-H-Padding);
+  padding-block: var(--bb-component-lg-button-V-Padding);
 
-  gap: var(--space-3); /* 12px */
-  border-radius: var(--radius-sm);
+  gap: var(--bb-component-lg-button-Spacing);
+  border-radius: var(--bb-component-lg-button-Radius);
 }
 
 /* Extra Large (XL) */
@@ -101,11 +105,11 @@
   font-weight: var(--bb-font-weight-medium);
   line-height: var(--bb-line-height-tight);
 
-  padding-inline: clamp(1.25rem, 3vw, 1.5rem); /* 20–24px fluid */
-  padding-block: clamp(0.75rem, 1.5vw, 1rem);  /* 12–16px fluid */
+  padding-inline: var(--bb-component-xl-button-H-Padding);
+  padding-block: var(--bb-component-xl-button-V-Padding);
 
-  gap: var(--space-4); /* 16px */
-  border-radius: var(--radius-sm);
+  gap: var(--bb-component-xl-button-Spacing);
+  border-radius: var(--bb-component-xl-button-Radius);
 }
 
 /* =========================================================
@@ -114,113 +118,145 @@
 
 /* Neutral */
 .bb-button-neutral {
-  background-color: var(--bb-button-bg-neutral-default);
-  color: var(--bb-button-text-neutral-default);
+  background-color: var(--bb-Surface-Neutral-inverse);
+  color: var(--bb-Text-Neutral-inverse);
 }
 .bb-button-neutral:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-neutral-hover);
+  background-color: var(--bb-Surface-Neutral-inverse-hover);
 }
 .bb-button-neutral:active:not(:disabled) {
-  background-color: var(--bb-button-bg-neutral-pressed);
+  background-color: var(--bb-Surface-Neutral-inverse-focus);
 }
 .bb-button-neutral:disabled {
-  background-color: var(--bb-button-bg-neutral-disabled);
-  color: var(--bb-button-text-neutral-disabled);
+  background-color: var(--bb-Surface-Neutral-disabled);
+  color: var(--bb-Text-Neutral-disabled);
 }
 
 /* Primary */
 .bb-button-primary {
-  background-color: var(--bb-button-bg-primary-default);
-  color: var(--bb-button-text-primary-default);
+  background-color: var(--bb-Surface-Primary-default);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-primary:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-primary-hover);
+  background-color: var(--bb-Surface-Primary-hover);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-primary:active:not(:disabled) {
-  background-color: var(--bb-button-bg-primary-pressed);
+  background-color: var(--bb-Surface-Primary-hover);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-primary:disabled {
-  background-color: var(--bb-button-bg-primary-disabled);
-  color: var(--bb-button-text-primary-disabled);
+  background-color: var(--bb-Surface-Primary-disabled);
+  color: var(--bb-Text-Primary-disabled);
 }
 
 /* Secondary */
 .bb-button-secondary {
-  background-color: var(--bb-button-bg-secondary-default);
-  color: var(--bb-button-text-secondary-default);
+  background-color: var(--bb-Surface-Secondary-default);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-secondary:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-secondary-hover);
+  background-color: var(--bb-Surface-Secondary-hover);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-secondary:active:not(:disabled) {
-  background-color: var(--bb-button-bg-secondary-pressed);
+  background-color: var(--bb-Surface-Secondary-hover);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-secondary:disabled {
-  background-color: var(--bb-button-bg-secondary-disabled);
-  color: var(--bb-button-text-secondary-disabled);
+  background-color: var(--bb-Surface-Secondary-disabled);
+  color: var(--bb-Text-Neutral-disabled);
 }
 
 /* Destructive */
 .bb-button-destructive {
-  background-color: var(--bb-button-bg-destructive-default);
-  color: var(--bb-button-text-destructive-default);
+  background-color: var(--bb-Surface-Error-default);
+  color: var(--bb-Text-Neutral-inverse);
 }
 .bb-button-destructive:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-destructive-hover);
+  background-color: var(--bb-Surface-Error-hover);
 }
 .bb-button-destructive:active:not(:disabled) {
-  background-color: var(--bb-button-bg-destructive-pressed);
+  background-color: var(--bb-Surface-Error-hover);
 }
 .bb-button-destructive:disabled {
-  background-color: var(--bb-button-bg-destructive-disabled);
-  color: var(--bb-button-text-destructive-disabled);
+  background-color: var(--bb-Surface-Error-disabled);
+  color: var(--bb-Text-Neutral-disabled);
 }
 
 /* Outline */
 .bb-button-outline {
   background-color: transparent;
-  color: var(--bb-button-text-outline-default);
-  border: 1px solid var(--bb-button-border-outline);
+  color: var(--bb-Text-Neutral-display);
+  border: 1px solid var(--bb-Text-Neutral-display);
 }
 .bb-button-outline:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-outline-hover);
+  background-color: var(--bb-Surface-Neutral-focus);
 }
 .bb-button-outline:active:not(:disabled) {
-  background-color: var(--bb-button-bg-outline-pressed);
+  background-color: var(--bb-Surface-Neutral-elevated);
 }
 .bb-button-outline:disabled {
-  color: var(--bb-button-text-outline-disabled);
-  border-color: var(--bb-button-border-outline-disabled);
+  color: var(--bb-Text-Neutral-disabled);
+  border-color: var(--bb-Text-Neutral-disabled);
 }
 
 /* Ghost */
 .bb-button-ghost {
   background-color: transparent;
-  color: var(--bb-button-text-ghost-default);
+  color: var(--bb-Text-Neutral-display);
 }
 .bb-button-ghost:hover:not(:disabled) {
-  background-color: var(--bb-button-bg-ghost-hover);
+  background-color: var(--bb-Surface-Neutral-hover);
 }
 .bb-button-ghost:active:not(:disabled) {
-  background-color: var(--bb-button-bg-ghost-pressed);
+  background-color: var(--bb-Surface-Neutral-focus);
 }
 .bb-button-ghost:disabled {
-  color: var(--bb-button-text-ghost-disabled);
+  color: var(--bb-Text-Neutral-disabled);
 }
 
 /* Link */
 .bb-button-link {
   background-color: transparent;
-  color: var(--bb-button-text-link-default);
+  color: var(--bb-Text-Neutral-display);
   text-decoration: underline;
 }
 .bb-button-link:hover:not(:disabled) {
-  color: var(--bb-button-text-link-hover);
+  color: var(--bb-Text-Neutral-title);
 }
 .bb-button-link:active:not(:disabled) {
-  color: var(--bb-button-text-link-pressed);
+  color: var(--bb-Text-Neutral-heading);
 }
 .bb-button-link:disabled {
-  color: var(--bb-button-text-link-disabled);
+  color: var(--bb-Text-Neutral-disabled);
   text-decoration: none;
+}
+
+/* =========================================================
+   BUTTON ICON SUPPORT
+   ========================================================= */
+
+/* Button icons should inherit the button text color */
+.bb-button .bb-icon {
+  color: inherit;
+  flex-shrink: 0;
+}
+
+/* Icon-only buttons (no text, just icon) */
+.bb-button-icon-only {
+  padding-inline: var(--bb-component-md-button-V-Padding);
+  aspect-ratio: 1;
+}
+
+.bb-button-icon-only.bb-button-sm {
+  padding-inline: var(--bb-component-sm-button-V-Padding);
+}
+
+.bb-button-icon-only.bb-button-lg {
+  padding-inline: var(--bb-component-lg-button-V-Padding);
+}
+
+.bb-button-icon-only.bb-button-xl {
+  padding-inline: var(--bb-component-xl-button-V-Padding);
 }

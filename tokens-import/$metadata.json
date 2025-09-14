@@ -1,0 +1,15 @@
+{
+  "tokenSetOrder": [
+    "Primitives/Light",
+    "Primitives/Dark",
+    "Semantic/light",
+    "Alias",
+    "Responsive/mobile",
+    "Responsive/tablet",
+    "Responsive/desktop",
+    "Components/SM",
+    "Components/MD",
+    "Components/LG",
+    "Components/XL"
+  ]
+}

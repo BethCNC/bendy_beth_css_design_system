@@ -1,0 +1,20 @@
+{
+  "name": "bendy-beth-css-design-system",
+  "version": "1.0.0",
+  "description": "Production-grade CSS design system built from Figma tokens",
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.js",
+    "lint": "stylelint 'src/**/*.css'",
+    "lint:fix": "stylelint 'src/**/*.css' --fix",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-declaration-strict-value": "^1.9.2"
+  },
+  "dependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.1"
+  }
+}

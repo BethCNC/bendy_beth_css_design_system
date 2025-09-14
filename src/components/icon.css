@@ -6,11 +6,36 @@
 .bb-icon {
   display: inline-block;
   vertical-align: middle;
-  stroke: currentColor; /* icon inherits text color */
+  stroke: currentcolor; /* icon inherits text color */
   fill: none;
 }
 
-/* Sizes (built from spacing + stroke tokens) */
+/* Button Icon Sizes (using component tokens) */
+.bb-icon-button-sm {
+  width: var(--bb-component-sm-button-Icon Size);
+  height: var(--bb-component-sm-button-Icon Size);
+  stroke-width: var(--bb-component-sm-button-Icon Border Width);
+}
+
+.bb-icon-button-md {
+  width: var(--bb-component-md-button-Icon Size);
+  height: var(--bb-component-md-button-Icon Size);
+  stroke-width: var(--bb-component-md-button-Icon Border Width);
+}
+
+.bb-icon-button-lg {
+  width: var(--bb-component-lg-button-Icon Size);
+  height: var(--bb-component-lg-button-Icon Size);
+  stroke-width: var(--bb-component-lg-button-Icon Border Width);
+}
+
+.bb-icon-button-xl {
+  width: var(--bb-component-xl-button-Icon Size);
+  height: var(--bb-component-xl-button-Icon Size);
+  stroke-width: var(--bb-component-xl-button-Icon Border Width);
+}
+
+/* General Icon Sizes (for non-button use) */
 .bb-icon-sm {
   width: var(--space-4);   /* 1rem = 16px */
   height: var(--space-4);
