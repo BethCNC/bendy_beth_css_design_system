@@ -50,7 +50,7 @@
     --bb-component-lg-button-radius: var(--bb-radius-lg);
     --bb-component-lg-button-icon-size: var(--bb-spacing-6);
     --bb-component-lg-button-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-lg-button-full-padding: 0.625rem;
+    --bb-component-lg-button-full-padding: var(--bb-spacing-4);
   
     /* Large Chip */
     --bb-component-lg-chip-h-padding: 0.75rem;
@@ -70,7 +70,7 @@
     --bb-component-xl-button-radius: var(--bb-radius-lg);
     --bb-component-xl-button-icon-size: var(--bb-spacing-6);
     --bb-component-xl-button-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-xl-button-full-padding: var(--bb-spacing-3);
+    --bb-component-xl-button-full-padding: var(--bb-spacing-5);
   
     /* Extra Large Chip */
     --bb-component-xl-chip-h-padding: 1rem;

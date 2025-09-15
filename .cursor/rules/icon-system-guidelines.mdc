@@ -1,0 +1,358 @@
+---
+alwaysApply: true
+---
+
+# Icon System Guidelines for CSS Design Systems
+
+## ICON SYSTEM ARCHITECTURE
+
+### Single Icon File Principle
+- **ONE icon CSS file only** - never duplicate icon styles across multiple files
+- **Consolidate all icon styles** into a single, comprehensive file
+- **Remove conflicting files** immediately when discovered
+- **Use semantic naming** that reflects the design system structure
+
+### Icon Token Structure
+```css
+/* Base icon styles - no hardcoded values */
+.bb-icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentcolor;
+  fill: none;
+  flex-shrink: 0;
+  width: var(--bb-icon-size-default);
+  height: var(--bb-icon-size-default);
+}
+
+/* Icon size variants */
+.bb-icon--sm {
+  width: var(--bb-icon-size-sm);
+  height: var(--bb-icon-size-sm);
+}
+
+.bb-icon--lg {
+  width: var(--bb-icon-size-lg);
+  height: var(--bb-icon-size-lg);
+}
+
+/* Icon color variants - using semantic tokens */
+.bb-icon--primary {
+  color: var(--bb-color-text-primary);
+}
+
+.bb-icon--inverse {
+  color: var(--bb-color-text-inverse);
+}
+
+.bb-icon--muted {
+  color: var(--bb-color-text-muted);
+}
+```
+
+## ICON INTEGRATION WITH COMPONENTS
+
+### Button Icon Integration
+```css
+/* Button with icon - proper token usage */
+.bb-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bb-space-2);
+  /* ... other button styles */
+}
+
+.bb-button .bb-icon {
+  /* Icons inherit color from button text token */
+  color: inherit;
+}
+
+/* Specific button variants with icon colors */
+.bb-button--primary .bb-icon {
+  color: var(--bb-button-text-primary);
+}
+
+.bb-button--neutral .bb-icon {
+  color: var(--bb-button-text-neutral);
+}
+
+.bb-button--destructive .bb-icon {
+  color: var(--bb-button-text-destructive);
+}
+```
+
+### Icon Color Inheritance Rules
+1. **Default behavior**: Icons inherit color from parent component
+2. **Component-specific**: Use component semantic tokens for icon colors
+3. **Never hardcode**: No `#ffffff`, `#000000`, or other raw color values
+4. **Theme-aware**: Icons automatically adapt to light/dark themes
+
+## ICON TOKEN DEFINITIONS
+
+### Required Icon Tokens
+```css
+/* Icon sizes */
+:root {
+  --bb-icon-size-xs: 0.75rem;    /* 12px */
+  --bb-icon-size-sm: 1rem;       /* 16px */
+  --bb-icon-size-default: 1.25rem; /* 20px */
+  --bb-icon-size-lg: 1.5rem;     /* 24px */
+  --bb-icon-size-xl: 2rem;       /* 32px */
+}
+
+/* Icon colors - semantic tokens */
+:root {
+  --bb-icon-color-primary: var(--bb-color-text-primary);
+  --bb-icon-color-inverse: var(--bb-color-text-inverse);
+  --bb-icon-color-muted: var(--bb-color-text-muted);
+  --bb-icon-color-success: var(--bb-color-text-success);
+  --bb-icon-color-warning: var(--bb-color-text-warning);
+  --bb-icon-color-error: var(--bb-color-text-error);
+}
+```
+
+## ICON IMPLEMENTATION PATTERNS
+
+### Pattern 1: Icon-Only Buttons
+```css
+.bb-button--icon-only {
+  padding: var(--bb-space-2);
+  min-width: var(--bb-button-height);
+  justify-content: center;
+}
+
+.bb-button--icon-only .bb-icon {
+  margin: 0; /* Remove any default margins */
+}
+```
+
+### Pattern 2: Icon with Text
+```css
+.bb-button--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bb-space-2);
+}
+
+.bb-button--with-icon .bb-icon {
+  flex-shrink: 0;
+}
+```
+
+### Pattern 3: Icon in Navigation
+```css
+.bb-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--bb-space-2);
+  color: var(--bb-color-text-primary);
+}
+
+.bb-nav-item .bb-icon {
+  color: inherit;
+}
+
+.bb-nav-item--active .bb-icon {
+  color: var(--bb-color-text-accent);
+}
+```
+
+## ICON ACCESSIBILITY
+
+### Screen Reader Support
+```html
+<!-- Icon with accessible label -->
+<button class="bb-button bb-button--icon-only" aria-label="Close dialog">
+  <svg class="bb-icon" aria-hidden="true">
+    <!-- icon content -->
+  </svg>
+</button>
+
+<!-- Decorative icon (no label needed) -->
+<span class="bb-text">
+  <svg class="bb-icon bb-icon--sm" aria-hidden="true">
+    <!-- icon content -->
+  </svg>
+  Some text content
+</span>
+```
+
+### Focus Indicators
+```css
+.bb-button:focus-visible .bb-icon {
+  /* Icon inherits focus ring from button */
+  outline: inherit;
+}
+```
+
+## ICON THEME SUPPORT
+
+### Light/Dark Theme Adaptation
+```css
+/* Icons automatically adapt via color inheritance */
+.bb-icon {
+  /* No hardcoded colors - uses currentcolor */
+  stroke: currentcolor;
+  fill: none;
+}
+
+/* Theme-specific icon colors if needed */
+[data-theme="dark"] .bb-icon--accent {
+  color: var(--bb-color-accent-light);
+}
+
+[data-theme="light"] .bb-icon--accent {
+  color: var(--bb-color-accent-dark);
+}
+```
+
+## ICON TROUBLESHOOTING
+
+### Common Issues and Solutions
+
+#### Issue: Icons not changing color
+**Problem**: Icon has hardcoded color or wrong inheritance
+**Solution**: 
+```css
+/* ❌ Wrong */
+.bb-icon {
+  color: #000000; /* Hardcoded value */
+}
+
+/* ✅ Correct */
+.bb-icon {
+  color: inherit; /* Inherits from parent */
+  stroke: currentcolor; /* Uses current color */
+}
+```
+
+#### Issue: Icons too small/large
+**Problem**: Using hardcoded sizes instead of tokens
+**Solution**:
+```css
+/* ❌ Wrong */
+.bb-icon {
+  width: 16px; /* Hardcoded size */
+  height: 16px;
+}
+
+/* ✅ Correct */
+.bb-icon {
+  width: var(--bb-icon-size-default);
+  height: var(--bb-icon-size-default);
+}
+```
+
+#### Issue: Icons not theme-aware
+**Problem**: Missing semantic token references
+**Solution**:
+```css
+/* ❌ Wrong */
+.bb-icon {
+  color: white; /* Doesn't change in dark theme */
+}
+
+/* ✅ Correct */
+.bb-icon {
+  color: var(--bb-color-text-inverse); /* Changes with theme */
+}
+```
+
+## ICON FILE ORGANIZATION
+
+### Single Icon File Structure
+```
+src/components/
+├── icon.css          # Single icon file with all styles
+├── button.css        # Button styles (imports icon.css)
+├── chip.css          # Chip styles (imports icon.css)
+└── ...
+```
+
+### Icon File Content
+```css
+/* src/components/icon.css */
+
+/* Base icon styles */
+.bb-icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentcolor;
+  fill: none;
+  flex-shrink: 0;
+  width: var(--bb-icon-size-default);
+  height: var(--bb-icon-size-default);
+}
+
+/* Size variants */
+.bb-icon--xs { width: var(--bb-icon-size-xs); height: var(--bb-icon-size-xs); }
+.bb-icon--sm { width: var(--bb-icon-size-sm); height: var(--bb-icon-size-sm); }
+.bb-icon--lg { width: var(--bb-icon-size-lg); height: var(--bb-icon-size-lg); }
+.bb-icon--xl { width: var(--bb-icon-size-xl); height: var(--bb-icon-size-xl); }
+
+/* Color variants */
+.bb-icon--primary { color: var(--bb-color-text-primary); }
+.bb-icon--inverse { color: var(--bb-color-text-inverse); }
+.bb-icon--muted { color: var(--bb-color-text-muted); }
+.bb-icon--success { color: var(--bb-color-text-success); }
+.bb-icon--warning { color: var(--bb-color-text-warning); }
+.bb-icon--error { color: var(--bb-color-text-error); }
+```
+
+## ICON TESTING CHECKLIST
+
+### Before Approving Icon Implementation
+- [ ] Single icon file with no duplicates
+- [ ] No hardcoded colors or sizes
+- [ ] Icons inherit colors from parent components
+- [ ] All size variants work correctly
+- [ ] Icons adapt to light/dark themes
+- [ ] Proper accessibility attributes
+- [ ] Focus indicators work correctly
+- [ ] Icons align properly in all contexts
+
+### Testing Commands
+```bash
+# Check for hardcoded values in icon files
+grep -r "#[0-9a-fA-F]\{3,6\}" src/components/icon.css
+
+# Check for duplicate icon files
+find src/components -name "*icon*" -type f
+
+# Verify token usage
+grep -r "var(--bb-" src/components/icon.css
+```
+
+## ICON SYSTEM MAINTENANCE
+
+### Adding New Icon Variants
+1. **Add size token** to design system if needed
+2. **Create CSS class** using semantic naming
+3. **Use design tokens** for all values
+4. **Test in both themes**
+5. **Update documentation**
+
+### Removing Icon Variants
+1. **Remove CSS class** from icon.css
+2. **Update any components** using the variant
+3. **Remove unused tokens** if no longer needed
+4. **Test all affected components**
+
+### Icon System Updates
+1. **Never edit generated token files**
+2. **Update source tokens** in Figma/JSON
+3. **Regenerate CSS** using build process
+4. **Test all icon implementations**
+5. **Update documentation**
+
+---
+
+## CRITICAL ICON RULES
+
+1. **ONE icon file only** - consolidate all icon styles
+2. **NO hardcoded values** - use design tokens exclusively
+3. **Inherit colors** from parent components
+4. **Test in both themes** for proper adaptation
+5. **Use semantic tokens** for all icon properties
+6. **Maintain accessibility** with proper ARIA attributes
+7. **Document icon patterns** for team consistency

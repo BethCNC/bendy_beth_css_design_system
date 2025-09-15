@@ -21,12 +21,12 @@
   font-family: var(--bb-font-body);
   font-size: var(--bb-text-body-md);
   line-height: var(--bb-line-height-normal);
-  color: var(--bb-Text-Neutral-body);
-  background-color: var(--bb-Surface-Neutral-page);
+  color: var(--bb-text-neutral-body);
+  background-color: var(--bb-surface-neutral-page);
 }
 
 :focus-visible {
-  outline: var(--bb-stroke-width-md) solid var(--bb-Icon-focus);
+  outline: var(--bb-stroke-width-md) solid var(--bb-border-focus-ring);
   outline-offset: var(--bb-spacing-1);
 }
 

@@ -10,129 +10,129 @@
     font-size: var(--bb-text-body-sm);
     font-weight: var(--bb-font-weight-medium);
     line-height: var(--bb-line-height-normal);
-    border-radius: var(--bb-component-md-chip-Radius);
-    gap: var(--bb-component-md-chip-Spacing);
-    padding-inline: var(--bb-component-md-chip-H-Padding);
-    padding-block: var(--bb-component-md-chip-V-Padding);
+    border-radius: var(--bb-component-md-chip-radius);
+    gap: var(--bb-component-md-chip-spacing);
+    padding-inline: var(--bb-component-md-chip-h-padding);
+    padding-block: var(--bb-component-md-chip-v-padding);
     cursor: default;
-    border: var(--bb-component-md-chip-Border Width) solid var(--bb-Border-Neutral-default);
-    background-color: var(--bb-Surface-Neutral-card);
-    color: var(--bb-Text-Neutral-body);
+    border: var(--bb-component-md-chip-border-width) solid var(--bb-border-neutral-default);
+    background-color: var(--bb-surface-neutral-card);
+    color: var(--bb-text-neutral-body);
   }
   
   /* Sizes */
   .bb-chip-sm {
     font-size: var(--bb-text-body-xs);
-    padding-inline: var(--bb-component-sm-chip-H-Padding);
-    padding-block: var(--bb-component-sm-chip-V-Padding);
-    border-radius: var(--bb-component-sm-chip-Radius);
-    gap: var(--bb-component-sm-chip-Spacing);
-    border: var(--bb-component-sm-chip-Border Width) solid var(--bb-Border-Neutral-default);
+    padding-inline: var(--bb-component-sm-chip-h-padding);
+    padding-block: var(--bb-component-sm-chip-v-padding);
+    border-radius: var(--bb-component-sm-chip-radius);
+    gap: var(--bb-component-sm-chip-spacing);
+    border: var(--bb-component-sm-chip-border-width) solid var(--bb-border-neutral-default);
   }
   
   .bb-chip-md { /* default */ }
   
   .bb-chip-lg {
     font-size: var(--bb-text-body-md);
-    padding-inline: var(--bb-component-lg-chip-H-Padding);
-    padding-block: var(--bb-component-lg-chip-V-Padding);
-    border-radius: var(--bb-component-lg-chip-Radius);
-    gap: var(--bb-component-lg-chip-Spacing);
-    border: var(--bb-component-lg-chip-Border Width) solid var(--bb-Border-Neutral-default);
+    padding-inline: var(--bb-component-lg-chip-h-padding);
+    padding-block: var(--bb-component-lg-chip-v-padding);
+    border-radius: var(--bb-component-lg-chip-radius);
+    gap: var(--bb-component-lg-chip-spacing);
+    border: var(--bb-component-lg-chip-border-width) solid var(--bb-border-neutral-default);
   }
   
   .bb-chip-xl {
     font-size: var(--bb-text-body-lg);
-    padding-inline: var(--bb-component-xl-chip-H-Padding);
-    padding-block: var(--bb-component-xl-chip-V-Padding);
-    border-radius: var(--bb-component-xl-chip-Radius);
-    gap: var(--bb-component-xl-chip-Spacing);
-    border: var(--bb-component-xl-chip-Border Width) solid var(--bb-Border-Neutral-default);
+    padding-inline: var(--bb-component-xl-chip-h-padding);
+    padding-block: var(--bb-component-xl-chip-v-padding);
+    border-radius: var(--bb-component-xl-chip-radius);
+    gap: var(--bb-component-xl-chip-spacing);
+    border: var(--bb-component-xl-chip-border-width) solid var(--bb-border-neutral-default);
   }
   
   /* Variants */
   .bb-chip-neutral {
-    background-color: var(--bb-Surface-Neutral-card);
-    color: var(--bb-Text-Neutral-body);
+    background-color: var(--bb-surface-neutral-card);
+    color: var(--bb-text-neutral-body);
   }
   .bb-chip-neutral:hover {
-    background-color: var(--bb-Surface-Neutral-hover);
+    background-color: var(--bb-surface-neutral-hover);
   }
   .bb-chip-neutral:disabled {
-    background-color: var(--bb-Surface-Neutral-disabled);
-    color: var(--bb-Text-Neutral-disabled);
+    background-color: var(--bb-surface-neutral-disabled);
+    color: var(--bb-text-neutral-disabled);
   }
   
   .bb-chip-primary {
-    background-color: var(--bb-Surface-Primary-default);
-    color: var(--bb-Text-Neutral-inverse);
+    background-color: var(--bb-surface-primary-default);
+    color: var(--bb-text-neutral-inverse);
   }
   .bb-chip-primary:hover {
-    background-color: var(--bb-Surface-Primary-hover);
+    background-color: var(--bb-surface-primary-hover);
   }
   .bb-chip-primary:disabled {
-    background-color: var(--bb-Surface-Primary-disabled);
-    color: var(--bb-Text-Primary-disabled);
+    background-color: var(--bb-surface-primary-disabled);
+    color: var(--bb-text-primary-disabled);
   }
   
   .bb-chip-secondary {
-    background-color: var(--bb-Surface-Secondary-default);
-    color: var(--bb-Text-Neutral-inverse);
+    background-color: var(--bb-surface-secondary-default);
+    color: var(--bb-text-neutral-inverse);
   }
   .bb-chip-secondary:hover {
-    background-color: var(--bb-Surface-Secondary-hover);
+    background-color: var(--bb-surface-secondary-hover);
   }
   .bb-chip-secondary:disabled {
-    background-color: var(--bb-Surface-Secondary-disabled);
-    color: var(--bb-Text-Secondary-disabled);
+    background-color: var(--bb-surface-secondary-disabled);
+    color: var(--bb-text-secondary-disabled);
   }
   
   .bb-chip-destructive {
-    background-color: var(--bb-Surface-Error-default);
-    color: var(--bb-Text-Neutral-inverse);
+    background-color: var(--bb-surface-error-default);
+    color: var(--bb-text-neutral-inverse);
   }
   .bb-chip-destructive:hover {
-    background-color: var(--bb-Surface-Error-hover);
+    background-color: var(--bb-surface-error-hover);
   }
   .bb-chip-destructive:disabled {
-    background-color: var(--bb-Surface-Error-disabled);
-    color: var(--bb-Text-Error-disabled);
+    background-color: var(--bb-surface-error-disabled);
+    color: var(--bb-text-error-disabled);
   }
   
   /* Outline + Ghost */
   .bb-chip-outline {
     background-color: transparent;
-    border: var(--bb-component-md-chip-Border Width) solid var(--bb-Border-Neutral-dark);
-    color: var(--bb-Text-Neutral-body);
+    border: var(--bb-component-md-chip-border-width) solid var(--bb-border-neutral-dark);
+    color: var(--bb-text-neutral-body);
   }
   .bb-chip-outline:hover {
-    background-color: var(--bb-Surface-Neutral-hover);
+    background-color: var(--bb-surface-neutral-hover);
   }
   .bb-chip-outline:disabled {
-    border-color: var(--bb-Border-Neutral-disabled);
-    color: var(--bb-Text-Neutral-disabled);
+    border-color: var(--bb-border-neutral-disabled);
+    color: var(--bb-text-neutral-disabled);
   }
   
   .bb-chip-ghost {
     background-color: transparent;
-    color: var(--bb-Text-Neutral-body);
+    color: var(--bb-text-neutral-body);
   }
   .bb-chip-ghost:hover {
-    background-color: var(--bb-Surface-Neutral-hover);
+    background-color: var(--bb-surface-neutral-hover);
   }
   .bb-chip-ghost:disabled {
-    color: var(--bb-Text-Neutral-disabled);
+    color: var(--bb-text-neutral-disabled);
   }
   
   /* Focus state */
   .bb-chip:focus-visible {
-    outline: var(--bb-component-md-chip-Focus border width) solid var(--bb-Border-Focus Ring);
+    outline: var(--bb-component-md-chip-focus-border-width) solid var(--bb-border-focus-ring);
     outline-offset: var(--bb-spacing-1);
   }
   
   /* Icon support */
   .bb-chip-icon {
-    width: var(--bb-component-md-chip-Icon Size);
-    height: var(--bb-component-md-chip-Icon Size);
+    width: var(--bb-component-md-chip-icon-size);
+    height: var(--bb-component-md-chip-icon-size);
     flex-shrink: 0;
   }

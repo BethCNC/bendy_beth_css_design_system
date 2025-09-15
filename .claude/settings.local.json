@@ -9,7 +9,10 @@
       "Bash(npx style-dictionary build:*)",
       "Bash(jq:*)",
       "Bash(npm run build:tokens:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "WebFetch(domain:www.figma.com)"
     ],
     "deny": [],
     "ask": []

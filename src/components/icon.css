@@ -1,55 +1,80 @@
 /* =========================================================
    ICON SYSTEM
-   Standardizes Lucide icon sizes and stroke widths
+   Uses semantic tokens for sizing and colors
    ========================================================= */
 
-.bb-icon {
+.bb-icon,
+[data-lucide] {
   display: inline-block;
   vertical-align: middle;
-  stroke: currentcolor; /* icon inherits text color */
+  stroke: currentcolor;
   fill: none;
+  flex-shrink: 0;
 }
 
-/* Button Icon Sizes (using component tokens) */
+/* Button Icon Sizes (using semantic component tokens) */
 .bb-icon-button-sm {
-  width: var(--bb-component-sm-button-Icon Size);
-  height: var(--bb-component-sm-button-Icon Size);
-  stroke-width: var(--bb-component-sm-button-Icon Border Width);
+  width: var(--bb-component-sm-button-icon-size);
+  height: var(--bb-component-sm-button-icon-size);
+  stroke-width: var(--bb-component-sm-button-icon-border-width);
 }
 
 .bb-icon-button-md {
-  width: var(--bb-component-md-button-Icon Size);
-  height: var(--bb-component-md-button-Icon Size);
-  stroke-width: var(--bb-component-md-button-Icon Border Width);
+  width: var(--bb-component-md-button-icon-size);
+  height: var(--bb-component-md-button-icon-size);
+  stroke-width: var(--bb-component-md-button-icon-border-width);
 }
 
 .bb-icon-button-lg {
-  width: var(--bb-component-lg-button-Icon Size);
-  height: var(--bb-component-lg-button-Icon Size);
-  stroke-width: var(--bb-component-lg-button-Icon Border Width);
+  width: var(--bb-component-lg-button-icon-size);
+  height: var(--bb-component-lg-button-icon-size);
+  stroke-width: var(--bb-component-lg-button-icon-border-width);
 }
 
-.bb-icon-button-xl {
-  width: var(--bb-component-xl-button-Icon Size);
-  height: var(--bb-component-xl-button-Icon Size);
-  stroke-width: var(--bb-component-xl-button-Icon Border Width);
-}
-
-/* General Icon Sizes (for non-button use) */
+/* General Icon Sizes (using semantic spacing tokens) */
 .bb-icon-sm {
-  width: var(--space-4);   /* 1rem = 16px */
-  height: var(--space-4);
-  stroke-width: var(--stroke-1);
+  width: var(--bb-spacing-4);
+  height: var(--bb-spacing-4);
+  stroke-width: var(--bb-stroke-width-sm);
 }
 
 .bb-icon-md {
-  width: var(--space-5);   /* 1.25rem = 20px */
-  height: var(--space-5);
-  stroke-width: var(--stroke-1);
+  width: var(--bb-spacing-5);
+  height: var(--bb-spacing-5);
+  stroke-width: var(--bb-stroke-width-sm);
 }
 
 .bb-icon-lg {
-  width: var(--space-6);   /* 1.5rem = 24px */
-  height: var(--space-6);
-  stroke-width: var(--stroke-2);
+  width: var(--bb-spacing-6);
+  height: var(--bb-spacing-6);
+  stroke-width: var(--bb-stroke-width-md);
+}
+
+/* Icon Color Variants (using semantic text tokens) */
+.bb-icon-neutral {
+  color: var(--bb-text-neutral-inverse);
+}
+
+.bb-icon-primary {
+  color: var(--bb-text-neutral-heading);
+}
+
+.bb-icon-destructive {
+  color: var(--bb-text-neutral-inverse);
+}
+
+.bb-icon-outline {
+  color: var(--bb-text-neutral-body);
+}
+
+.bb-icon-ghost {
+  color: var(--bb-text-neutral-body);
+}
+
+.bb-icon-link {
+  color: var(--bb-text-info-default);
+}
+
+.bb-icon-disabled {
+  color: var(--bb-text-neutral-disabled);
 }

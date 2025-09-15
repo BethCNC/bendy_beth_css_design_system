@@ -1,0 +1,394 @@
+---
+alwaysApply: true
+---
+
+# Design System Implementation Rules
+
+## 🏗️ ARCHITECTURE OVERVIEW
+
+### Token Hierarchy (MANDATORY)
+```
+Components → Semantic Tokens → Alias Tokens → Primitive Tokens
+```
+
+**CRITICAL**: Never skip levels in this hierarchy. Each level serves a specific purpose.
+
+### File Structure (ENFORCED)
+```
+/build/               
+├── primitives.css    # Raw values from Figma (# 🚨 GENERATED - NEVER EDIT BY HAND)
+├── alias.css         # Primitive → Semantic mapping  (# 🚨 GENERATED - NEVER EDIT BY HAND)
+├── semantic.css      # Generic semantic tokens
+├── effects.css       # Shadows, blurs, effects
+├── typography.css    # Font tokens
+└── components.css    # Component-specific tokens
+
+/src/
+├── globals.css       # Imports all token layers + base styles
+└── components/       # Component CSS (uses ONLY semantic tokens)
+    ├── button.css
+    ├── chip.css
+    └── icon.css
+```
+
+## 🎯 TOKEN USAGE RULES
+
+### Rule 1: Component Token Usage
+**Components MUST use semantic tokens only. Never reference primitives or aliases directly.**
+
+```css
+/* ✅ CORRECT - Using semantic tokens */
+.bb-button--primary {
+  background: var(--bb-surface-primary-default);
+  color: var(--bb-text-neutral-inverse);
+  border-radius: var(--bb-component-md-button-radius);
+}
+
+/* ❌ WRONG - Using primitive tokens directly */
+.bb-button--primary {
+  background: var(--bb-color-yellow-500); /* Primitive */
+  color: var(--bb-color-neutral-white);   /* Primitive */
+}
+```
+
+### Rule 2: Semantic Token Categories
+**Use the correct semantic token category for each property:**
+
+```css
+/* Surface tokens for backgrounds */
+background: var(--bb-surface-primary-default);
+background: var(--bb-surface-neutral-card);
+
+/* Text tokens for text colors */
+color: var(--bb-text-neutral-body);
+color: var(--bb-text-neutral-inverse);
+
+/* Icon tokens for icon colors */
+.bb-icon {
+  color: var(--bb-icon-neutral-display);
+}
+
+/* Component tokens for sizing/spacing */
+padding: var(--bb-component-md-button-h-padding);
+border-radius: var(--bb-component-md-button-radius);
+```
+
+### Rule 3: Token Naming Patterns
+**Follow established naming conventions:**
+
+```css
+/* Semantic tokens */
+--bb-surface-[context]-[variant]     /* --bb-surface-primary-default */
+--bb-text-[context]-[variant]        /* --bb-text-neutral-body */
+--bb-icon-[context]-[variant]        /* --bb-icon-neutral-display */
+
+/* Component tokens */
+--bb-component-[size]-[component]-[property]  /* --bb-component-md-button-radius */
+
+/* Typography tokens */
+--bb-font-[role]                     /* --bb-font-body */
+--bb-text-[role]-[size]              /* --bb-text-body-md */
+```
+
+## 🧩 COMPONENT IMPLEMENTATION RULES
+
+### Rule 4: Component Structure
+**Every component must follow this structure:**
+
+```css
+/* 1. Base styles */
+.bb-component {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Typography */
+  font-family: var(--bb-font-body);
+  font-size: var(--bb-text-body-md);
+  font-weight: var(--bb-font-weight-medium);
+  
+  /* Spacing */
+  padding: var(--bb-component-md-component-h-padding) var(--bb-component-md-component-v-padding);
+  gap: var(--bb-component-md-component-spacing);
+  
+  /* Colors */
+  background: var(--bb-surface-neutral-card);
+  color: var(--bb-text-neutral-body);
+  
+  /* Borders */
+  border: var(--bb-component-md-component-border-width) solid var(--bb-border-neutral-default);
+  border-radius: var(--bb-component-md-component-radius);
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 2. State styles */
+.bb-component:hover {
+  background: var(--bb-surface-neutral-hover);
+}
+
+.bb-component:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-border-focus-ring);
+  outline-offset: var(--bb-spacing-1);
+}
+
+.bb-component:disabled {
+  background: var(--bb-surface-neutral-disabled);
+  color: var(--bb-text-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* 3. Variant styles */
+.bb-component--primary {
+  background: var(--bb-surface-primary-default);
+  color: var(--bb-text-neutral-inverse);
+}
+
+.bb-component--primary:hover {
+  background: var(--bb-surface-primary-hover);
+}
+```
+
+### Rule 5: Size Variants
+**Implement size variants using component tokens:**
+
+```css
+/* Small variant */
+.bb-component--sm {
+  font-size: var(--bb-text-body-sm);
+  padding: var(--bb-component-sm-component-h-padding) var(--bb-component-sm-component-v-padding);
+  border-radius: var(--bb-component-sm-component-radius);
+}
+
+/* Medium variant (default) */
+.bb-component--md { /* default styles */ }
+
+/* Large variant */
+.bb-component--lg {
+  font-size: var(--bb-text-body-lg);
+  padding: var(--bb-component-lg-component-h-padding) var(--bb-component-lg-component-v-padding);
+  border-radius: var(--bb-component-lg-component-radius);
+}
+```
+
+### Rule 6: Icon Integration
+**Icons must use semantic icon tokens and inherit colors properly:**
+
+```css
+/* Icon base styles */
+.bb-icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentcolor;
+  fill: none;
+  flex-shrink: 0;
+}
+
+/* Icon sizes using component tokens */
+.bb-icon-button-sm {
+  width: var(--bb-component-sm-button-icon-size);
+  height: var(--bb-component-sm-button-icon-size);
+}
+
+/* Icon colors using semantic tokens */
+.bb-icon-neutral {
+  color: var(--bb-icon-neutral-display);
+}
+
+/* Icons in components inherit color */
+.bb-button .bb-icon {
+  color: inherit; /* Inherits from button text color */
+}
+```
+
+## 🎨 STYLING RULES
+
+### Rule 7: No Hardcoded Values
+**NEVER use hardcoded values. Everything must use tokens:**
+
+```css
+/* ❌ WRONG - Hardcoded values */
+.component {
+  background: #ff0000;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ✅ CORRECT - Using tokens */
+.component {
+  background: var(--bb-surface-primary-default);
+  padding: var(--bb-component-md-component-h-padding);
+  border-radius: var(--bb-component-md-component-radius);
+  font-size: var(--bb-text-body-sm);
+}
+```
+
+### Rule 8: Responsive Design
+**Use fluid sizing and modern CSS functions:**
+
+```css
+/* ✅ CORRECT - Fluid sizing */
+.component {
+  padding: clamp(0.5rem, 1.5vw, 1.25rem);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+}
+
+/* ✅ CORRECT - Flexible layouts */
+.component {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bb-spacing-4);
+}
+```
+
+### Rule 9: Theme Support
+**All components must work in both light and dark themes:**
+
+```css
+/* ✅ CORRECT - Theme-aware tokens */
+.component {
+  background: var(--bb-surface-neutral-card); /* Changes with theme */
+  color: var(--bb-text-neutral-body);        /* Changes with theme */
+}
+
+/* ❌ WRONG - Theme-specific values */
+.component {
+  background: white; /* Doesn't change in dark theme */
+  color: black;      /* Doesn't change in dark theme */
+}
+```
+
+## 🔧 DEVELOPMENT WORKFLOW RULES
+
+### Rule 10: Token Generation
+**Always regenerate tokens when source changes:**
+
+```bash
+# After updating tokens.json
+npm run build:tokens
+
+# Verify no errors
+npm run lint
+```
+
+### Rule 11: Component Testing
+**Test every component thoroughly:**
+
+```bash
+# Visual testing checklist
+- [ ] Base appearance matches design
+- [ ] All states work (hover, focus, active, disabled)
+- [ ] All variants render correctly
+- [ ] All sizes scale appropriately
+- [ ] Theme switching works
+- [ ] Responsive behavior adapts
+- [ ] Content flexibility handles varying lengths
+```
+
+### Rule 12: File Organization
+**Maintain strict file separation:**
+
+```css
+/* ✅ CORRECT - Component in src/components/ */
+/* src/components/button.css */
+.bb-button { /* component styles */ }
+
+/* ❌ WRONG - Component in build/ */
+/* build/button.css - This is generated, don't edit */
+```
+
+## 🚨 ENFORCEMENT RULES
+
+### Rule 13: Linting
+**Use Stylelint to enforce token usage:**
+
+```bash
+# Check for hardcoded values
+npm run lint
+
+# Should catch violations like:
+color: #ff0000;        /* ❌ Hardcoded color */
+padding: 16px;         /* ❌ Hardcoded spacing */
+font-size: 14px;       /* ❌ Hardcoded typography */
+```
+
+### Rule 14: Code Review
+**Every component must pass these checks:**
+
+- [ ] Uses only semantic tokens
+- [ ] No hardcoded values
+- [ ] Works in both themes
+- [ ] Responsive and flexible
+- [ ] Meets accessibility standards
+- [ ] Has proper focus indicators
+- [ ] All states defined and tested
+
+### Rule 15: Documentation
+**Document every component:**
+
+```markdown
+## Component Name
+
+### Tokens Used
+- `--bb-surface-primary-default` - Background color
+- `--bb-text-neutral-inverse` - Text color
+- `--bb-component-md-component-radius` - Border radius
+
+### Variants
+- `.bb-component--primary` - Primary variant
+- `.bb-component--secondary` - Secondary variant
+
+### States
+- `:hover` - Hover state
+- `:focus-visible` - Focus state
+- `:disabled` - Disabled state
+
+### Usage
+```html
+<button class="bb-component bb-component--primary">Click me</button>
+```
+```
+
+## 🎯 SUCCESS CRITERIA
+
+### Rule 16: Definition of Done
+**A component is complete when:**
+
+- [ ] Uses only semantic tokens (no primitives or hardcoded values)
+- [ ] Works in both light and dark themes
+- [ ] Responsive and flexible
+- [ ] Meets accessibility standards
+- [ ] Has proper focus indicators
+- [ ] All states defined and tested
+- [ ] Documented with usage examples
+- [ ] Added to demo page
+- [ ] Passes linting checks
+
+### Rule 17: Quality Gates
+**Never proceed to next component until current one is perfect:**
+
+- [ ] Visual testing complete
+- [ ] Cross-browser testing done
+- [ ] Accessibility testing passed
+- [ ] Documentation written
+- [ ] Demo integration complete
+- [ ] Code review approved
+
+---
+
+## 🚨 CRITICAL REMINDERS
+
+1. **NEVER edit generated files** in `/build/` directory
+2. **ALWAYS use semantic tokens** in component CSS
+3. **TEST in both themes** for every component
+4. **VERIFY accessibility** with proper contrast and focus
+5. **MAINTAIN token hierarchy** (components → semantic → aliases → primitives)
+6. **DOCUMENT decisions** and patterns for future reference
+7. **ENFORCE quality gates** before moving to next phase
+8. **USE semantic tokens only** in component CSS
+9. **NO hardcoded values** anywhere in the system
+10. **ONE icon file only** - consolidate all icon styles

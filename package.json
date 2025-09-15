@@ -19,6 +19,8 @@
     "stylelint-declaration-strict-value": "^1.10.11"
   },
   "dependencies": {
-    "@tokens-studio/sd-transforms": "^2.0.1"
+    "@tokens-studio/sd-transforms": "^2.0.1",
+    "figma-developer-mcp": "^0.6.0",
+    "lucide": "^0.544.0"
   }
 }

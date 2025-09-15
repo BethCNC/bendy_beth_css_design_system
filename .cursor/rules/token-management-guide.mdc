@@ -1,0 +1,480 @@
+---
+alwaysApply: true
+---
+
+# Token Management Guide for CSS Design Systems
+
+## TOKEN ARCHITECTURE OVERVIEW
+
+### Three-Tier Token System
+```
+Components → Semantic Tokens → Aliases → Primitives
+```
+
+**Primitives**: Raw values (colors, sizes, etc.)
+**Aliases**: Semantic roles that reference primitives
+**Semantic**: Component-specific tokens that reference aliases
+**Components**: Use only semantic tokens
+
+## PRIMITIVE TOKENS
+
+### Color Primitives
+```css
+/* Light theme primitives */
+:root {
+  /* Grayscale palette */
+  --bb-color-grayscale-50: #f9fafa;
+  --bb-color-grayscale-100: #f1f2f2;
+  --bb-color-grayscale-200: #e8e9e9;
+  --bb-color-grayscale-300: #d9dada;
+  --bb-color-grayscale-400: #c4c5c5;
+  --bb-color-grayscale-500: #a8a9a9;
+  --bb-color-grayscale-600: #8a8b8b;
+  --bb-color-grayscale-700: #6d6e6e;
+  --bb-color-grayscale-800: #525353;
+  --bb-color-grayscale-900: #3a3b3b;
+  --bb-color-grayscale-950: #252626;
+  --bb-color-grayscale-999: #0c0d0d;
+  
+  /* Brand colors */
+  --bb-color-cobalt-50: #d8e6fc;
+  --bb-color-cobalt-100: #bdd6fb;
+  --bb-color-cobalt-200: #9cc1f8;
+  --bb-color-cobalt-300: #7aa7f4;
+  --bb-color-cobalt-400: #5d8ef0;
+  --bb-color-cobalt-500: #3d75ec;
+  --bb-color-cobalt-600: #2d5dd9;
+  --bb-color-cobalt-700: #1f45c7;
+  --bb-color-cobalt-800: #1330b5;
+  --bb-color-cobalt-900: #0a1fa3;
+  
+  /* Semantic colors */
+  --bb-color-success-50: #d1fae5;
+  --bb-color-success-500: #10b981;
+  --bb-color-success-900: #064e3b;
+  
+  --bb-color-warning-50: #fef3c7;
+  --bb-color-warning-500: #f59e0b;
+  --bb-color-warning-900: #78350f;
+  
+  --bb-color-error-50: #fee2e2;
+  --bb-color-error-500: #ef4444;
+  --bb-color-error-900: #7f1d1d;
+}
+
+/* Dark theme primitives */
+[data-theme="dark"] {
+  /* Grayscale palette (inverted) */
+  --bb-color-grayscale-50: #0c0d0d;
+  --bb-color-grayscale-100: #252626;
+  --bb-color-grayscale-200: #3a3b3b;
+  --bb-color-grayscale-300: #525353;
+  --bb-color-grayscale-400: #6d6e6e;
+  --bb-color-grayscale-500: #8a8b8b;
+  --bb-color-grayscale-600: #a8a9a9;
+  --bb-color-grayscale-700: #c4c5c5;
+  --bb-color-grayscale-800: #d9dada;
+  --bb-color-grayscale-900: #e8e9e9;
+  --bb-color-grayscale-950: #f1f2f2;
+  --bb-color-grayscale-999: #f9fafa;
+  
+  /* Brand colors (adjusted for dark theme) */
+  --bb-color-cobalt-50: #0a1fa3;
+  --bb-color-cobalt-100: #1330b5;
+  --bb-color-cobalt-200: #1f45c7;
+  --bb-color-cobalt-300: #2d5dd9;
+  --bb-color-cobalt-400: #3d75ec;
+  --bb-color-cobalt-500: #5d8ef0;
+  --bb-color-cobalt-600: #7aa7f4;
+  --bb-color-cobalt-700: #9cc1f8;
+  --bb-color-cobalt-800: #bdd6fb;
+  --bb-color-cobalt-900: #d8e6fc;
+}
+```
+
+### Spacing Primitives
+```css
+:root {
+  --bb-spacing-0: 0;
+  --bb-spacing-1: 0.25rem;   /* 4px */
+  --bb-spacing-2: 0.5rem;    /* 8px */
+  --bb-spacing-3: 0.75rem;   /* 12px */
+  --bb-spacing-4: 1rem;      /* 16px */
+  --bb-spacing-5: 1.25rem;   /* 20px */
+  --bb-spacing-6: 1.5rem;    /* 24px */
+  --bb-spacing-8: 2rem;      /* 32px */
+  --bb-spacing-10: 2.5rem;   /* 40px */
+  --bb-spacing-12: 3rem;     /* 48px */
+  --bb-spacing-16: 4rem;     /* 64px */
+  --bb-spacing-20: 5rem;     /* 80px */
+  --bb-spacing-24: 6rem;     /* 96px */
+}
+```
+
+### Typography Primitives
+```css
+:root {
+  /* Font families */
+  --bb-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bb-font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font sizes */
+  --bb-font-size-xs: 0.75rem;    /* 12px */
+  --bb-font-size-sm: 0.875rem;   /* 14px */
+  --bb-font-size-base: 1rem;     /* 16px */
+  --bb-font-size-lg: 1.125rem;   /* 18px */
+  --bb-font-size-xl: 1.25rem;    /* 20px */
+  --bb-font-size-2xl: 1.5rem;    /* 24px */
+  --bb-font-size-3xl: 1.875rem;  /* 30px */
+  --bb-font-size-4xl: 2.25rem;   /* 36px */
+  
+  /* Font weights */
+  --bb-font-weight-normal: 400;
+  --bb-font-weight-medium: 500;
+  --bb-font-weight-semibold: 600;
+  --bb-font-weight-bold: 700;
+  
+  /* Line heights */
+  --bb-line-height-tight: 1.25;
+  --bb-line-height-normal: 1.5;
+  --bb-line-height-relaxed: 1.75;
+}
+```
+
+### Border Radius Primitives
+```css
+:root {
+  --bb-radius-none: 0;
+  --bb-radius-sm: 0.125rem;   /* 2px */
+  --bb-radius-base: 0.25rem;  /* 4px */
+  --bb-radius-md: 0.375rem;   /* 6px */
+  --bb-radius-lg: 0.5rem;     /* 8px */
+  --bb-radius-xl: 0.75rem;    /* 12px */
+  --bb-radius-2xl: 1rem;      /* 16px */
+  --bb-radius-full: 9999px;
+}
+```
+
+### Shadow Primitives
+```css
+:root {
+  --bb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --bb-shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --bb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --bb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --bb-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+```
+
+## ALIAS TOKENS
+
+### Color Aliases
+```css
+:root {
+  /* Background colors */
+  --bb-color-bg-default: var(--bb-color-grayscale-50);
+  --bb-color-bg-elevated: var(--bb-color-grayscale-white);
+  --bb-color-bg-muted: var(--bb-color-grayscale-100);
+  --bb-color-bg-accent: var(--bb-color-cobalt-50);
+  
+  /* Text colors */
+  --bb-color-text-primary: var(--bb-color-grayscale-950);
+  --bb-color-text-secondary: var(--bb-color-grayscale-700);
+  --bb-color-text-muted: var(--bb-color-grayscale-500);
+  --bb-color-text-inverse: var(--bb-color-grayscale-white);
+  --bb-color-text-accent: var(--bb-color-cobalt-600);
+  
+  /* Border colors */
+  --bb-color-border-default: var(--bb-color-grayscale-200);
+  --bb-color-border-muted: var(--bb-color-grayscale-100);
+  --bb-color-border-accent: var(--bb-color-cobalt-200);
+  
+  /* Semantic colors */
+  --bb-color-success: var(--bb-color-success-500);
+  --bb-color-warning: var(--bb-color-warning-500);
+  --bb-color-error: var(--bb-color-error-500);
+  
+  /* Focus colors */
+  --bb-color-focus: var(--bb-color-cobalt-500);
+  --bb-color-focus-ring: var(--bb-color-cobalt-100);
+}
+
+[data-theme="dark"] {
+  /* Background colors */
+  --bb-color-bg-default: var(--bb-color-grayscale-50);
+  --bb-color-bg-elevated: var(--bb-color-grayscale-100);
+  --bb-color-bg-muted: var(--bb-color-grayscale-200);
+  --bb-color-bg-accent: var(--bb-color-cobalt-900);
+  
+  /* Text colors */
+  --bb-color-text-primary: var(--bb-color-grayscale-950);
+  --bb-color-text-secondary: var(--bb-color-grayscale-700);
+  --bb-color-text-muted: var(--bb-color-grayscale-500);
+  --bb-color-text-inverse: var(--bb-color-grayscale-white);
+  --bb-color-text-accent: var(--bb-color-cobalt-400);
+  
+  /* Border colors */
+  --bb-color-border-default: var(--bb-color-grayscale-200);
+  --bb-color-border-muted: var(--bb-color-grayscale-100);
+  --bb-color-border-accent: var(--bb-color-cobalt-800);
+  
+  /* Focus colors */
+  --bb-color-focus: var(--bb-color-cobalt-400);
+  --bb-color-focus-ring: var(--bb-color-cobalt-900);
+}
+```
+
+### Spacing Aliases
+```css
+:root {
+  --bb-space-1: var(--bb-spacing-1);
+  --bb-space-2: var(--bb-spacing-2);
+  --bb-space-3: var(--bb-spacing-3);
+  --bb-space-4: var(--bb-spacing-4);
+  --bb-space-5: var(--bb-spacing-5);
+  --bb-space-6: var(--bb-spacing-6);
+  --bb-space-8: var(--bb-spacing-8);
+  --bb-space-10: var(--bb-spacing-10);
+  --bb-space-12: var(--bb-spacing-12);
+  --bb-space-16: var(--bb-spacing-16);
+  --bb-space-20: var(--bb-spacing-20);
+  --bb-space-24: var(--bb-spacing-24);
+}
+```
+
+### Typography Aliases
+```css
+:root {
+  /* Body text */
+  --bb-text-body: var(--bb-font-size-base);
+  --bb-text-body-sm: var(--bb-font-size-sm);
+  --bb-text-body-lg: var(--bb-font-size-lg);
+  
+  /* Headings */
+  --bb-text-heading-1: var(--bb-font-size-4xl);
+  --bb-text-heading-2: var(--bb-font-size-3xl);
+  --bb-text-heading-3: var(--bb-font-size-2xl);
+  --bb-text-heading-4: var(--bb-font-size-xl);
+  --bb-text-heading-5: var(--bb-font-size-lg);
+  --bb-text-heading-6: var(--bb-font-size-base);
+  
+  /* Captions and labels */
+  --bb-text-caption: var(--bb-font-size-xs);
+  --bb-text-label: var(--bb-font-size-sm);
+}
+```
+
+## SEMANTIC TOKENS
+
+### Button Tokens
+```css
+:root {
+  /* Button base */
+  --bb-button-bg: var(--bb-color-bg-elevated);
+  --bb-button-text: var(--bb-color-text-primary);
+  --bb-button-border: 1px solid var(--bb-color-border-default);
+  --bb-button-padding: var(--bb-space-3) var(--bb-space-4);
+  --bb-button-height: 2.5rem;
+  --bb-button-radius: var(--bb-radius-base);
+  --bb-button-font-size: var(--bb-text-body);
+  --bb-button-font-weight: var(--bb-font-weight-medium);
+  --bb-button-line-height: var(--bb-line-height-normal);
+  
+  /* Button states */
+  --bb-button-bg-hover: var(--bb-color-bg-muted);
+  --bb-button-text-hover: var(--bb-color-text-primary);
+  --bb-button-border-hover: 1px solid var(--bb-color-border-default);
+  
+  --bb-button-bg-active: var(--bb-color-bg-muted);
+  --bb-button-text-active: var(--bb-color-text-primary);
+  --bb-button-border-active: 1px solid var(--bb-color-border-default);
+  
+  --bb-button-bg-disabled: var(--bb-color-bg-muted);
+  --bb-button-text-disabled: var(--bb-color-text-muted);
+  --bb-button-border-disabled: 1px solid var(--bb-color-border-muted);
+  
+  /* Button variants */
+  --bb-button-primary-bg: var(--bb-color-cobalt-500);
+  --bb-button-primary-text: var(--bb-color-text-inverse);
+  --bb-button-primary-border: 1px solid var(--bb-color-cobalt-500);
+  
+  --bb-button-primary-bg-hover: var(--bb-color-cobalt-600);
+  --bb-button-primary-text-hover: var(--bb-color-text-inverse);
+  --bb-button-primary-border-hover: 1px solid var(--bb-color-cobalt-600);
+  
+  --bb-button-destructive-bg: var(--bb-color-error);
+  --bb-button-destructive-text: var(--bb-color-text-inverse);
+  --bb-button-destructive-border: 1px solid var(--bb-color-error);
+  
+  --bb-button-destructive-bg-hover: var(--bb-color-error-600);
+  --bb-button-destructive-text-hover: var(--bb-color-text-inverse);
+  --bb-button-destructive-border-hover: 1px solid var(--bb-color-error-600);
+}
+```
+
+### Input Tokens
+```css
+:root {
+  /* Input base */
+  --bb-input-bg: var(--bb-color-bg-elevated);
+  --bb-input-text: var(--bb-color-text-primary);
+  --bb-input-border: 1px solid var(--bb-color-border-default);
+  --bb-input-padding: var(--bb-space-3) var(--bb-space-4);
+  --bb-input-height: 2.5rem;
+  --bb-input-radius: var(--bb-radius-base);
+  --bb-input-font-size: var(--bb-text-body);
+  --bb-input-line-height: var(--bb-line-height-normal);
+  
+  /* Input states */
+  --bb-input-bg-hover: var(--bb-color-bg-elevated);
+  --bb-input-border-hover: 1px solid var(--bb-color-border-accent);
+  
+  --bb-input-bg-focus: var(--bb-color-bg-elevated);
+  --bb-input-border-focus: 1px solid var(--bb-color-focus);
+  
+  --bb-input-bg-disabled: var(--bb-color-bg-muted);
+  --bb-input-text-disabled: var(--bb-color-text-muted);
+  --bb-input-border-disabled: 1px solid var(--bb-color-border-muted);
+  
+  /* Input error state */
+  --bb-input-bg-error: var(--bb-color-bg-elevated);
+  --bb-input-text-error: var(--bb-color-text-primary);
+  --bb-input-border-error: 1px solid var(--bb-color-error);
+}
+```
+
+### Card Tokens
+```css
+:root {
+  /* Card base */
+  --bb-card-bg: var(--bb-color-bg-elevated);
+  --bb-card-border: 1px solid var(--bb-color-border-default);
+  --bb-card-radius: var(--bb-radius-lg);
+  --bb-card-padding: var(--bb-space-6);
+  --bb-card-shadow: var(--bb-shadow-sm);
+  
+  /* Card header */
+  --bb-card-header-bg: var(--bb-color-bg-muted);
+  --bb-card-header-padding: var(--bb-space-4) var(--bb-space-6);
+  --bb-card-header-border: 1px solid var(--bb-color-border-default);
+  
+  /* Card content */
+  --bb-card-content-padding: var(--bb-space-6);
+  
+  /* Card actions */
+  --bb-card-actions-bg: var(--bb-color-bg-muted);
+  --bb-card-actions-padding: var(--bb-space-4) var(--bb-space-6);
+  --bb-card-actions-border: 1px solid var(--bb-color-border-default);
+}
+```
+
+## TOKEN MANAGEMENT WORKFLOW
+
+### Adding New Tokens
+1. **Identify token type** (primitive, alias, or semantic)
+2. **Add to appropriate file** (primitives.css, alias.css, or semantic.css)
+3. **Follow naming conventions** (kebab-case, logical hierarchy)
+4. **Include light/dark variants** for color tokens
+5. **Test token usage** in components
+6. **Update documentation** with token purpose
+
+### Updating Existing Tokens
+1. **Identify impact** on existing components
+2. **Update token value** in source file
+3. **Test all affected components**
+4. **Verify theme compatibility**
+5. **Update documentation** if needed
+
+### Removing Tokens
+1. **Check for usage** in components
+2. **Remove from components** if used
+3. **Remove token definition**
+4. **Test remaining components**
+5. **Update documentation**
+
+## TOKEN VALIDATION
+
+### Token Reference Validation
+```bash
+# Check for broken token references
+grep -r "var(--bb-" build/ | grep -v "var(--bb-[a-z-]*[0-9]"
+
+# Check for unused tokens
+grep -r "var(--bb-" src/ | cut -d: -f2 | sort | uniq
+
+# Check for missing tokens
+grep -r "var(--bb-" src/ | grep -o "var(--bb-[^)]*)" | sort | uniq
+```
+
+### Token Naming Validation
+```bash
+# Check for consistent naming
+grep -r "var(--bb-" build/ | grep -v "var(--bb-[a-z-]*[0-9]"
+
+# Check for proper prefixes
+grep -r "var(--" build/ | grep -v "var(--bb-"
+```
+
+## TOKEN DOCUMENTATION
+
+### Token Documentation Template
+```markdown
+## Token: --bb-button-bg
+
+**Type**: Semantic Token
+**Category**: Component (Button)
+**Purpose**: Background color for button component
+**References**: --bb-color-bg-elevated
+**Used in**: .bb-button, .bb-button--primary
+**Theme support**: Yes (light/dark)
+**Last updated**: 2024-01-15
+
+### Usage
+```css
+.button {
+  background: var(--bb-button-bg);
+}
+```
+
+### Related tokens
+- --bb-button-bg-hover
+- --bb-button-bg-active
+- --bb-button-bg-disabled
+```
+
+## TOKEN TESTING
+
+### Token Testing Checklist
+- [ ] **All tokens defined** in appropriate files
+- [ ] **No broken references** between token layers
+- [ ] **Light/dark variants** exist for color tokens
+- [ ] **Consistent naming** follows conventions
+- [ ] **Proper prefixes** used throughout
+- [ ] **Theme switching** works correctly
+- [ ] **Components use tokens** correctly
+- [ ] **No hardcoded values** in components
+
+### Token Testing Commands
+```bash
+# Test token generation
+npm run build:tokens
+
+# Test token usage
+npm run lint:css
+
+# Test theme switching
+npm run test:themes
+```
+
+---
+
+## CRITICAL TOKEN RULES
+
+1. **Three-tier hierarchy** - components → semantic → aliases → primitives
+2. **No hardcoded values** - use tokens exclusively
+3. **Consistent naming** - kebab-case, logical hierarchy
+4. **Theme support** - light/dark variants for all colors
+5. **Proper prefixes** - --bb- for all design system tokens
+6. **Documentation** - document purpose and usage
+7. **Testing** - validate references and usage
+8. **Maintenance** - keep tokens organized and up-to-date

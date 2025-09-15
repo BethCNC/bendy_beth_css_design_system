@@ -1,6 +1,5 @@
 {
     "rules": {
-      "declaration-no-important": true,
       "declaration-block-no-duplicate-properties": true,
       "custom-property-pattern": "^--bb-[a-z0-9-]+$",
       "declaration-property-value-disallowed-list": {
