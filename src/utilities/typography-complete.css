@@ -1,0 +1,513 @@
+/* src/utilities/typography-complete.css */
+
+/* ===============================================
+   COMPLETE FLUID TYPOGRAPHY UTILITIES
+   Based on original design system specifications
+   =============================================== */
+
+/* ===============================================
+   DISPLAY STYLES
+   =============================================== */
+
+.bb-text-display-regular {
+  font-size: var(--bb-fluid-typography-fluid-display-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.bb-text-display-medium {
+  font-size: var(--bb-fluid-typography-fluid-display-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ===============================================
+   HEADING STYLES (H1-H6)
+   =============================================== */
+
+.bb-text-h1-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h1-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.bb-text-h1-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h1-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.bb-text-h2-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h2-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.25;
+}
+
+.bb-text-h2-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h2-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.25;
+}
+
+.bb-text-h3-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h3-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.3;
+}
+
+.bb-text-h3-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h3-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.3;
+}
+
+.bb-text-h4-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h4-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.35;
+}
+
+.bb-text-h4-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h4-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.35;
+}
+
+.bb-text-h5-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h5-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.4;
+}
+
+.bb-text-h5-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h5-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.4;
+}
+
+.bb-text-h6-regular {
+  font-size: var(--bb-fluid-typography-fluid-heading-h6-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.45;
+}
+
+.bb-text-h6-medium {
+  font-size: var(--bb-fluid-typography-fluid-heading-h6-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.45;
+}
+
+/* ===============================================
+   TITLE STYLES (XL, LG, MD, SM, XS)
+   =============================================== */
+
+.bb-text-title-xl-regular {
+  font-size: var(--bb-fluid-typography-fluid-title-xl-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.3;
+}
+
+.bb-text-title-xl-medium {
+  font-size: var(--bb-fluid-typography-fluid-title-xl-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.3;
+}
+
+.bb-text-title-xl-semibold {
+  font-size: var(--bb-fluid-typography-fluid-title-xl-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.3;
+}
+
+.bb-text-title-lg-regular {
+  font-size: var(--bb-fluid-typography-fluid-title-lg-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.35;
+}
+
+.bb-text-title-lg-medium {
+  font-size: var(--bb-fluid-typography-fluid-title-lg-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.35;
+}
+
+.bb-text-title-lg-semibold {
+  font-size: var(--bb-fluid-typography-fluid-title-lg-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.35;
+}
+
+.bb-text-title-md-regular {
+  font-size: var(--bb-fluid-typography-fluid-title-md-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.4;
+}
+
+.bb-text-title-md-medium {
+  font-size: var(--bb-fluid-typography-fluid-title-md-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.4;
+}
+
+.bb-text-title-md-semibold {
+  font-size: var(--bb-fluid-typography-fluid-title-md-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.4;
+}
+
+.bb-text-title-sm-regular {
+  font-size: var(--bb-fluid-typography-fluid-title-sm-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.45;
+}
+
+.bb-text-title-sm-medium {
+  font-size: var(--bb-fluid-typography-fluid-title-sm-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.45;
+}
+
+.bb-text-title-sm-semibold {
+  font-size: var(--bb-fluid-typography-fluid-title-sm-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.45;
+}
+
+.bb-text-title-xs-regular {
+  font-size: var(--bb-fluid-typography-fluid-title-xs-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.5;
+}
+
+.bb-text-title-xs-medium {
+  font-size: var(--bb-fluid-typography-fluid-title-xs-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.5;
+}
+
+.bb-text-title-xs-semibold {
+  font-size: var(--bb-fluid-typography-fluid-title-xs-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.5;
+}
+
+/* ===============================================
+   BODY TEXT STYLES (LG, MD, SM, XS)
+   =============================================== */
+
+.bb-text-body-lg-regular {
+  font-size: var(--bb-fluid-typography-fluid-body-lg-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.5;
+}
+
+.bb-text-body-lg-medium {
+  font-size: var(--bb-fluid-typography-fluid-body-lg-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.5;
+}
+
+.bb-text-body-lg-semibold {
+  font-size: var(--bb-fluid-typography-fluid-body-lg-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.5;
+}
+
+.bb-text-body-lg-bold {
+  font-size: var(--bb-fluid-typography-fluid-body-lg-bold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-bold);
+  line-height: 1.5;
+}
+
+.bb-text-body-md-regular {
+  font-size: var(--bb-fluid-typography-fluid-body-md-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.6;
+}
+
+.bb-text-body-md-medium {
+  font-size: var(--bb-fluid-typography-fluid-body-md-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.6;
+}
+
+.bb-text-body-md-semibold {
+  font-size: var(--bb-fluid-typography-fluid-body-md-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.6;
+}
+
+.bb-text-body-sm-regular {
+  font-size: var(--bb-fluid-typography-fluid-body-sm-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.5;
+}
+
+.bb-text-body-sm-medium {
+  font-size: var(--bb-fluid-typography-fluid-body-sm-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.5;
+}
+
+.bb-text-body-sm-semibold {
+  font-size: var(--bb-fluid-typography-fluid-body-sm-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.5;
+}
+
+.bb-text-body-xs-regular {
+  font-size: var(--bb-fluid-typography-fluid-body-xs-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.4;
+}
+
+.bb-text-body-xs-medium {
+  font-size: var(--bb-fluid-typography-fluid-body-xs-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.4;
+}
+
+.bb-text-body-xs-semibold {
+  font-size: var(--bb-fluid-typography-fluid-body-xs-semibold);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-semibold);
+  line-height: 1.4;
+}
+
+/* ===============================================
+   SEMANTIC COLOR CLASSES
+   =============================================== */
+
+.bb-text--primary { color: var(--bb-text-primary-default); }
+.bb-text--heading { color: var(--bb-text-neutral-heading); }
+.bb-text--body { color: var(--bb-text-neutral-body); }
+.bb-text--muted { color: var(--bb-text-neutral-disabled); }
+.bb-text--inverse { color: var(--bb-text-neutral-inverse); }
+.bb-text--success { color: var(--bb-text-success-default); }
+.bb-text--warning { color: var(--bb-text-warning-default); }
+.bb-text--error { color: var(--bb-text-error-default); }
+
+/* ===============================================
+   TEXT ALIGNMENT
+   =============================================== */
+
+.bb-text--left { text-align: left; }
+.bb-text--center { text-align: center; }
+.bb-text--right { text-align: right; }
+
+/* ===============================================
+   TEXT DECORATION
+   =============================================== */
+
+.bb-text--underline { text-decoration: underline; }
+.bb-text--no-underline { text-decoration: none; }
+
+/* ===============================================
+   SIMPLIFIED ALIASES FOR COMMON USAGE
+   =============================================== */
+
+/* Most common display and heading styles */
+.bb-text-display {
+  font-size: var(--bb-fluid-typography-fluid-display-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.bb-text-h1 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h1-medium);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.bb-text-h2 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h2-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.25;
+}
+
+.bb-text-h3 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h3-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.3;
+}
+
+.bb-text-h4 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h4-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.35;
+}
+
+.bb-text-h5 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h5-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.4;
+}
+
+.bb-text-h6 {
+  font-size: var(--bb-fluid-typography-fluid-heading-h6-regular);
+  font-family: var(--bb-type-family-behind-the-nineties);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.45;
+}
+
+/* Most common title styles */
+.bb-text-title-xl {
+  font-size: var(--bb-fluid-typography-fluid-title-xl-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.3;
+}
+
+.bb-text-title-lg {
+  font-size: var(--bb-fluid-typography-fluid-title-lg-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.35;
+}
+
+.bb-text-title-md {
+  font-size: var(--bb-fluid-typography-fluid-title-md-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.4;
+}
+
+.bb-text-title-sm {
+  font-size: var(--bb-fluid-typography-fluid-title-sm-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.45;
+}
+
+.bb-text-title-xs {
+  font-size: var(--bb-fluid-typography-fluid-title-xs-medium);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-medium);
+  line-height: 1.5;
+}
+
+/* Most common body styles */
+.bb-text-body-lg {
+  font-size: var(--bb-fluid-typography-fluid-body-lg-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.5;
+}
+
+.bb-text-body-md {
+  font-size: var(--bb-fluid-typography-fluid-body-md-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.6;
+}
+
+.bb-text-body-sm {
+  font-size: var(--bb-fluid-typography-fluid-body-sm-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.5;
+}
+
+.bb-text-body-xs {
+  font-size: var(--bb-fluid-typography-fluid-body-xs-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.4;
+}
+
+/* Default body text */
+.bb-text-body {
+  font-size: var(--bb-fluid-typography-fluid-body-md-regular);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-weight: var(--bb-type-font-weight-regular);
+  line-height: 1.6;
+}
+
+/* ===============================================
+   RESPONSIVE TEXT HIDING
+   =============================================== */
+
+@media (max-width: 768px) {
+  .bb-text--hide-mobile { display: none; }
+}
+
+@media (min-width: 769px) {
+  .bb-text--hide-desktop { display: none; }
+}
+
+/* ===============================================
+   TEXT TRUNCATION
+   =============================================== */
+
+.bb-text--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bb-text--truncate-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bb-text--truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

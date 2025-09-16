@@ -1,254 +1,149 @@
-/* =========================================================
-   BUTTON.CSS — COMPONENT LAYER
-   ========================================================= */
+/* src/components/button.css */
 
-   .bb-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--bb-font-body);
-    font-size: var(--bb-text-body-md);
-    font-weight: var(--bb-font-weight-medium);
-    line-height: var(--bb-line-height-normal);
-    border-radius: var(--bb-component-md-button-radius);
-    gap: var(--bb-component-md-button-spacing);
-    padding-inline: var(--bb-component-md-button-h-padding);
-    padding-block: var(--bb-component-md-button-v-padding);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    text-decoration: none; /* For link buttons */
-    white-space: nowrap; /* Prevent text wrapping */
-  }
+/* ===============================================
+   BUTTON COMPONENT — SEMANTIC TOKENS ONLY
+   =============================================== */
 
-  .bb-button {
-    overflow: hidden;
-    position: relative;
-  }
+.bb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bb-component-md-button-spacing);
+  padding-inline: var(--bb-component-md-button-h-padding);
+  padding-block: var(--bb-component-md-button-v-padding);
+  border: var(--bb-stroke-width-sm) solid transparent;
+  border-radius: var(--bb-component-md-button-radius);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-size: var(--bb-type-font-size-md);
+  font-weight: var(--bb-fontweights-overused-grotesk-3);
+  line-height: var(--bb-type-line-height-md);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
-  .bb-button:hover:not(:disabled) {
-    transform: translateY(-1px);
-  }
+/* ===============================================
+   PRIMARY BUTTON VARIANT
+   =============================================== */
 
-  .bb-button:after,
-  .bb-button:before {
-    background: linear-gradient(
-      90deg,
-      var(--bb-text-neutral-inverse) 25%,
-      transparent 0,
-      transparent 50%,
-      var(--bb-text-neutral-inverse) 0,
-      var(--bb-text-neutral-inverse) 75%,
-      transparent 0
-    );
-    content: "";
-    inset: 0;
-    position: absolute;
-    transform: translateY(var(--progress, 100%));
-    transition: transform 0.2s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
+.bb-button--primary {
+  background-color: var(--bb-surface-primary-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-primary-default);
+}
 
-  .bb-button:after {
-    --progress: -100%;
-    background: linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 25%,
-      var(--bb-text-neutral-inverse) 0,
-      var(--bb-text-neutral-inverse) 50%,
-      transparent 0,
-      transparent 75%,
-      var(--bb-text-neutral-inverse) 0
-    );
-    z-index: 0;
-  }
+.bb-button--primary:hover:not(:disabled) {
+  background-color: var(--bb-surface-primary-hover);
+  border-color: var(--bb-border-primary-hover);
+}
 
-  .bb-button:hover:after:not(:disabled),
-  .bb-button:hover:before:not(:disabled) {
-    --progress: 0;
-  }
+.bb-button--primary:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-icon-focus);
+  outline-offset: var(--bb-spacing-1);
+}
 
-  .bb-button > * {
-    position: relative;
-    z-index: 2;
-    mix-blend-mode: difference;
-  }
-  
-  /* Sizes */
-  .bb-button-sm {
-    font-size: var(--bb-text-body-sm);
-    padding-inline: var(--bb-component-sm-button-h-padding);
-    padding-block: var(--bb-component-sm-button-v-padding);
-    border-radius: var(--bb-component-sm-button-radius);
-    gap: var(--bb-component-sm-button-spacing);
-  }
-  
-  .bb-button-md { /* default */ }
-  
-  .bb-button-lg {
-    font-size: var(--bb-text-body-lg);
-    padding-inline: var(--bb-component-lg-button-h-padding);
-    padding-block: var(--bb-component-lg-button-v-padding);
-    border-radius: var(--bb-component-lg-button-radius);
-    gap: var(--bb-component-lg-button-spacing);
-  }
-  
-  
-  /* Variants */
-  .bb-button-neutral {
-    background-color: var(--bb-surface-neutral-inverse);
-    color: var(--bb-text-neutral-inverse);
-  }
-  .bb-button-neutral .bb-icon,
-  .bb-button-neutral svg {
-    color: var(--bb-text-neutral-inverse) !important;
-  }
-  .bb-button-neutral:hover {
-    background-color: var(--bb-surface-neutral-inverse-hover);
-  }
-  .bb-button-neutral:active {
-    background-color: var(--bb-surface-neutral-inverse-focus);
-    transform: translateY(1px);
-  }
-  .bb-button-neutral:disabled {
-    background-color: var(--bb-surface-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-    cursor: not-allowed;
-  }
+.bb-button--primary:disabled {
+  background-color: var(--bb-surface-primary-disabled);
+  color: var(--bb-text-primary-disabled);
+  border-color: var(--bb-border-primary-disabled);
+  cursor: not-allowed;
+}
 
-  .bb-button-destructive {
-    background-color: var(--bb-surface-error-default);
-    color: var(--bb-text-neutral-inverse);
-  }
-  .bb-button-destructive .bb-icon,
-  .bb-button-destructive svg {
-    color: var(--bb-text-neutral-inverse) !important;
-  }
-  .bb-button-destructive:hover {
-    background-color: var(--bb-surface-error-hover);
-  }
-  .bb-button-destructive:active {
-    background-color: var(--bb-surface-error-hover);
-    transform: translateY(1px);
-  }
-  .bb-button-destructive:disabled {
-    background-color: var(--bb-surface-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-  }
+/* ===============================================
+   DESTRUCTIVE BUTTON VARIANT
+   =============================================== */
 
-  .bb-button-primary {
-    background-color: var(--bb-surface-primary-default);
-    color: var(--bb-text-neutral-heading);
-  }
-  .bb-button-primary .bb-icon,
-  .bb-button-primary svg {
-    color: var(--bb-text-neutral-heading) !important;
-  }
-  .bb-button-primary:hover {
-    background-color: var(--bb-surface-primary-hover);
-  }
-  .bb-button-primary:active {
-    background-color: var(--bb-surface-primary-hover);
-    transform: translateY(1px);
-  }
-  .bb-button-primary:disabled {
-    background-color: var(--bb-surface-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-  }
+.bb-button--destructive {
+  background-color: var(--bb-surface-error-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-error-default);
+}
 
-  
-  .bb-button-outline {
-    background-color: transparent;
-    border: var(--bb-stroke-width-sm) solid var(--bb-border-neutral-dark);
-    color: var(--bb-text-neutral-body);
-  }
-  .bb-button-outline .bb-icon,
-  .bb-button-outline svg {
-    color: var(--bb-text-neutral-body) !important;
-  }
-  .bb-button-outline:hover {
-    background-color: var(--bb-surface-neutral-hover);
-  }
-  .bb-button-outline:active {
-    background-color: var(--bb-surface-neutral-focus);
-    transform: translateY(1px);
-  }
-  .bb-button-outline:disabled {
-    border-color: var(--bb-border-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-  }
-  
-  .bb-button-ghost {
-    background-color: transparent;
-    color: var(--bb-text-neutral-body);
-  }
-  .bb-button-ghost .bb-icon,
-  .bb-button-ghost svg {
-    color: var(--bb-text-neutral-body) !important;
-  }
-  .bb-button-ghost:hover {
-    background-color: var(--bb-surface-neutral-hover);
-  }
-  .bb-button-ghost:active {
-    background-color: var(--bb-surface-neutral-focus);
-    transform: translateY(1px);
-  }
-  .bb-button-ghost:disabled {
-    color: var(--bb-text-neutral-disabled);
-  }
+.bb-button--destructive:hover:not(:disabled) {
+  background-color: var(--bb-surface-error-hover);
+  border-color: var(--bb-border-error-hover);
+}
 
-  .bb-button-link {
-    background-color: transparent;
-    color: var(--bb-text-info-default);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
-  .bb-button-link .bb-icon,
-  .bb-button-link svg {
-    color: var(--bb-text-info-default) !important;
-  }
-  .bb-button-link:hover {
-    color: var(--bb-text-info-hover);
-    text-decoration: underline;
-  }
-  .bb-button-link:active {
-    color: var(--bb-text-info-hover);
-    transform: translateY(1px);
-  }
-  .bb-button-link:disabled {
-    color: var(--bb-text-neutral-disabled);
-    text-decoration: none;
-  }
-  
-  /* Focus state */
-  .bb-button:focus-visible {
-    outline: var(--bb-stroke-width-md) solid var(--bb-border-focus-ring);
-    outline-offset: var(--bb-spacing-1);
-  }
+.bb-button--destructive:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-icon-focus);
+  outline-offset: var(--bb-spacing-1);
+}
 
-  /* Icon-only buttons - size specific */
-  .bb-button.bb-button-icon.bb-button-sm {
-    padding: var(--bb-component-sm-button-full-padding);
-    aspect-ratio: 1 / 1;
-    width: auto;
-    height: auto;
-  }
+.bb-button--destructive:disabled {
+  background-color: var(--bb-surface-error-disabled);
+  color: var(--bb-text-error-disabled);
+  border-color: var(--bb-border-error-disabled);
+  cursor: not-allowed;
+}
 
-  .bb-button.bb-button-icon.bb-button-md,
-  .bb-button.bb-button-icon {
-    padding: var(--bb-component-md-button-full-padding);
-    aspect-ratio: 1 / 1;
-    width: auto;
-    height: auto;
-  }
+/* ===============================================
+   NEUTRAL BUTTON VARIANT
+   =============================================== */
 
-  .bb-button.bb-button-icon.bb-button-lg {
-    padding: var(--bb-component-lg-button-full-padding);
-    aspect-ratio: 1 / 1;
-    width: auto;
-    height: auto;
-  }
+.bb-button--neutral {
+  background-color: var(--bb-surface-neutral-card);
+  color: var(--bb-text-neutral-body);
+  border-color: var(--bb-border-neutral-default);
+}
 
+.bb-button--neutral:hover:not(:disabled) {
+  background-color: var(--bb-surface-neutral-elevated);
+  border-color: var(--bb-border-neutral-muted);
+}
 
+.bb-button--neutral:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-icon-focus);
+  outline-offset: var(--bb-spacing-1);
+}
+
+.bb-button--neutral:disabled {
+  background-color: var(--bb-surface-neutral-disabled);
+  color: var(--bb-text-neutral-disabled);
+  border-color: var(--bb-border-neutral-disabled);
+  cursor: not-allowed;
+}
+
+/* ===============================================
+   SIZE VARIANTS
+   =============================================== */
+
+.bb-button--sm {
+  gap: var(--bb-component-sm-button-spacing);
+  padding-inline: var(--bb-component-sm-button-h-padding);
+  padding-block: var(--bb-component-sm-button-v-padding);
+  font-size: var(--bb-type-font-size-sm);
+  border-radius: var(--bb-component-sm-button-radius);
+}
+
+.bb-button--lg {
+  gap: var(--bb-component-lg-button-spacing);
+  padding-inline: var(--bb-component-lg-button-h-padding);
+  padding-block: var(--bb-component-lg-button-v-padding);
+  font-size: var(--bb-type-font-size-lg);
+  border-radius: var(--bb-component-lg-button-radius);
+}
+
+/* ===============================================
+   ICON SIZING
+   =============================================== */
+
+.bb-button .bb-icon {
+  flex-shrink: 0;
+}
+
+.bb-button--sm .bb-icon {
+  width: var(--bb-component-sm-button-icon-size);
+  height: var(--bb-component-sm-button-icon-size);
+}
+
+.bb-button--md .bb-icon,
+.bb-button .bb-icon {
+  width: var(--bb-component-md-button-icon-size);
+  height: var(--bb-component-md-button-icon-size);
+}
+
+.bb-button--lg .bb-icon {
+  width: var(--bb-component-lg-button-icon-size);
+  height: var(--bb-component-lg-button-icon-size);
+}

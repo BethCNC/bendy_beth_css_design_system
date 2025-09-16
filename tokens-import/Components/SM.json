@@ -31,19 +31,19 @@
   },
   "Chip": {
     "H-Padding": {
-      "value": "0.5rem",
+      "value": "{spacing.2}",
       "type": "dimension"
     },
     "V-Padding": {
-      "value": "0.125rem",
+      "value": "{spacing.0-5}",
       "type": "dimension"
     },
     "Full Padding": {
-      "value": "0.25rem",
+      "value": "{spacing.1}",
       "type": "dimension"
     },
     "Spacing": {
-      "value": "0.25rem",
+      "value": "{spacing.1}",
       "type": "dimension"
     },
     "Radius": {
@@ -51,7 +51,7 @@
       "type": "dimension"
     },
     "Icon Size": {
-      "value": "0.625rem",
+      "value": "{spacing.2-5}",
       "type": "dimension"
     },
     "Icon Border Width": {

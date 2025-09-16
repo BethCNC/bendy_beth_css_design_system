@@ -1,86 +1,121 @@
-/* =========================================================
-   FIXED COMPONENT TOKENS (corrected naming + placeholders)
-   ========================================================= */
-
-   :root {
-    /* Small Button */
-    --bb-component-sm-button-h-padding: clamp(0.4rem, 1.2vw, 1rem);
-    --bb-component-sm-button-v-padding: clamp(0.2rem, 0.8vw, 0.6rem);
-    --bb-component-sm-button-spacing: var(--bb-spacing-1-5);
-    --bb-component-sm-button-radius: var(--bb-radius-lg);
-    --bb-component-sm-button-icon-size: var(--bb-spacing-4);
-    --bb-component-sm-button-icon-border-width: var(--bb-stroke-width-sm);
-    --bb-component-sm-button-full-padding: var(--bb-spacing-2);
-  
-    /* Small Chip */
-    --bb-component-sm-chip-h-padding: 0.5rem;
-    --bb-component-sm-chip-v-padding: 0.125rem;
-    --bb-component-sm-chip-full-padding: 0.25rem;
-    --bb-component-sm-chip-spacing: 0.25rem;
-    --bb-component-sm-chip-radius: var(--bb-radius-full);
-    --bb-component-sm-chip-icon-size: 0.625rem;
-    --bb-component-sm-chip-icon-border-width: var(--bb-stroke-width-sm);
-    --bb-component-sm-chip-border-width: var(--bb-stroke-width-xs);
-    --bb-component-sm-chip-focus-border-width: var(--bb-stroke-width-sm);
-  
-    /* Medium Button */
-    --bb-component-md-button-h-padding: clamp(0.5rem, 1.5vw, 1.25rem);
-    --bb-component-md-button-v-padding: clamp(0.25rem, 1vw, 0.75rem);
-    --bb-component-md-button-spacing: var(--bb-spacing-3);
-    --bb-component-md-button-radius: var(--bb-radius-lg);
-    --bb-component-md-button-icon-size: var(--bb-spacing-6);
-    --bb-component-md-button-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-md-button-full-padding: var(--bb-spacing-2);
-  
-    /* Medium Chip */
-    --bb-component-md-chip-h-padding: 0.625rem;
-    --bb-component-md-chip-v-padding: 0.25rem;
-    --bb-component-md-chip-full-padding: 0.5rem;
-    --bb-component-md-chip-spacing: 0.375rem;
-    --bb-component-md-chip-radius: var(--bb-radius-full);
-    --bb-component-md-chip-icon-size: 0.875rem;
-    --bb-component-md-chip-icon-border-width: var(--bb-stroke-width-sm);
-    --bb-component-md-chip-border-width: var(--bb-stroke-width-sm);
-    --bb-component-md-chip-focus-border-width: var(--bb-stroke-width-md);
-  
-    /* Large Button */
-    --bb-component-lg-button-h-padding: clamp(0.6rem, 1.8vw, 1.5rem);
-    --bb-component-lg-button-v-padding: clamp(0.3rem, 1.2vw, 0.9rem);
-    --bb-component-lg-button-spacing: var(--bb-spacing-3);
-    --bb-component-lg-button-radius: var(--bb-radius-lg);
-    --bb-component-lg-button-icon-size: var(--bb-spacing-6);
-    --bb-component-lg-button-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-lg-button-full-padding: var(--bb-spacing-4);
-  
-    /* Large Chip */
-    --bb-component-lg-chip-h-padding: 0.75rem;
-    --bb-component-lg-chip-v-padding: 0.375rem;
-    --bb-component-lg-chip-full-padding: 0.625rem;
-    --bb-component-lg-chip-spacing: 0.5rem;
-    --bb-component-lg-chip-radius: var(--bb-radius-full);
-    --bb-component-lg-chip-icon-size: 1rem;
-    --bb-component-lg-chip-icon-border-width: var(--bb-stroke-width-sm);
-    --bb-component-lg-chip-border-width: var(--bb-stroke-width-sm);
-    --bb-component-lg-chip-focus-border-width: var(--bb-stroke-width-md);
-  
-    /* Extra Large Button */
-    --bb-component-xl-button-h-padding: clamp(0.75rem, 2.25vw, 1.875rem);
-    --bb-component-xl-button-v-padding: clamp(0.375rem, 1.5vw, 1.125rem);
-    --bb-component-xl-button-spacing: var(--bb-spacing-4);
-    --bb-component-xl-button-radius: var(--bb-radius-lg);
-    --bb-component-xl-button-icon-size: var(--bb-spacing-6);
-    --bb-component-xl-button-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-xl-button-full-padding: var(--bb-spacing-5);
-  
-    /* Extra Large Chip */
-    --bb-component-xl-chip-h-padding: 1rem;
-    --bb-component-xl-chip-v-padding: 0.625rem;
-    --bb-component-xl-chip-full-padding: 0.75rem;
-    --bb-component-xl-chip-spacing: 0.625rem;
-    --bb-component-xl-chip-radius: var(--bb-radius-full);
-    --bb-component-xl-chip-icon-size: 1.125rem;
-    --bb-component-xl-chip-icon-border-width: var(--bb-stroke-width-md);
-    --bb-component-xl-chip-border-width: var(--bb-stroke-width-md);
-    --bb-component-xl-chip-focus-border-width: var(--bb-stroke-width-lg);
-  }
-  
+:root {
+  --bb-component-sm-button-h-padding: var(--bb-spacing-2);
+  --bb-component-sm-button-v-padding: var(--bb-spacing-1);
+  --bb-component-sm-button-spacing: var(--bb-spacing-1-5);
+  --bb-component-sm-button-radius: var(--bb-radius-lg);
+  --bb-component-sm-button-icon size: var(--bb-spacing-4);
+  --bb-component-sm-button-icon border width: var(--bb-stroke-width-sm);
+  --bb-component-sm-button-full padding: var(--bb-spacing-2);
+  --bb-component-sm-chip-h-padding: var(--bb-spacing-2);
+  --bb-component-sm-chip-v-padding: var(--bb-spacing-0-5);
+  --bb-component-sm-chip-full padding: var(--bb-spacing-1);
+  --bb-component-sm-chip-spacing: var(--bb-spacing-1);
+  --bb-component-sm-chip-radius: var(--bb-radius-full);
+  --bb-component-sm-chip-icon size: var(--bb-spacing-2-5);
+  --bb-component-sm-chip-icon border width: var(--bb-stroke-width-sm);
+  --bb-component-sm-chip-border width: var(--bb-stroke-width-xs);
+  --bb-component-sm-chip-focus border width: var(--bb-stroke-width-sm);
+  --bb-component-md-button-h-padding: var(--bb-spacing-3);
+  --bb-component-md-button-v-padding: var(--bb-spacing-2);
+  --bb-component-md-button-spacing: var(--bb-spacing-3);
+  --bb-component-md-button-radius: var(--bb-radius-lg);
+  --bb-component-md-button-icon size: var(--bb-spacing-6);
+  --bb-component-md-button-icon border width: var(--bb-stroke-width-md);
+  --bb-component-md-button-full padding: var(--bb-spacing-2);
+  --bb-component-md-chip-h-padding: var(--bb-spacing-2-5);
+  --bb-component-md-chip-v-padding: var(--bb-spacing-1);
+  --bb-component-md-chip-full padding: var(--bb-spacing-2);
+  --bb-component-md-chip-spacing: var(--bb-spacing-1-5);
+  --bb-component-md-chip-radius: var(--bb-radius-full);
+  --bb-component-md-chip-icon size: var(--bb-spacing-3-5);
+  --bb-component-md-chip-icon border width: var(--bb-stroke-width-sm);
+  --bb-component-md-chip-border width: var(--bb-stroke-width-sm);
+  --bb-component-md-chip-focus border width: var(--bb-stroke-width-md);
+  --bb-component-lg-button-h-padding: var(--bb-spacing-4);
+  --bb-component-lg-button-v-padding: 0.625rem;
+  --bb-component-lg-button-spacing: var(--bb-spacing-3);
+  --bb-component-lg-button-radius: var(--bb-radius-lg);
+  --bb-component-lg-button-icon size: var(--bb-spacing-7);
+  --bb-component-lg-button-icon border width: var(--bb-stroke-width-md);
+  --bb-component-lg-button-full padding: 0.625rem;
+  --bb-component-lg-chip-h-padding: var(--bb-spacing-3);
+  --bb-component-lg-chip-v-padding: var(--bb-spacing-1-5);
+  --bb-component-lg-chip-full padding: var(--bb-spacing-2-5);
+  --bb-component-lg-chip-spacing: var(--bb-spacing-2);
+  --bb-component-lg-chip-radius: var(--bb-radius-full);
+  --bb-component-lg-chip-icon size: var(--bb-spacing-4);
+  --bb-component-lg-chip-icon border width: var(--bb-stroke-width-sm);
+  --bb-component-lg-chip-border width: var(--bb-stroke-width-sm);
+  --bb-component-lg-chip-focus border width: var(--bb-stroke-width-md);
+  --bb-component-xl-button-h-padding: var(--bb-spacing-5);
+  --bb-component-xl-button-v-padding: var(--bb-spacing-3);
+  --bb-component-xl-button-spacing: var(--bb-spacing-4);
+  --bb-component-xl-button-radius: var(--bb-radius-lg);
+  --bb-component-xl-button-icon size: var(--bb-spacing-8);
+  --bb-component-xl-button-icon border width: var(--bb-stroke-width-md);
+  --bb-component-xl-button-full padding: var(--bb-spacing-3);
+  --bb-component-xl-chip-h-padding: 1rem;
+  --bb-component-xl-chip-v-padding: 0.625rem;
+  --bb-component-xl-chip-full padding: 0.75rem;
+  --bb-component-xl-chip-spacing: 0.625rem;
+  --bb-component-xl-chip-radius: {FULL};
+  --bb-component-xl-chip-icon size: 1.125rem;
+  --bb-component-xl-chip-icon border width: {MD};
+  --bb-component-xl-chip-border width: {MD};
+  --bb-component-xl-chip-focus border width: {LG};
+  --bb-fluid-button-fluid-h-padding: clamp(0.5rem, 2vw, 1.25rem);
+  --bb-fluid-button-fluid-v-padding: clamp(0.25rem, 1vw, 0.75rem);
+  --bb-fluid-button-fluid-spacing: clamp(0.375rem, 1.5vw, 0.75rem);
+  --bb-fluid-button-fluid-font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  --bb-fluid-button-fluid-icon-size: clamp(1rem, 3vw, 1.75rem);
+  --bb-fluid-chip-fluid-h-padding: clamp(0.5rem, 1.8vw, 0.875rem);
+  --bb-fluid-chip-fluid-v-padding: clamp(0.125rem, 0.8vw, 0.375rem);
+  --bb-fluid-chip-fluid-font-size: clamp(0.75rem, 2vw, 1rem);
+  --bb-fluid-chip-fluid-icon-size: clamp(0.625rem, 2.2vw, 1rem);
+  --bb-fluid-typography-fluid-display-regular: clamp(4rem, 10vw, 8rem);
+  --bb-fluid-typography-fluid-display-medium: clamp(4rem, 10vw, 8rem);
+  --bb-fluid-typography-fluid-heading-h1-regular: clamp(3rem, 8vw, 6rem);
+  --bb-fluid-typography-fluid-heading-h1-medium: clamp(3rem, 8vw, 6rem);
+  --bb-fluid-typography-fluid-heading-h2-regular: clamp(2.25rem, 6vw, 4.5rem);
+  --bb-fluid-typography-fluid-heading-h2-medium: clamp(2.25rem, 6vw, 4.5rem);
+  --bb-fluid-typography-fluid-heading-h3-regular: clamp(1.875rem, 5vw, 3.75rem);
+  --bb-fluid-typography-fluid-heading-h3-medium: clamp(1.875rem, 5vw, 3.75rem);
+  --bb-fluid-typography-fluid-heading-h4-regular: clamp(1.5rem, 4vw, 3rem);
+  --bb-fluid-typography-fluid-heading-h4-medium: clamp(1.5rem, 4vw, 3rem);
+  --bb-fluid-typography-fluid-heading-h5-regular: clamp(1.25rem, 3vw, 2.25rem);
+  --bb-fluid-typography-fluid-heading-h5-medium: clamp(1.25rem, 3vw, 2.25rem);
+  --bb-fluid-typography-fluid-heading-h6-regular: clamp(1.125rem, 2.5vw, 1.875rem);
+  --bb-fluid-typography-fluid-heading-h6-medium: clamp(1.125rem, 2.5vw, 1.875rem);
+  --bb-fluid-typography-fluid-title-xl-regular: clamp(1.875rem, 5vw, 3.75rem);
+  --bb-fluid-typography-fluid-title-xl-medium: clamp(1.875rem, 5vw, 3.75rem);
+  --bb-fluid-typography-fluid-title-xl-semibold: clamp(1.875rem, 5vw, 3.75rem);
+  --bb-fluid-typography-fluid-title-lg-regular: clamp(1.5rem, 4vw, 3rem);
+  --bb-fluid-typography-fluid-title-lg-medium: clamp(1.5rem, 4vw, 3rem);
+  --bb-fluid-typography-fluid-title-lg-semibold: clamp(1.5rem, 4vw, 3rem);
+  --bb-fluid-typography-fluid-title-md-regular: clamp(1.25rem, 3vw, 2.25rem);
+  --bb-fluid-typography-fluid-title-md-medium: clamp(1.25rem, 3vw, 2.25rem);
+  --bb-fluid-typography-fluid-title-md-semibold: clamp(1.25rem, 3vw, 2.25rem);
+  --bb-fluid-typography-fluid-title-sm-regular: clamp(1.125rem, 2.5vw, 1.875rem);
+  --bb-fluid-typography-fluid-title-sm-medium: clamp(1.125rem, 2.5vw, 1.875rem);
+  --bb-fluid-typography-fluid-title-sm-semibold: clamp(1.125rem, 2.5vw, 1.875rem);
+  --bb-fluid-typography-fluid-title-xs-regular: clamp(1rem, 2vw, 1.5rem);
+  --bb-fluid-typography-fluid-title-xs-medium: clamp(1rem, 2vw, 1.5rem);
+  --bb-fluid-typography-fluid-title-xs-semibold: clamp(1rem, 2vw, 1.5rem);
+  --bb-fluid-typography-fluid-body-lg-regular: clamp(1rem, 1.8vw, 1.125rem);
+  --bb-fluid-typography-fluid-body-lg-medium: clamp(1rem, 1.8vw, 1.125rem);
+  --bb-fluid-typography-fluid-body-lg-semibold: clamp(1rem, 1.8vw, 1.125rem);
+  --bb-fluid-typography-fluid-body-lg-bold: clamp(1rem, 1.8vw, 1.125rem);
+  --bb-fluid-typography-fluid-body-md-regular: clamp(0.875rem, 1.5vw, 1rem);
+  --bb-fluid-typography-fluid-body-md-medium: clamp(0.875rem, 1.5vw, 1rem);
+  --bb-fluid-typography-fluid-body-md-semibold: clamp(0.875rem, 1.5vw, 1rem);
+  --bb-fluid-typography-fluid-body-sm-regular: clamp(0.75rem, 1.2vw, 0.875rem);
+  --bb-fluid-typography-fluid-body-sm-medium: clamp(0.75rem, 1.2vw, 0.875rem);
+  --bb-fluid-typography-fluid-body-sm-semibold: clamp(0.75rem, 1.2vw, 0.875rem);
+  --bb-fluid-typography-fluid-body-xs-regular: clamp(0.625rem, 1vw, 0.75rem);
+  --bb-fluid-typography-fluid-body-xs-medium: clamp(0.625rem, 1vw, 0.75rem);
+  --bb-fluid-typography-fluid-body-xs-semibold: clamp(0.625rem, 1vw, 0.75rem);
+  --bb-fluid-spacing-fluid-section: clamp(3rem, 8vw, 8rem);
+  --bb-fluid-spacing-fluid-component: clamp(1.5rem, 4vw, 4rem);
+  --bb-fluid-spacing-fluid-element: clamp(0.75rem, 2vw, 2rem);
+  --bb-fluid-spacing-fluid-tight: clamp(0.5rem, 1.5vw, 1.5rem);
+}

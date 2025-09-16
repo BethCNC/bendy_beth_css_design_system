@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Typography Demo - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="src/globals.css">
+    <link rel="stylesheet" href="src/utilities/spacing-fluid.css">
+    <link rel="stylesheet" href="src/utilities/typography-complete.css">
+    <style>
+        .type-showcase {
+            border: 1px solid var(--bb-border-neutral-default);
+            border-radius: var(--bb-radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--bb-fluid-spacing-fluid-element);
+        }
+        .type-header {
+            background: var(--bb-surface-neutral-elevated);
+            border-bottom: 1px solid var(--bb-border-neutral-default);
+            padding: var(--bb-fluid-spacing-fluid-tight);
+            font-family: monospace;
+            font-size: 0.875rem;
+            color: var(--bb-text-neutral-body);
+        }
+        .type-content {
+            padding: var(--bb-fluid-spacing-fluid-element);
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bb-surface-neutral-card);
+            border: 1px solid var(--bb-border-neutral-default);
+            border-radius: var(--bb-radius-lg);
+            padding: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .size-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--bb-surface-neutral-card);
+            border: 1px solid var(--bb-border-neutral-default);
+            border-radius: var(--bb-radius-lg);
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--bb-text-neutral-body);
+            z-index: 100;
+        }
+        .weight-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--bb-fluid-spacing-fluid-tight);
+            margin-top: var(--bb-fluid-spacing-fluid-tight);
+        }
+        .section-divider {
+            border-top: 2px solid var(--bb-border-neutral-default);
+            margin: var(--bb-fluid-spacing-fluid-section) 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="size-indicator" id="sizeIndicator">
+        Screen: <span id="screenSize"></span>
+    </div>
+
+    <div class="bb-container">
+        <div class="bb-stack bb-stack--section">
+            <!-- Header -->
+            <header class="bb-text--center bb-py-component">
+                <h1 class="bb-text-display bb-text--heading bb-mb-element">Complete Typography System</h1>
+                <p class="bb-text-body-lg bb-text--body">
+                    All typography scales from your original design system, now with fluid responsive scaling.
+                    Resize your window to see smooth scaling across all screen sizes.
+                </p>
+            </header>
+
+            <!-- Display Styles -->
+            <section>
+                <h2 class="bb-text-h2 bb-text--heading bb-mb-component">Display Styles</h2>
+                <div class="type-showcase">
+                    <div class="type-header">Display - Regular (clamp(4rem, 10vw, 8rem))</div>
+                    <div class="type-content">
+                        <div class="bb-text-display-regular bb-text--heading">Display Regular</div>
+                    </div>
+                </div>
+                <div class="type-showcase">
+                    <div class="type-header">Display - Medium (clamp(4rem, 10vw, 8rem))</div>
+                    <div class="type-content">
+                        <div class="bb-text-display-medium bb-text--heading">Display Medium</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Heading Styles -->
+            <section>
+                <h2 class="bb-text-h2 bb-text--heading bb-mb-component">Heading Styles (H1-H6)</h2>
+
+                <div class="type-showcase">
+                    <div class="type-header">H1 - Regular & Medium (clamp(3rem, 8vw, 6rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h1-regular bb-text--heading">H1 Regular</div>
+                            <div class="bb-text-h1-medium bb-text--heading">H1 Medium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">H2 - Regular & Medium (clamp(2.25rem, 6vw, 4.5rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h2-regular bb-text--heading">H2 Regular</div>
+                            <div class="bb-text-h2-medium bb-text--heading">H2 Medium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">H3 - Regular & Medium (clamp(1.875rem, 5vw, 3.75rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h3-regular bb-text--heading">H3 Regular</div>
+                            <div class="bb-text-h3-medium bb-text--heading">H3 Medium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">H4 - Regular & Medium (clamp(1.5rem, 4vw, 3rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h4-regular bb-text--heading">H4 Regular</div>
+                            <div class="bb-text-h4-medium bb-text--heading">H4 Medium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">H5 - Regular & Medium (clamp(1.25rem, 3vw, 2.25rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h5-regular bb-text--heading">H5 Regular</div>
+                            <div class="bb-text-h5-medium bb-text--heading">H5 Medium</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">H6 - Regular & Medium (clamp(1.125rem, 2.5vw, 1.875rem))</div>
+                    <div class="type-content">
+                        <div class="weight-demo">
+                            <div class="bb-text-h6-regular bb-text--heading">H6 Regular</div>
+                            <div class="bb-text-h6-medium bb-text--heading">H6 Medium</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Title Styles -->
+            <section>
+                <h2 class="bb-text-h2 bb-text--heading bb-mb-component">Title Styles</h2>
+
+                <div class="type-showcase">
+                    <div class="type-header">Title XL - Regular, Medium, Semibold (clamp(1.875rem, 5vw, 3.75rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <div class="bb-text-title-xl-regular bb-text--heading">Title XL Regular</div>
+                        <div class="bb-text-title-xl-medium bb-text--heading">Title XL Medium</div>
+                        <div class="bb-text-title-xl-semibold bb-text--heading">Title XL Semibold</div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Title LG - Regular, Medium, Semibold (clamp(1.5rem, 4vw, 3rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <div class="bb-text-title-lg-regular bb-text--heading">Title LG Regular</div>
+                        <div class="bb-text-title-lg-medium bb-text--heading">Title LG Medium</div>
+                        <div class="bb-text-title-lg-semibold bb-text--heading">Title LG Semibold</div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Title MD - Regular, Medium, Semibold (clamp(1.25rem, 3vw, 2.25rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <div class="bb-text-title-md-regular bb-text--heading">Title MD Regular</div>
+                        <div class="bb-text-title-md-medium bb-text--heading">Title MD Medium</div>
+                        <div class="bb-text-title-md-semibold bb-text--heading">Title MD Semibold</div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Title SM - Regular, Medium, Semibold (clamp(1.125rem, 2.5vw, 1.875rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <div class="bb-text-title-sm-regular bb-text--heading">Title SM Regular</div>
+                        <div class="bb-text-title-sm-medium bb-text--heading">Title SM Medium</div>
+                        <div class="bb-text-title-sm-semibold bb-text--heading">Title SM Semibold</div>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Title XS - Regular, Medium, Semibold (clamp(1rem, 2vw, 1.5rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <div class="bb-text-title-xs-regular bb-text--heading">Title XS Regular</div>
+                        <div class="bb-text-title-xs-medium bb-text--heading">Title XS Medium</div>
+                        <div class="bb-text-title-xs-semibold bb-text--heading">Title XS Semibold</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Body Styles -->
+            <section>
+                <h2 class="bb-text-h2 bb-text--heading bb-mb-component">Body Text Styles</h2>
+
+                <div class="type-showcase">
+                    <div class="type-header">Body LG - Regular, Medium, Semibold, Bold (clamp(1rem, 1.8vw, 1.125rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <p class="bb-text-body-lg-regular bb-text--body">Body LG Regular - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="bb-text-body-lg-medium bb-text--body">Body LG Medium - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="bb-text-body-lg-semibold bb-text--body">Body LG Semibold - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="bb-text-body-lg-bold bb-text--body">Body LG Bold - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Body MD - Regular, Medium, Semibold (clamp(0.875rem, 1.5vw, 1rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <p class="bb-text-body-md-regular bb-text--body">Body MD Regular - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p class="bb-text-body-md-medium bb-text--body">Body MD Medium - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p class="bb-text-body-md-semibold bb-text--body">Body MD Semibold - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Body SM - Regular, Medium, Semibold (clamp(0.75rem, 1.2vw, 0.875rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <p class="bb-text-body-sm-regular bb-text--body">Body SM Regular - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="bb-text-body-sm-medium bb-text--body">Body SM Medium - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="bb-text-body-sm-semibold bb-text--body">Body SM Semibold - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+
+                <div class="type-showcase">
+                    <div class="type-header">Body XS - Regular, Medium, Semibold (clamp(0.625rem, 1vw, 0.75rem))</div>
+                    <div class="type-content bb-stack bb-stack--tight">
+                        <p class="bb-text-body-xs-regular bb-text--body">Body XS Regular - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p class="bb-text-body-xs-medium bb-text--body">Body XS Medium - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p class="bb-text-body-xs-semibold bb-text--body">Body XS Semibold - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Usage Instructions -->
+            <section class="bb-mt-section">
+                <div class="type-showcase">
+                    <div class="type-header">Testing Instructions</div>
+                    <div class="type-content">
+                        <div class="bb-text-body bb-text--body bb-stack bb-stack--tight">
+                            <p><strong>1. Resize Test:</strong> Slowly drag your browser window from mobile (390px) to desktop (1440px+) and watch the smooth scaling.</p>
+                            <p><strong>2. Font Weight Test:</strong> Compare the different weights (Regular, Medium, Semibold, Bold) within each size category.</p>
+                            <p><strong>3. Dark Mode Test:</strong> Click the moon icon in the top-right to test dark mode typography.</p>
+                            <p><strong>4. Screen Size Monitor:</strong> Watch the bottom-left indicator to see exact viewport width.</p>
+                            <p><strong>5. Hierarchy Test:</strong> Notice how the visual hierarchy is maintained across all screen sizes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            const toggle = document.querySelector('.theme-toggle');
+            toggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        function updateScreenSize() {
+            const sizeElement = document.getElementById('screenSize');
+            const width = window.innerWidth;
+            sizeElement.textContent = `${width}px`;
+        }
+
+        window.addEventListener('resize', updateScreenSize);
+        updateScreenSize();
+    </script>
+</body>
+</html>

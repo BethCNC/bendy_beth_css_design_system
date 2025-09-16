@@ -3,17 +3,78 @@
   "plugins": ["stylelint-declaration-strict-value"],
   "rules": {
     "scale-unlimited/declaration-strict-value": [
-      ["color", "background-color", "border-color", "fill", "stroke", "font-size", "margin", "padding", "border-radius", "gap"],
+      [
+        "/color/",
+        "/background/",
+        "/border/",
+        "font-size",
+        "font-weight",
+        "line-height",
+        "letter-spacing",
+        "margin",
+        "padding",
+        "gap",
+        "width",
+        "height",
+        "min-width",
+        "min-height",
+        "max-width",
+        "max-height",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "border-radius",
+        "box-shadow",
+        "text-shadow",
+        "z-index"
+      ],
       {
-        "ignoreKeywords": ["inherit", "initial", "transparent", "currentcolor", "none", "auto", "unset", "0"]
+        "ignoreValues": [
+          "transparent",
+          "inherit",
+          "initial",
+          "unset",
+          "auto",
+          "0",
+          "none",
+          "normal",
+          "currentColor"
+        ]
       }
     ],
-    "import-notation": null,
+    "declaration-no-important": true,
     "declaration-block-single-line-max-declarations": null,
     "declaration-empty-line-before": null,
-    "rule-empty-line-before": null,
-    "no-descending-specificity": null,
-    "declaration-no-important": true,
-    "selector-max-id": 0
-  }
+    "length-zero-no-unit": null,
+    "number-max-precision": null,
+    "value-keyword-case": null,
+    "media-feature-range-notation": null,
+    "selector-class-pattern": [
+      "^bb-[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:--[a-z0-9]+)*$",
+      {
+        "resolveNestedSelectors": true,
+        "message": "Expected class selector to match BEM-like pattern (e.g., .bb-button, .bb-button--primary, .bb-w-1\\/2)"
+      }
+    ],
+    "custom-property-pattern": "^bb-[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "layer"
+        ]
+      }
+    ]
+  },
+  "ignoreFiles": [
+    "build/**/*",
+    "node_modules/**/*",
+    "dist/**/*"
+  ]
 }

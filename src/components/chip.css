@@ -1,138 +1,142 @@
-/* =========================================================
-   CHIP.CSS — COMPONENT LAYER
-   ========================================================= */
+/* src/components/chip.css */
 
-   .bb-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--bb-font-body);
-    font-size: var(--bb-text-body-sm);
-    font-weight: var(--bb-font-weight-medium);
-    line-height: var(--bb-line-height-normal);
-    border-radius: var(--bb-component-md-chip-radius);
-    gap: var(--bb-component-md-chip-spacing);
-    padding-inline: var(--bb-component-md-chip-h-padding);
-    padding-block: var(--bb-component-md-chip-v-padding);
-    cursor: default;
-    border: var(--bb-component-md-chip-border-width) solid var(--bb-border-neutral-default);
-    background-color: var(--bb-surface-neutral-card);
-    color: var(--bb-text-neutral-body);
-  }
-  
-  /* Sizes */
-  .bb-chip-sm {
-    font-size: var(--bb-text-body-xs);
-    padding-inline: var(--bb-component-sm-chip-h-padding);
-    padding-block: var(--bb-component-sm-chip-v-padding);
-    border-radius: var(--bb-component-sm-chip-radius);
-    gap: var(--bb-component-sm-chip-spacing);
-    border: var(--bb-component-sm-chip-border-width) solid var(--bb-border-neutral-default);
-  }
-  
-  .bb-chip-md { /* default */ }
-  
-  .bb-chip-lg {
-    font-size: var(--bb-text-body-md);
-    padding-inline: var(--bb-component-lg-chip-h-padding);
-    padding-block: var(--bb-component-lg-chip-v-padding);
-    border-radius: var(--bb-component-lg-chip-radius);
-    gap: var(--bb-component-lg-chip-spacing);
-    border: var(--bb-component-lg-chip-border-width) solid var(--bb-border-neutral-default);
-  }
-  
-  .bb-chip-xl {
-    font-size: var(--bb-text-body-lg);
-    padding-inline: var(--bb-component-xl-chip-h-padding);
-    padding-block: var(--bb-component-xl-chip-v-padding);
-    border-radius: var(--bb-component-xl-chip-radius);
-    gap: var(--bb-component-xl-chip-spacing);
-    border: var(--bb-component-xl-chip-border-width) solid var(--bb-border-neutral-default);
-  }
-  
-  /* Variants */
-  .bb-chip-neutral {
-    background-color: var(--bb-surface-neutral-card);
-    color: var(--bb-text-neutral-body);
-  }
-  .bb-chip-neutral:hover {
-    background-color: var(--bb-surface-neutral-hover);
-  }
-  .bb-chip-neutral:disabled {
-    background-color: var(--bb-surface-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-  }
-  
-  .bb-chip-primary {
-    background-color: var(--bb-surface-primary-default);
-    color: var(--bb-text-neutral-inverse);
-  }
-  .bb-chip-primary:hover {
-    background-color: var(--bb-surface-primary-hover);
-  }
-  .bb-chip-primary:disabled {
-    background-color: var(--bb-surface-primary-disabled);
-    color: var(--bb-text-primary-disabled);
-  }
-  
-  .bb-chip-secondary {
-    background-color: var(--bb-surface-secondary-default);
-    color: var(--bb-text-neutral-inverse);
-  }
-  .bb-chip-secondary:hover {
-    background-color: var(--bb-surface-secondary-hover);
-  }
-  .bb-chip-secondary:disabled {
-    background-color: var(--bb-surface-secondary-disabled);
-    color: var(--bb-text-secondary-disabled);
-  }
-  
-  .bb-chip-destructive {
-    background-color: var(--bb-surface-error-default);
-    color: var(--bb-text-neutral-inverse);
-  }
-  .bb-chip-destructive:hover {
-    background-color: var(--bb-surface-error-hover);
-  }
-  .bb-chip-destructive:disabled {
-    background-color: var(--bb-surface-error-disabled);
-    color: var(--bb-text-error-disabled);
-  }
-  
-  /* Outline + Ghost */
-  .bb-chip-outline {
-    background-color: transparent;
-    border: var(--bb-component-md-chip-border-width) solid var(--bb-border-neutral-dark);
-    color: var(--bb-text-neutral-body);
-  }
-  .bb-chip-outline:hover {
-    background-color: var(--bb-surface-neutral-hover);
-  }
-  .bb-chip-outline:disabled {
-    border-color: var(--bb-border-neutral-disabled);
-    color: var(--bb-text-neutral-disabled);
-  }
-  
-  .bb-chip-ghost {
-    background-color: transparent;
-    color: var(--bb-text-neutral-body);
-  }
-  .bb-chip-ghost:hover {
-    background-color: var(--bb-surface-neutral-hover);
-  }
-  .bb-chip-ghost:disabled {
-    color: var(--bb-text-neutral-disabled);
-  }
-  
-  /* Focus state */
-  .bb-chip:focus-visible {
-    outline: var(--bb-component-md-chip-focus-border-width) solid var(--bb-border-focus-ring);
-    outline-offset: var(--bb-spacing-1);
-  }
-  
-  /* Icon support */
-  .bb-chip-icon {
-    width: var(--bb-component-md-chip-icon-size);
-    height: var(--bb-component-md-chip-icon-size);
-    flex-shrink: 0;
-  }
+/* ===============================================
+   CHIP COMPONENT — SEMANTIC TOKENS ONLY
+   =============================================== */
+
+.bb-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bb-component-md-chip-spacing);
+  padding-inline: var(--bb-component-md-chip-h-padding);
+  padding-block: var(--bb-component-md-chip-v-padding);
+  border: var(--bb-component-md-chip-border-width) solid transparent;
+  border-radius: var(--bb-component-md-chip-radius);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-size: var(--bb-type-font-size-sm);
+  font-weight: var(--bb-fontweights-overused-grotesk-3);
+  line-height: var(--bb-type-line-height-sm);
+  white-space: nowrap;
+  cursor: default;
+}
+
+/* ===============================================
+   PRIMARY CHIP VARIANT
+   =============================================== */
+
+.bb-chip--primary {
+  background-color: var(--bb-surface-primary-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-primary-default);
+}
+
+/* ===============================================
+   SECONDARY CHIP VARIANT
+   =============================================== */
+
+.bb-chip--secondary {
+  background-color: var(--bb-surface-secondary-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-secondary-default);
+}
+
+/* ===============================================
+   DESTRUCTIVE CHIP VARIANT
+   =============================================== */
+
+.bb-chip--destructive {
+  background-color: var(--bb-surface-error-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-error-default);
+}
+
+/* ===============================================
+   NEUTRAL CHIP VARIANT
+   =============================================== */
+
+.bb-chip--neutral {
+  background-color: var(--bb-surface-neutral-card);
+  color: var(--bb-text-neutral-body);
+  border-color: var(--bb-border-neutral-default);
+}
+
+/* ===============================================
+   OUTLINE CHIP VARIANT
+   =============================================== */
+
+.bb-chip--outline {
+  background-color: transparent;
+  color: var(--bb-text-neutral-body);
+  border-color: var(--bb-border-neutral-default);
+}
+
+/* ===============================================
+   GHOST CHIP VARIANT
+   =============================================== */
+
+.bb-chip--ghost {
+  background-color: var(--bb-surface-neutral-ghost);
+  color: var(--bb-text-neutral-body);
+  border-color: transparent;
+}
+
+/* ===============================================
+   SIZE VARIANTS
+   =============================================== */
+
+.bb-chip--sm {
+  gap: var(--bb-component-sm-chip-spacing);
+  padding-inline: var(--bb-component-sm-chip-h-padding);
+  padding-block: var(--bb-component-sm-chip-v-padding);
+  font-size: var(--bb-type-font-size-xs);
+  border-radius: var(--bb-component-sm-chip-radius);
+  border-width: var(--bb-component-sm-chip-border-width);
+}
+
+.bb-chip--lg {
+  gap: var(--bb-component-lg-chip-spacing);
+  padding-inline: var(--bb-component-lg-chip-h-padding);
+  padding-block: var(--bb-component-lg-chip-v-padding);
+  font-size: var(--bb-type-font-size-md);
+  border-radius: var(--bb-component-lg-chip-radius);
+  border-width: var(--bb-component-lg-chip-border-width);
+}
+
+.bb-chip--xl {
+  gap: var(--bb-component-xl-chip-spacing);
+  padding-inline: var(--bb-component-xl-chip-h-padding);
+  padding-block: var(--bb-component-xl-chip-v-padding);
+  font-size: var(--bb-type-font-size-lg);
+  border-radius: var(--bb-component-xl-chip-radius);
+  border-width: var(--bb-component-xl-chip-border-width);
+}
+
+/* ===============================================
+   ICON SIZING
+   =============================================== */
+
+.bb-chip .bb-icon {
+  flex-shrink: 0;
+}
+
+.bb-chip--sm .bb-icon {
+  width: var(--bb-component-sm-chip-icon-size);
+  height: var(--bb-component-sm-chip-icon-size);
+}
+
+.bb-chip--md .bb-icon,
+.bb-chip .bb-icon {
+  width: var(--bb-component-md-chip-icon-size);
+  height: var(--bb-component-md-chip-icon-size);
+}
+
+.bb-chip--lg .bb-icon {
+  width: var(--bb-component-lg-chip-icon-size);
+  height: var(--bb-component-lg-chip-icon-size);
+}
+
+.bb-chip--xl .bb-icon {
+  width: var(--bb-component-xl-chip-icon-size);
+  height: var(--bb-component-xl-chip-icon-size);
+}

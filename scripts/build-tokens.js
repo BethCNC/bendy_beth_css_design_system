@@ -16,7 +16,7 @@ function flattenTokens(obj, prefix = '', path = []) {
 
     if (value && typeof value === 'object' && value.value !== undefined) {
       // This is a token with a value
-      const tokenName = prefix ? `--bb-${prefix}${newPath.join('-')}` : `--bb-${newPath.join('-')}`;
+      const tokenName = prefix ? `--bb-${prefix}${newPath.join('-').toLowerCase()}` : `--bb-${newPath.join('-').toLowerCase()}`;
       result[tokenName] = value.value;
     } else if (value && typeof value === 'object') {
       // Recurse deeper
@@ -38,7 +38,7 @@ function resolveReferences(tokens) {
       if (typeof value === 'string' && value.includes('{') && value.includes('}')) {
         // This has a reference to resolve
         const newValue = value.replace(/\{([^}]+)\}/g, (match, ref) => {
-          const refName = `--bb-${ref.replace(/\./g, '-')}`;
+          const refName = `--bb-${ref.replace(/\./g, '-').toLowerCase()}`;
           if (resolved[refName]) {
             changed = true;
             return `var(${refName})`;
@@ -74,18 +74,19 @@ const darkPrimitiveTokens = flattenTokens(tokens['Primitives/Dark'] || {});
 // Extract aliases (theme-agnostic)
 const aliasTokens = flattenTokens(tokens['Alias'] || {});
 
-// Extract semantic tokens (from Semantic/light - assuming same structure for dark)
-const semanticTokens = flattenTokens(tokens['Semantic/light'] || {});
+// Extract semantic tokens (from both light and dark)
+const lightSemanticTokens = flattenTokens(tokens['Semantic/light'] || {});
+const darkSemanticTokens = flattenTokens(tokens['Semantic/dark'] || {});
 
 // Resolve all references for light theme
 const resolvedLightPrimitives = resolveReferences(lightPrimitiveTokens);
 const resolvedLightAliases = resolveReferences({ ...lightPrimitiveTokens, ...aliasTokens });
-const resolvedLightSemantic = resolveReferences({ ...lightPrimitiveTokens, ...aliasTokens, ...semanticTokens });
+const resolvedLightSemantic = resolveReferences({ ...lightPrimitiveTokens, ...aliasTokens, ...lightSemanticTokens });
 
 // Resolve all references for dark theme
 const resolvedDarkPrimitives = resolveReferences(darkPrimitiveTokens);
 const resolvedDarkAliases = resolveReferences({ ...darkPrimitiveTokens, ...aliasTokens });
-const resolvedDarkSemantic = resolveReferences({ ...darkPrimitiveTokens, ...aliasTokens, ...semanticTokens });
+const resolvedDarkSemantic = resolveReferences({ ...darkPrimitiveTokens, ...aliasTokens, ...darkSemanticTokens });
 
 // Generate CSS files with both light and dark themes
 const buildDir = path.join(__dirname, '../build');
@@ -137,13 +138,13 @@ const lightSemanticOnly = {};
 const darkSemanticOnly = {};
 
 for (const [name, value] of Object.entries(resolvedLightSemantic)) {
-  if (name in semanticTokens) {
+  if (name in lightSemanticTokens) {
     lightSemanticOnly[name] = value;
   }
 }
 
 for (const [name, value] of Object.entries(resolvedDarkSemantic)) {
-  if (name in semanticTokens) {
+  if (name in darkSemanticTokens) {
     darkSemanticOnly[name] = value;
   }
 }
@@ -173,6 +174,9 @@ const componentTokens = {};
   }
 });
 
+// Process fluid responsive tokens
+const fluidTokens = flattenTokens(tokens['Responsive/fluid'] || {}, 'fluid-');
+
 // Generate component CSS with resolved references
 const componentTokensFlat = {};
 Object.keys(componentTokens).forEach(size => {
@@ -185,7 +189,8 @@ const resolvedComponents = resolveReferences({
   ...resolvedLightPrimitives,
   ...resolvedLightAliases,
   ...resolvedLightSemantic,
-  ...componentTokensFlat
+  ...componentTokensFlat,
+  ...fluidTokens
 });
 
 // Extract only component tokens for CSS output and add clamp values for responsive sizing
@@ -219,6 +224,9 @@ for (const [name, value] of Object.entries(resolvedComponents)) {
     }
   } else if (name.includes('component')) {
     // Non-button components keep original values
+    componentOnly[name] = value;
+  } else if (name.includes('fluid-')) {
+    // Include fluid tokens directly (they already have clamp values)
     componentOnly[name] = value;
   }
 }

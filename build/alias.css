@@ -1,18 +1,4 @@
 :root {
-  /* Radius aliases */
-  --bb-radius-full: var(--bb-radius-FULL);
-
-  /* Opacity aliases */
-  --bb-color-opacity-white-0%: var(--bb-color-Opacity-white-0%);
-  --bb-color-opacity-white-20%: var(--bb-color-Opacity-white-20%);
-  --bb-color-opacity-white-30%: var(--bb-color-Opacity-white-30%);
-  --bb-color-opacity-yellow-30: var(--bb-color-Opacity-yellow-30);
-  --bb-color-opacity-yellow-50: var(--bb-color-Opacity-yellow-50);
-  --bb-color-opacity-yellow-80: var(--bb-color-Opacity-yellow-80);
-  --bb-color-opacity-pink-30: var(--bb-color-Opacity-pink-30);
-  --bb-color-opacity-pink-50: var(--bb-color-Opacity-pink-50);
-  --bb-color-opacity-pink-80: var(--bb-color-Opacity-pink-80);
-
   --bb-color-primary-50: var(--bb-color-yellow-50);
   --bb-color-primary-100: var(--bb-color-yellow-100);
   --bb-color-primary-200: var(--bb-color-yellow-200);
@@ -101,25 +87,11 @@
   --bb-color-neutral-800: var(--bb-color-grayscale-800);
   --bb-color-neutral-900: var(--bb-color-grayscale-900);
   --bb-color-neutral-950: var(--bb-color-grayscale-950);
-  --bb-color-neutral-white: var(--bb-color-grayscale-white);
-  --bb-color-neutral-black: var(--bb-color-grayscale-black);
+  --bb-color-neutral-white: var(--bb-color-grayscale-0);
+  --bb-color-neutral-black: var(--bb-color-grayscale-999);
 }
 
 [data-theme="dark"] {
-  /* Radius aliases */
-  --bb-radius-full: var(--bb-radius-FULL);
-
-  /* Opacity aliases */
-  --bb-color-opacity-white-0%: var(--bb-color-Opacity-white-0%);
-  --bb-color-opacity-white-20%: var(--bb-color-Opacity-white-20%);
-  --bb-color-opacity-white-30%: var(--bb-color-Opacity-white-30%);
-  --bb-color-opacity-yellow-30: var(--bb-color-Opacity-yellow-30);
-  --bb-color-opacity-yellow-50: var(--bb-color-Opacity-yellow-50);
-  --bb-color-opacity-yellow-80: var(--bb-color-Opacity-yellow-80);
-  --bb-color-opacity-pink-30: var(--bb-color-Opacity-pink-30);
-  --bb-color-opacity-pink-50: var(--bb-color-Opacity-pink-50);
-  --bb-color-opacity-pink-80: var(--bb-color-Opacity-pink-80);
-
   --bb-color-primary-50: var(--bb-color-yellow-50);
   --bb-color-primary-100: var(--bb-color-yellow-100);
   --bb-color-primary-200: var(--bb-color-yellow-200);
@@ -208,6 +180,6 @@
   --bb-color-neutral-800: var(--bb-color-grayscale-800);
   --bb-color-neutral-900: var(--bb-color-grayscale-900);
   --bb-color-neutral-950: var(--bb-color-grayscale-950);
-  --bb-color-neutral-white: var(--bb-color-grayscale-white);
-  --bb-color-neutral-black: var(--bb-color-grayscale-black);
+  --bb-color-neutral-white: var(--bb-color-grayscale-0);
+  --bb-color-neutral-black: var(--bb-color-grayscale-999);
 }

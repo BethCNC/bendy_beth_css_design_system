@@ -1,0 +1,88 @@
+/* src/components/button-fluid.css */
+
+/* ===============================================
+   FLUID BUTTON COMPONENT — RESPONSIVE SCALING
+   =============================================== */
+
+.bb-button-fluid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bb-fluid-button-fluid-spacing);
+  padding-inline: var(--bb-fluid-button-fluid-h-padding);
+  padding-block: var(--bb-fluid-button-fluid-v-padding);
+  border: var(--bb-stroke-width-sm) solid transparent;
+  border-radius: var(--bb-radius-lg);
+  font-family: var(--bb-type-family-overused-grotesk);
+  font-size: var(--bb-fluid-button-fluid-font-size);
+  font-weight: var(--bb-fontweights-overused-grotesk-3);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ===============================================
+   FLUID BUTTON VARIANTS
+   =============================================== */
+
+.bb-button-fluid--primary {
+  background-color: var(--bb-surface-primary-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-primary-default);
+}
+
+.bb-button-fluid--primary:hover:not(:disabled) {
+  background-color: var(--bb-surface-primary-hover);
+  border-color: var(--bb-border-primary-hover);
+}
+
+.bb-button-fluid--primary:focus-visible {
+  outline: var(--bb-stroke-width-md) solid var(--bb-icon-focus);
+  outline-offset: var(--bb-spacing-1);
+}
+
+.bb-button-fluid--destructive {
+  background-color: var(--bb-surface-error-default);
+  color: var(--bb-text-neutral-inverse);
+  border-color: var(--bb-border-error-default);
+}
+
+.bb-button-fluid--destructive:hover:not(:disabled) {
+  background-color: var(--bb-surface-error-hover);
+  border-color: var(--bb-border-error-hover);
+}
+
+.bb-button-fluid--neutral {
+  background-color: var(--bb-surface-neutral-card);
+  color: var(--bb-text-neutral-body);
+  border-color: var(--bb-border-neutral-default);
+}
+
+.bb-button-fluid--neutral:hover:not(:disabled) {
+  background-color: var(--bb-surface-neutral-elevated);
+  border-color: var(--bb-border-neutral-muted);
+}
+
+/* ===============================================
+   ICON SUPPORT
+   =============================================== */
+
+.bb-button-fluid .bb-icon {
+  flex-shrink: 0;
+  width: var(--bb-fluid-button-fluid-icon-size);
+  height: var(--bb-fluid-button-fluid-icon-size);
+}
+
+/* ===============================================
+   DISABLED STATE
+   =============================================== */
+
+.bb-button-fluid:disabled {
+  background-color: var(--bb-surface-neutral-disabled);
+  color: var(--bb-text-neutral-disabled);
+  border-color: var(--bb-border-neutral-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
