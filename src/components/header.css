@@ -1,0 +1,136 @@
+/* src/components/header.css */
+
+/* ===============================================
+   HEADER COMPONENT - RESPONSIVE DESIGN
+   Based on Figma breakpoints: 1440px, 810px, 390px
+   =============================================== */
+
+.bb-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  background-color: #f1f2f2;
+
+  /* Desktop: 1440px+ */
+  padding: var(--bb-spacing-16) var(--bb-spacing-24);
+}
+
+.bb-header--hover {
+  background-color: transparent;
+}
+
+.bb-header__logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+
+  /* Desktop: 622px width, 100px height */
+  width: 622px;
+  height: 100px;
+}
+
+.bb-header__logo {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.bb-header__logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+
+/* ===============================================
+   RESPONSIVE BREAKPOINTS
+   Based on Figma specifications
+   =============================================== */
+
+/* Tablet: 810px breakpoint */
+@media (max-width: 1024px) {
+  .bb-header {
+    /* Tablet: 64px horizontal, 56px vertical */
+    padding: var(--bb-spacing-14) var(--bb-spacing-16);
+  }
+
+  .bb-header__logo-container {
+    /* Tablet: 311px width, 100px height */
+    width: 311px;
+    height: 100px;
+  }
+
+  .bb-header__logo {
+    height: 100px;
+  }
+}
+
+/* Mobile: 390px breakpoint */
+@media (max-width: 768px) {
+  .bb-header {
+    /* Mobile: 32px horizontal, 48px vertical */
+    padding: var(--bb-spacing-12) var(--bb-spacing-8);
+  }
+
+  .bb-header__logo-container {
+    /* Mobile: 232.5px width, 75px height */
+    width: 232.5px;
+    height: 75px;
+  }
+
+  .bb-header__logo {
+    height: 75px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 390px) {
+  .bb-header {
+    padding: var(--bb-spacing-10) var(--bb-spacing-6);
+  }
+
+  .bb-header__logo-container {
+    width: 200px;
+    height: 65px;
+  }
+
+  .bb-header__logo {
+    height: 65px;
+  }
+}
+
+/* ===============================================
+   HOVER EFFECT WITH VIDEO BACKGROUND
+   =============================================== */
+
+.bb-header__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.bb-header--hover .bb-header__video-bg {
+  opacity: 1;
+}
+
+.bb-header--hover {
+  background-color: transparent;
+  overflow: hidden;
+}

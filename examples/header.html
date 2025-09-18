@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Component - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/header.css">
+    <style>
+        /* Demo styles */
+        body {
+            margin: 0;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+        }
+
+        .demo-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #e5e7eb;
+        }
+
+        .demo-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-section">
+        <h2 class="demo-title">Default Header State</h2>
+        <!-- Default Header -->
+        <header class="bb-header" data-component="header" data-state="default">
+            <div class="bb-header__logo-container">
+                <div class="bb-header__logo">
+                    <img
+                        src="../public/logos/horizontal.svg"
+                        alt="Bendy Beth Logo"
+                        class="bb-header__logo-image"
+                    >
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="demo-title">Hover Header State (with Cloud Video Background)</h2>
+        <!-- Hover State Header with Video -->
+        <header class="bb-header bb-header--hover" data-component="header" data-state="hover">
+            <video
+                class="bb-header__video-bg"
+                autoplay
+                muted
+                loop
+                playsinline
+            >
+                <source src="../public/videos/clouds_halfsize.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="bb-header__logo-container">
+                <div class="bb-header__logo">
+                    <img
+                        src="../public/logos/horizontal.svg"
+                        alt="Bendy Beth Logo"
+                        class="bb-header__logo-image"
+                    >
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="demo-title">Interactive Header (Hover to See Effect)</h2>
+        <!-- Interactive Header -->
+        <header class="bb-header bb-header--interactive" id="interactive-header" data-component="header">
+            <video
+                class="bb-header__video-bg"
+                id="clouds-video"
+                muted
+                loop
+                playsinline
+            >
+                <source src="../public/videos/clouds_halfsize.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="bb-header__logo-container">
+                <div class="bb-header__logo">
+                    <img
+                        src="../public/logos/horizontal.svg"
+                        alt="Bendy Beth Logo"
+                        class="bb-header__logo-image"
+                    >
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="demo-title">Responsive Test</h2>
+        <p style="text-align: center; margin-bottom: 1rem;">
+            Resize your browser window to test responsive breakpoints:<br>
+            <strong>Desktop:</strong> 1440px+ (96px padding, 622px logo)<br>
+            <strong>Tablet:</strong> 1024px (64px padding, 311px logo)<br>
+            <strong>Mobile:</strong> 768px (32px padding, 232.5px logo)
+        </p>
+
+        <header class="bb-header" data-component="header">
+            <div class="bb-header__logo-container">
+                <div class="bb-header__logo">
+                    <img
+                        src="../public/logos/horizontal.svg"
+                        alt="Bendy Beth Logo"
+                        class="bb-header__logo-image"
+                    >
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script>
+        // Debug video loading
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach((video, index) => {
+            console.log(`Video ${index + 1} src:`, video.querySelector('source').src);
+
+            video.addEventListener('loadstart', () => {
+                console.log(`Video ${index + 1}: Loading started`);
+            });
+
+            video.addEventListener('canplay', () => {
+                console.log(`Video ${index + 1}: Can play`);
+            });
+
+            video.addEventListener('error', (e) => {
+                console.error(`Video ${index + 1}: Error loading`, e);
+                console.error('Error details:', video.error);
+            });
+
+            video.addEventListener('loadeddata', () => {
+                console.log(`Video ${index + 1}: Data loaded`);
+            });
+        });
+
+        // Interactive hover effect with video control
+        const interactiveHeader = document.getElementById('interactive-header');
+        const cloudsVideo = document.getElementById('clouds-video');
+
+        if (interactiveHeader && cloudsVideo) {
+            interactiveHeader.addEventListener('mouseenter', () => {
+                console.log('Mouse enter - adding hover class and playing video');
+                interactiveHeader.classList.add('bb-header--hover');
+                cloudsVideo.play().then(() => {
+                    console.log('Video play successful');
+                }).catch((error) => {
+                    console.error('Video play failed:', error);
+                });
+            });
+
+            interactiveHeader.addEventListener('mouseleave', () => {
+                console.log('Mouse leave - removing hover class and pausing video');
+                interactiveHeader.classList.remove('bb-header--hover');
+                cloudsVideo.pause();
+                cloudsVideo.currentTime = 0; // Reset video to beginning
+            });
+        } else {
+            console.error('Interactive header or video element not found');
+        }
+
+        // Log current viewport size for responsive testing
+        function logViewportSize() {
+            console.log(`Viewport: ${window.innerWidth}px x ${window.innerHeight}px`);
+        }
+
+        window.addEventListener('resize', logViewportSize);
+        logViewportSize(); // Initial log
+    </script>
+</body>
+</html>

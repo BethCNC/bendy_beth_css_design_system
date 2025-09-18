@@ -12,37 +12,35 @@
   font-size: var(--bb-fluid-typography-fluid-display);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-fontweights-behind-the-nineties-1);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h1 {
   font-size: var(--bb-fluid-typography-fluid-h1);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-fontweights-behind-the-nineties-1);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h2 {
   font-size: var(--bb-fluid-typography-fluid-h2);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-fontweights-behind-the-nineties-0);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h3 {
   font-size: var(--bb-fluid-typography-fluid-h3);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-fontweights-overused-grotesk-4);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h4 {
   font-size: var(--bb-fluid-typography-fluid-h4);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-fontweights-overused-grotesk-3);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* ===============================================
@@ -53,21 +51,21 @@
   font-size: var(--bb-fluid-typography-fluid-body-large);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-fontweights-overused-grotesk-2);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body {
   font-size: var(--bb-fluid-typography-fluid-body);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-fontweights-overused-grotesk-2);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 .bb-text-small {
   font-size: var(--bb-fluid-typography-fluid-small);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-fontweights-overused-grotesk-2);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* ===============================================
@@ -106,18 +104,18 @@
    =============================================== */
 
 .bb-text--underline { text-decoration: underline; }
-.bb-text--no-underline { text-decoration: none; }
+.bb-text-no-underline { text-decoration: none; }
 
 /* ===============================================
    RESPONSIVE TEXT HIDING
    =============================================== */
 
 @media (max-width: 768px) {
-  .bb-text--hide-mobile { display: none; }
+  .bb-text-hide-mobile { display: none; }
 }
 
 @media (min-width: 769px) {
-  .bb-text--hide-desktop { display: none; }
+  .bb-text-hide-desktop { display: none; }
 }
 
 /* ===============================================
@@ -130,14 +128,14 @@
   white-space: nowrap;
 }
 
-.bb-text--truncate-lines {
+.bb-text-truncate-lines {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.bb-text--truncate-2 {
+.bb-text-truncate-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

@@ -33,11 +33,6 @@
   border-color: var(--bb-border-primary-default);
 }
 
-.bb-button--primary:hover:not(:disabled) {
-  background-color: var(--bb-surface-primary-hover);
-  border-color: var(--bb-border-primary-hover);
-}
-
 .bb-button--primary:focus-visible {
   outline: var(--bb-stroke-width-md) solid var(--bb-icon-focus);
   outline-offset: var(--bb-spacing-1);
@@ -50,6 +45,11 @@
   cursor: not-allowed;
 }
 
+.bb-button--primary:hover:not(:disabled) {
+  background-color: var(--bb-surface-primary-hover);
+  border-color: var(--bb-border-primary-hover);
+}
+
 /* ===============================================
    DESTRUCTIVE BUTTON VARIANT
    =============================================== */
@@ -58,11 +58,6 @@
   background-color: var(--bb-surface-error-default);
   color: var(--bb-text-neutral-inverse);
   border-color: var(--bb-border-error-default);
-}
-
-.bb-button--destructive:hover:not(:disabled) {
-  background-color: var(--bb-surface-error-hover);
-  border-color: var(--bb-border-error-hover);
 }
 
 .bb-button--destructive:focus-visible {
@@ -77,6 +72,11 @@
   cursor: not-allowed;
 }
 
+.bb-button--destructive:hover:not(:disabled) {
+  background-color: var(--bb-surface-error-hover);
+  border-color: var(--bb-border-error-hover);
+}
+
 /* ===============================================
    NEUTRAL BUTTON VARIANT
    =============================================== */
@@ -85,11 +85,6 @@
   background-color: var(--bb-surface-neutral-card);
   color: var(--bb-text-neutral-body);
   border-color: var(--bb-border-neutral-default);
-}
-
-.bb-button--neutral:hover:not(:disabled) {
-  background-color: var(--bb-surface-neutral-elevated);
-  border-color: var(--bb-border-neutral-muted);
 }
 
 .bb-button--neutral:focus-visible {
@@ -102,6 +97,11 @@
   color: var(--bb-text-neutral-disabled);
   border-color: var(--bb-border-neutral-disabled);
   cursor: not-allowed;
+}
+
+.bb-button--neutral:hover:not(:disabled) {
+  background-color: var(--bb-surface-neutral-elevated);
+  border-color: var(--bb-border-neutral-muted);
 }
 
 /* ===============================================

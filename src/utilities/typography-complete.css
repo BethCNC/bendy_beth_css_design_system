@@ -13,16 +13,14 @@
   font-size: var(--bb-fluid-typography-fluid-display-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-display-medium {
   font-size: var(--bb-fluid-typography-fluid-display-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: var(--bb-line-height-tight);
 }
 
 /* ===============================================
@@ -33,86 +31,84 @@
   font-size: var(--bb-fluid-typography-fluid-heading-h1-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h1-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h1-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h2-regular {
   font-size: var(--bb-fluid-typography-fluid-heading-h2-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.25;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h2-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h2-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.25;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h3-regular {
   font-size: var(--bb-fluid-typography-fluid-heading-h3-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h3-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h3-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h4-regular {
   font-size: var(--bb-fluid-typography-fluid-heading-h4-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h4-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h4-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h5-regular {
   font-size: var(--bb-fluid-typography-fluid-heading-h5-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-h5-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h5-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-h6-regular {
   font-size: var(--bb-fluid-typography-fluid-heading-h6-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-h6-medium {
   font-size: var(--bb-fluid-typography-fluid-heading-h6-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* ===============================================
@@ -123,105 +119,105 @@
   font-size: var(--bb-fluid-typography-fluid-title-xl-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-xl-medium {
   font-size: var(--bb-fluid-typography-fluid-title-xl-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-xl-semibold {
   font-size: var(--bb-fluid-typography-fluid-title-xl-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-lg-regular {
   font-size: var(--bb-fluid-typography-fluid-title-lg-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-lg-medium {
   font-size: var(--bb-fluid-typography-fluid-title-lg-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-lg-semibold {
   font-size: var(--bb-fluid-typography-fluid-title-lg-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-md-regular {
   font-size: var(--bb-fluid-typography-fluid-title-md-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-md-medium {
   font-size: var(--bb-fluid-typography-fluid-title-md-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-md-semibold {
   font-size: var(--bb-fluid-typography-fluid-title-md-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-sm-regular {
   font-size: var(--bb-fluid-typography-fluid-title-sm-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-sm-medium {
   font-size: var(--bb-fluid-typography-fluid-title-sm-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-sm-semibold {
   font-size: var(--bb-fluid-typography-fluid-title-sm-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-xs-regular {
   font-size: var(--bb-fluid-typography-fluid-title-xs-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-xs-medium {
   font-size: var(--bb-fluid-typography-fluid-title-xs-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-xs-semibold {
   font-size: var(--bb-fluid-typography-fluid-title-xs-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* ===============================================
@@ -232,91 +228,91 @@
   font-size: var(--bb-fluid-typography-fluid-body-lg-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-lg-medium {
   font-size: var(--bb-fluid-typography-fluid-body-lg-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-lg-semibold {
   font-size: var(--bb-fluid-typography-fluid-body-lg-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-lg-bold {
   font-size: var(--bb-fluid-typography-fluid-body-lg-bold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-bold);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-md-regular {
   font-size: var(--bb-fluid-typography-fluid-body-md-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 .bb-text-body-md-medium {
   font-size: var(--bb-fluid-typography-fluid-body-md-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 .bb-text-body-md-semibold {
   font-size: var(--bb-fluid-typography-fluid-body-md-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 .bb-text-body-sm-regular {
   font-size: var(--bb-fluid-typography-fluid-body-sm-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-sm-medium {
   font-size: var(--bb-fluid-typography-fluid-body-sm-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-sm-semibold {
   font-size: var(--bb-fluid-typography-fluid-body-sm-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-xs-regular {
   font-size: var(--bb-fluid-typography-fluid-body-xs-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-xs-medium {
   font-size: var(--bb-fluid-typography-fluid-body-xs-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-xs-semibold {
   font-size: var(--bb-fluid-typography-fluid-body-xs-semibold);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-semibold);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* ===============================================
@@ -345,7 +341,7 @@
    =============================================== */
 
 .bb-text--underline { text-decoration: underline; }
-.bb-text--no-underline { text-decoration: none; }
+.bb-text-no-underline { text-decoration: none; }
 
 /* ===============================================
    SIMPLIFIED ALIASES FOR COMMON USAGE
@@ -356,51 +352,49 @@
   font-size: var(--bb-fluid-typography-fluid-display-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h1 {
   font-size: var(--bb-fluid-typography-fluid-heading-h1-medium);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h2 {
   font-size: var(--bb-fluid-typography-fluid-heading-h2-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.25;
+  line-height: var(--bb-line-height-tight);
 }
 
 .bb-text-h3 {
   font-size: var(--bb-fluid-typography-fluid-heading-h3-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h4 {
   font-size: var(--bb-fluid-typography-fluid-heading-h4-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-h5 {
   font-size: var(--bb-fluid-typography-fluid-heading-h5-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-h6 {
   font-size: var(--bb-fluid-typography-fluid-heading-h6-regular);
   font-family: var(--bb-type-family-behind-the-nineties);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* Most common title styles */
@@ -408,35 +402,35 @@
   font-size: var(--bb-fluid-typography-fluid-title-xl-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.3;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-lg {
   font-size: var(--bb-fluid-typography-fluid-title-lg-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.35;
+  line-height: var(--bb-line-height-snug);
 }
 
 .bb-text-title-md {
   font-size: var(--bb-fluid-typography-fluid-title-md-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-sm {
   font-size: var(--bb-fluid-typography-fluid-title-sm-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.45;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-title-xs {
   font-size: var(--bb-fluid-typography-fluid-title-xs-medium);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-medium);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* Most common body styles */
@@ -444,28 +438,28 @@
   font-size: var(--bb-fluid-typography-fluid-body-lg-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-md {
   font-size: var(--bb-fluid-typography-fluid-body-md-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 .bb-text-body-sm {
   font-size: var(--bb-fluid-typography-fluid-body-sm-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--bb-line-height-normal);
 }
 
 .bb-text-body-xs {
   font-size: var(--bb-fluid-typography-fluid-body-xs-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.4;
+  line-height: var(--bb-line-height-normal);
 }
 
 /* Default body text */
@@ -473,7 +467,7 @@
   font-size: var(--bb-fluid-typography-fluid-body-md-regular);
   font-family: var(--bb-type-family-overused-grotesk);
   font-weight: var(--bb-type-font-weight-regular);
-  line-height: 1.6;
+  line-height: var(--bb-line-height-relaxed);
 }
 
 /* ===============================================
@@ -481,31 +475,31 @@
    =============================================== */
 
 @media (max-width: 768px) {
-  .bb-text--hide-mobile { display: none; }
+  .bb-text-hide-mobile { display: none; }
 }
 
 @media (min-width: 769px) {
-  .bb-text--hide-desktop { display: none; }
+  .bb-text-hide-desktop { display: none; }
 }
 
 /* ===============================================
    TEXT TRUNCATION
    =============================================== */
 
-.bb-text--truncate {
+.bb-text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.bb-text--truncate-lines {
+.bb-text-truncate-lines {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.bb-text--truncate-2 {
+.bb-text-truncate-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

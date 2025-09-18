@@ -5,12 +5,12 @@
    ========================================================= */
 
 /* CRITICAL: Import token layers FIRST (generated, read-only) */
-@import "../build/primitives.css";
-@import "../build/alias.css";
-@import "../build/semantic.css";
-@import "../build/effects.css";
-@import "../build/typography.css";
-@import "../build/components.css";
+@import url("../build/primitives.css");
+@import url("../build/alias.css");
+@import url("../build/semantic.css");
+@import url("../build/effects.css");
+@import url("../build/typography.css");
+@import url("../build/components.css");
 
 /* ===============================================
    MODERN CSS RESET & BASE STYLES
@@ -165,10 +165,10 @@ select:focus-visible {
 
 .bb-sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: var(--bb-spacing-1);
+  height: var(--bb-spacing-1);
   padding: 0;
-  margin: -1px;
+  margin: calc(-1 * var(--bb-spacing-1));
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -220,6 +220,7 @@ select:focus-visible {
   }
 }
 
+
 @keyframes bb-bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -230,6 +231,7 @@ select:focus-visible {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
 
 .bb-animate-spin {
   animation: bb-spin 1s linear infinite;
