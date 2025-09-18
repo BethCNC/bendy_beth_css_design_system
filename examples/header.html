@@ -56,9 +56,12 @@
                 muted
                 loop
                 playsinline
+                preload="auto"
             >
                 <source src="../public/videos/clouds_halfsize.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="../public/videos/clouds.mp4" type="video/mp4">
+                <!-- Fallback image if video fails -->
+                <img src="../public/images/clouds-600px.png" alt="Cloud background" style="width: 100%; height: 100%; object-fit: cover;">
             </video>
             <div class="bb-header__logo-container">
                 <div class="bb-header__logo">
@@ -82,8 +85,10 @@
                 muted
                 loop
                 playsinline
+                preload="metadata"
             >
                 <source src="../public/videos/clouds_halfsize.mp4" type="video/mp4">
+                <source src="../public/videos/clouds.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="bb-header__logo-container">
@@ -121,61 +126,128 @@
     </div>
 
     <script>
-        // Debug video loading
-        const allVideos = document.querySelectorAll('video');
-        allVideos.forEach((video, index) => {
-            console.log(`Video ${index + 1} src:`, video.querySelector('source').src);
+        // Enhanced video debugging and path testing
+        console.log('🎬 Video Debug Information:');
+        console.log('Current URL:', window.location.href);
+        console.log('Base URL:', window.location.origin);
 
-            video.addEventListener('loadstart', () => {
-                console.log(`Video ${index + 1}: Loading started`);
-            });
+        // Test video path accessibility
+        async function testVideoPath(path) {
+            try {
+                const response = await fetch(path, { method: 'HEAD' });
+                console.log(`📁 Path "${path}": ${response.ok ? '✅ Accessible' : '❌ Failed'} (${response.status})`);
+                return response.ok;
+            } catch (error) {
+                console.log(`📁 Path "${path}": ❌ Network Error - ${error.message}`);
+                return false;
+            }
+        }
 
-            video.addEventListener('canplay', () => {
-                console.log(`Video ${index + 1}: Can play`);
-            });
+        // Test all video paths
+        const videoPaths = [
+            '../public/videos/clouds_halfsize.mp4',
+            '../public/videos/clouds.mp4',
+            'public/videos/clouds_halfsize.mp4',
+            '/public/videos/clouds_halfsize.mp4'
+        ];
 
-            video.addEventListener('error', (e) => {
-                console.error(`Video ${index + 1}: Error loading`, e);
-                console.error('Error details:', video.error);
-            });
-
-            video.addEventListener('loadeddata', () => {
-                console.log(`Video ${index + 1}: Data loaded`);
-            });
+        Promise.all(videoPaths.map(testVideoPath)).then(results => {
+            console.log('📊 Path Test Results:', results);
         });
 
-        // Interactive hover effect with video control
+        // Enhanced video event monitoring
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach((video, index) => {
+            const sources = video.querySelectorAll('source');
+            console.log(`🎥 Video ${index + 1} sources:`, Array.from(sources).map(s => s.src));
+
+            // Comprehensive event listeners
+            const events = ['loadstart', 'loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing', 'waiting', 'stalled', 'suspend', 'abort', 'error', 'emptied'];
+
+            events.forEach(eventType => {
+                video.addEventListener(eventType, (e) => {
+                    if (eventType === 'error') {
+                        const error = video.error;
+                        console.error(`🚨 Video ${index + 1} ERROR:`, {
+                            code: error?.code,
+                            message: error?.message,
+                            type: ['MEDIA_ERR_ABORTED', 'MEDIA_ERR_NETWORK', 'MEDIA_ERR_DECODE', 'MEDIA_ERR_SRC_NOT_SUPPORTED'][error?.code - 1] || 'Unknown'
+                        });
+                    } else if (['canplay', 'loadeddata', 'playing'].includes(eventType)) {
+                        console.log(`✅ Video ${index + 1} ${eventType.toUpperCase()}:`, {
+                            duration: video.duration,
+                            videoWidth: video.videoWidth,
+                            videoHeight: video.videoHeight,
+                            readyState: video.readyState
+                        });
+                    } else {
+                        console.log(`📺 Video ${index + 1} ${eventType.toUpperCase()}`);
+                    }
+                });
+            });
+
+            // Force load attempt
+            video.load();
+        });
+
+        // Enhanced interactive hover effect
         const interactiveHeader = document.getElementById('interactive-header');
         const cloudsVideo = document.getElementById('clouds-video');
 
         if (interactiveHeader && cloudsVideo) {
-            interactiveHeader.addEventListener('mouseenter', () => {
-                console.log('Mouse enter - adding hover class and playing video');
+            // Pre-load video
+            cloudsVideo.load();
+
+            interactiveHeader.addEventListener('mouseenter', async () => {
+                console.log('🖱️ Mouse ENTER - Starting video');
                 interactiveHeader.classList.add('bb-header--hover');
-                cloudsVideo.play().then(() => {
-                    console.log('Video play successful');
-                }).catch((error) => {
-                    console.error('Video play failed:', error);
-                });
+
+                try {
+                    // Wait a moment for transition, then play
+                    setTimeout(async () => {
+                        await cloudsVideo.play();
+                        console.log('✅ Video play successful');
+                    }, 100);
+                } catch (error) {
+                    console.error('❌ Video play failed:', error);
+                    // Fallback: try loading and playing again
+                    cloudsVideo.load();
+                    setTimeout(() => cloudsVideo.play().catch(e => console.error('Retry failed:', e)), 500);
+                }
             });
 
             interactiveHeader.addEventListener('mouseleave', () => {
-                console.log('Mouse leave - removing hover class and pausing video');
+                console.log('🖱️ Mouse LEAVE - Stopping video');
                 interactiveHeader.classList.remove('bb-header--hover');
                 cloudsVideo.pause();
-                cloudsVideo.currentTime = 0; // Reset video to beginning
+                cloudsVideo.currentTime = 0;
             });
+
+            // Monitor video readiness
+            setInterval(() => {
+                if (cloudsVideo.readyState >= 3) { // HAVE_FUTURE_DATA
+                    console.log('📊 Video ready state: READY');
+                }
+            }, 5000);
         } else {
-            console.error('Interactive header or video element not found');
+            console.error('❌ Interactive header or video element not found');
         }
 
-        // Log current viewport size for responsive testing
+        // Viewport logging
         function logViewportSize() {
-            console.log(`Viewport: ${window.innerWidth}px x ${window.innerHeight}px`);
+            console.log(`📱 Viewport: ${window.innerWidth}px x ${window.innerHeight}px`);
         }
 
         window.addEventListener('resize', logViewportSize);
-        logViewportSize(); // Initial log
+        logViewportSize();
+
+        // Overall system check
+        setTimeout(() => {
+            console.log('🔍 Final System Check:');
+            console.log('- Videos found:', allVideos.length);
+            console.log('- Interactive elements:', interactiveHeader ? '✅' : '❌');
+            console.log('- Target video element:', cloudsVideo ? '✅' : '❌');
+        }, 2000);
     </script>
 </body>
 </html>
