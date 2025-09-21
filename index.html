@@ -1,12 +1,471 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bendy Bethc Design System</title>
-    <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bendybethc - Creative Solutions & Design</title>
+  <meta name="description" content="Beth Carter - Creative designer and developer specializing in user-centered design, accessibility, and scalable design systems.">
+
+  <!-- Design System Styles -->
+  <link rel="stylesheet" href="src/globals.css">
+  <link rel="stylesheet" href="src/components/header.css">
+  <link rel="stylesheet" href="src/components/nav-item.css">
+  <link rel="stylesheet" href="src/components/nav-bar.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="public/logos/monogram.svg">
+
+  <style>
+    /* Homepage specific styles */
+    body {
+      margin: 0;
+      font-family: var(--bb-type-family-overused-grotesk);
+      background: var(--bb-surface-neutral-page);
+      color: var(--bb-text-neutral-body);
+      line-height: var(--bb-type-line-height-base);
+    }
+
+    /* Layout container */
+    .homepage-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header section */
+    .homepage-header {
+      background: var(--bb-surface-neutral-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Navigation section */
+    .homepage-navigation {
+      background: var(--bb-surface-neutral-page);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 var(--bb-spacing-0-5) var(--bb-spacing-2) var(--bb-surface-neutral-disabled);
+    }
+
+    /* Main content area */
+    .homepage-main {
+      flex: 1;
+      padding: var(--bb-spacing-8) var(--bb-spacing-4);
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Content sections */
+    .content-section {
+      margin-bottom: var(--bb-spacing-12);
+      padding: var(--bb-spacing-8);
+      background: var(--bb-surface-neutral-card);
+      border-radius: var(--bb-radius-lg);
+      box-shadow: 0 var(--bb-spacing-1) var(--bb-spacing-3) var(--bb-surface-neutral-disabled);
+    }
+
+    .content-section h2 {
+      font-size: var(--bb-type-font-size-2xl);
+      font-weight: var(--bb-fontweights-overused-grotesk-4);
+      color: var(--bb-text-neutral-heading);
+      margin-bottom: var(--bb-spacing-4);
+      line-height: var(--bb-type-line-height-heading);
+    }
+
+    .content-section p {
+      font-size: var(--bb-type-font-size-base);
+      color: var(--bb-text-neutral-body);
+      margin-bottom: var(--bb-spacing-4);
+      line-height: var(--bb-type-line-height-relaxed);
+    }
+
+    /* Hero section */
+    .hero-section {
+      text-align: center;
+      background: linear-gradient(135deg, var(--bb-surface-primary-a-30), var(--bb-surface-secondary-a-30));
+      border: none;
+    }
+
+    .hero-title {
+      font-size: var(--bb-type-font-size-4xl);
+      font-weight: var(--bb-fontweights-overused-grotesk-5);
+      color: var(--bb-text-neutral-display);
+      margin-bottom: var(--bb-spacing-6);
+      line-height: var(--bb-type-line-height-tight);
+    }
+
+    .hero-subtitle {
+      font-size: var(--bb-type-font-size-xl);
+      color: var(--bb-text-neutral-title);
+      margin-bottom: var(--bb-spacing-8);
+      line-height: var(--bb-type-line-height-relaxed);
+    }
+
+    /* Feature grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--bb-spacing-6);
+      margin-top: var(--bb-spacing-8);
+    }
+
+    .feature-card {
+      padding: var(--bb-spacing-6);
+      background: var(--bb-surface-neutral-elevated);
+      border-radius: var(--bb-radius-md);
+      border: var(--bb-spacing-0-25) solid var(--bb-surface-neutral-focus);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .feature-card:hover {
+      transform: translateY(calc(var(--bb-spacing-1) * -1));
+      box-shadow: 0 var(--bb-spacing-2) var(--bb-spacing-6) var(--bb-surface-neutral-disabled);
+    }
+
+    .feature-icon {
+      width: var(--bb-spacing-12);
+      height: var(--bb-spacing-12);
+      margin-bottom: var(--bb-spacing-4);
+      color: var(--bb-icon-primary-default);
+    }
+
+    .feature-title {
+      font-size: var(--bb-type-font-size-lg);
+      font-weight: var(--bb-fontweights-overused-grotesk-4);
+      color: var(--bb-text-neutral-heading);
+      margin-bottom: var(--bb-spacing-3);
+    }
+
+    .feature-description {
+      font-size: var(--bb-type-font-size-sm);
+      color: var(--bb-text-neutral-body);
+      line-height: var(--bb-type-line-height-relaxed);
+    }
+
+    /* Footer */
+    .homepage-footer {
+      background: var(--bb-surface-neutral-inverse);
+      color: var(--bb-text-neutral-inverse);
+      padding: var(--bb-spacing-8) var(--bb-spacing-4);
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: var(--bb-spacing-4);
+      right: var(--bb-spacing-4);
+      padding: var(--bb-spacing-2) var(--bb-spacing-3);
+      background: var(--bb-surface-primary-default);
+      color: var(--bb-text-neutral-display);
+      border: none;
+      border-radius: var(--bb-radius-sm);
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: var(--bb-fontweights-overused-grotesk-3);
+      z-index: 1000;
+      box-shadow: 0 var(--bb-spacing-1) var(--bb-spacing-3) var(--bb-surface-neutral-disabled);
+    }
+
+    .theme-toggle:hover {
+      background: var(--bb-surface-primary-hover);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .homepage-main {
+        padding: var(--bb-spacing-4) var(--bb-spacing-2);
+      }
+
+      .content-section {
+        padding: var(--bb-spacing-4);
+        margin-bottom: var(--bb-spacing-6);
+      }
+
+      .hero-title {
+        font-size: var(--bb-type-font-size-2xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--bb-type-font-size-lg);
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--bb-spacing-4);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: var(--bb-type-font-size-xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--bb-type-font-size-base);
+      }
+
+      .theme-toggle {
+        top: var(--bb-spacing-2);
+        right: var(--bb-spacing-2);
+        padding: var(--bb-spacing-1) var(--bb-spacing-2);
+        font-size: var(--bb-type-font-size-sm);
+      }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .feature-card {
+        transition: none;
+      }
+
+      .theme-toggle {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, Let's Learn CSS</h1>
-</body>    
+  <div class="homepage-container">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <i data-lucide="moon" class="theme-icon"></i>
+    </button>
+
+    <!-- Header Section -->
+    <section class="homepage-header">
+      <header class="bb-header" data-component="header" data-state="default">
+        <video
+          class="bb-header__video-bg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="public/videos/clouds.mp4" type="video/mp4">
+        </video>
+        <div class="bb-header__logo-container">
+          <div class="bb-header__logo">
+            <img
+              src="public/logos/horizontal.svg"
+              alt="Bendy Beth Logo"
+              class="bb-header__logo-image"
+            >
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Navigation Section -->
+    <section class="homepage-navigation">
+      <nav class="bb-nav-bar" role="navigation" aria-label="Main navigation">
+        <ul class="bb-nav-bar-items">
+          <li><a href="#" class="bb-nav-item bb-nav-item--md bb-nav-item--selected" aria-current="page">
+            <span class="bb-nav-item-text">Home</span>
+          </a></li>
+          <li><a href="#about" class="bb-nav-item bb-nav-item--md">
+            <span class="bb-nav-item-text">About Me</span>
+          </a></li>
+          <li><a href="#blog" class="bb-nav-item bb-nav-item--md">
+            <span class="bb-nav-item-text">Blog</span>
+          </a></li>
+          <li><a href="#resources" class="bb-nav-item bb-nav-item--md">
+            <span class="bb-nav-item-text">Resources</span>
+          </a></li>
+          <li><a href="#contact" class="bb-nav-item bb-nav-item--md">
+            <span class="bb-nav-item-text">Contact Me</span>
+          </a></li>
+          <li><a href="#links" class="bb-nav-item bb-nav-item--md">
+            <span class="bb-nav-item-text">Links</span>
+          </a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Main Content -->
+    <main class="homepage-main" role="main">
+      <!-- Hero Section -->
+      <section class="content-section hero-section">
+        <h1 class="hero-title">Welcome to bendybethc</h1>
+        <p class="hero-subtitle">
+          Creative solutions, thoughtful design, and innovative development
+        </p>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>
+          I'm Beth, a passionate designer and developer who loves creating beautiful,
+          functional experiences that make a difference. With expertise in both
+          design and development, I bridge the gap between creativity and technology.
+        </p>
+        <p>
+          My work focuses on user-centered design, accessibility, and creating
+          systems that scale. I believe in the power of good design to solve
+          complex problems and make technology more human.
+        </p>
+      </section>
+
+      <!-- Features/Services Section -->
+      <section class="content-section">
+        <h2>What I Do</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i data-lucide="palette" class="feature-icon"></i>
+            <h3 class="feature-title">Design Systems</h3>
+            <p class="feature-description">
+              Creating cohesive, scalable design systems that ensure consistency
+              across all touchpoints and empower teams to build better products.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i data-lucide="code" class="feature-icon"></i>
+            <h3 class="feature-title">Frontend Development</h3>
+            <p class="feature-description">
+              Building responsive, accessible, and performant web applications
+              using modern technologies and best practices.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i data-lucide="users" class="feature-icon"></i>
+            <h3 class="feature-title">User Experience</h3>
+            <p class="feature-description">
+              Researching, designing, and testing user experiences that are
+              intuitive, inclusive, and delightful to use.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Preview Section -->
+      <section id="blog" class="content-section">
+        <h2>Latest from the Blog</h2>
+        <p>
+          I write about design, development, and the intersection of creativity
+          and technology. Check out my latest thoughts on building better digital experiences.
+        </p>
+        <p>
+          <strong>Coming soon:</strong> Blog posts about design systems, accessibility
+          best practices, and modern web development techniques.
+        </p>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="content-section">
+        <h2>Let's Connect</h2>
+        <p>
+          Interested in working together or just want to say hello? I'd love to
+          hear from you. Let's create something amazing together.
+        </p>
+        <p>
+          Drop me a line and let's start a conversation about your next project.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="homepage-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2024 bendybethc. Built with love and semantic tokens.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+
+      // Update theme toggle icon
+      const icon = document.querySelector('.theme-icon');
+      if (icon) {
+        icon.setAttribute('data-lucide', newTheme === 'light' ? 'moon' : 'sun');
+        lucide.createIcons();
+      }
+    }
+
+    // Initialize icons
+    document.addEventListener('DOMContentLoaded', function() {
+      lucide.createIcons();
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Update active navigation item based on scroll position
+    function updateActiveNavItem() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.bb-nav-item');
+
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('bb-nav-item--selected');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('bb-nav-item--selected');
+        } else if (current === '' && link.getAttribute('href') === '#') {
+          link.classList.add('bb-nav-item--selected');
+        }
+      });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', updateActiveNavItem);
+
+    // Header hover effect for video
+    function initHeaderHoverEffect() {
+      const header = document.querySelector('.bb-header');
+      const video = document.querySelector('.bb-header__video-bg');
+
+      if (!header || !video) return;
+
+      header.addEventListener('mouseenter', () => {
+        header.classList.add('bb-header--hover');
+        video.play().catch(e => console.log('Video play failed:', e));
+      });
+
+      header.addEventListener('mouseleave', () => {
+        header.classList.remove('bb-header--hover');
+        video.pause();
+        video.currentTime = 0; // Reset video to beginning
+      });
+    }
+
+    // Initialize header hover effect
+    initHeaderHoverEffect();
+  </script>
+</body>
 </html>

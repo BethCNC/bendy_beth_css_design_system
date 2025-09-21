@@ -13,6 +13,42 @@
 @import url("../build/components.css");
 
 /* ===============================================
+   FONT LOADING
+   =============================================== */
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../public/fonts/OverusedGrotesk-Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../public/fonts/OverusedGrotesk-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../public/fonts/OverusedGrotesk-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('../public/fonts/OverusedGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===============================================
    MODERN CSS RESET & BASE STYLES
    =============================================== */
 
@@ -215,6 +251,7 @@ select:focus-visible {
   0%, 100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -226,6 +263,7 @@ select:focus-visible {
     transform: translateY(-25%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);

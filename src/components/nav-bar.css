@@ -1,0 +1,157 @@
+/* src/components/nav-bar.css */
+
+/* ===============================================
+   NAVIGATION BAR COMPONENT — SEMANTIC TOKENS ONLY
+   Responsive navigation bar with wrapping items
+   ===============================================
+
+   NAV BAR HTML STRUCTURE (based on Figma design):
+   <nav class="bb-nav-bar">
+     <ul class="bb-nav-bar-items">
+       <li><a class="bb-nav-item" href="/home">Home</a></li>
+       <li><a class="bb-nav-item" href="/about">About Me</a></li>
+       <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+       <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+       <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+       <li><a class="bb-nav-item" href="/links">Links</a></li>
+     </ul>
+   </nav>
+
+   USAGE EXAMPLES:
+
+   Basic Responsive Nav Bar:
+   <nav class="bb-nav-bar">
+     <div class="bb-nav-bar-brand">
+       <span class="bb-nav-bar-title">bendybethc</span>
+     </div>
+     <ul class="bb-nav-bar-items">
+       <li><a class="bb-nav-item" href="/">Home</a></li>
+       <li><a class="bb-nav-item bb-nav-item--active" href="/about">About Me</a></li>
+       <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+     </ul>
+   </nav>
+
+   =============================================== */
+
+/* ===============================================
+   NAV BAR BASE
+   =============================================== */
+
+.bb-nav-bar {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: 0;
+  background: var(--bb-surface-neutral-page);
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  border-top: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);
+  border-bottom: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);
+}
+
+
+/* ===============================================
+   NAV BAR ITEMS SECTION
+   =============================================== */
+
+.bb-nav-bar-items {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  gap: 0;
+}
+
+.bb-nav-bar-items li {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+/* ===============================================
+   NAV BAR RESPONSIVE BEHAVIOR
+   =============================================== */
+
+/* Enable wrapping for mobile */
+.bb-nav-bar-items {
+  flex-wrap: wrap;
+}
+
+/* Default: Equal width items that wrap naturally */
+.bb-nav-bar-items li {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Mobile navigation - single row with borders */
+@media (max-width: 768px) {
+  .bb-nav-bar-items li {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* Ensure all items except last have right border */
+  .bb-nav-bar-items li:not(:last-child) .bb-nav-item {
+    border-right: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);
+  }
+
+  .bb-nav-bar-items li:last-child .bb-nav-item {
+    border-right: none;
+  }
+}
+
+/* Remove right border from last item only */
+.bb-nav-bar-items li:last-child .bb-nav-item {
+  border-right: none;
+}
+
+
+/* ===============================================
+   NAV BAR VARIANTS
+   =============================================== */
+
+/* Elevated Nav Bar */
+.bb-nav-bar--elevated {
+  background: var(--bb-surface-neutral-elevated);
+  box-shadow: 0 var(--bb-spacing-1) var(--bb-spacing-6) var(--bb-surface-neutral-shadow);
+  border: none;
+}
+
+/* Compact Nav Bar */
+.bb-nav-bar--compact {
+  padding: var(--bb-spacing-4);
+  gap: var(--bb-spacing-3);
+}
+
+.bb-nav-bar--compact .bb-nav-bar-title {
+  font-size: var(--bb-type-font-size-xl);
+  line-height: var(--bb-type-line-height-xl);
+}
+
+.bb-nav-bar--compact .bb-nav-bar-items {
+  gap: var(--bb-spacing-0-25);
+}
+
+/* ===============================================
+   ACCESSIBILITY
+   =============================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bb-nav-bar {
+    border-width: var(--bb-stroke-width-md);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .bb-nav-bar * {
+    transition: none;
+  }
+}
+
