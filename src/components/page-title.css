@@ -1,0 +1,101 @@
+/* src/components/page-title.css */
+
+/* ===============================================
+   PAGE TITLE COMPONENT — SEMANTIC TOKENS ONLY
+   Exact Figma specifications: 96px x-padding, 48px y-padding
+   ===============================================
+
+   PAGE TITLE HTML STRUCTURE:
+   <div class="bb-page-title">
+     <div class="bb-page-title-text">
+       <p>Hello Bendy Friends!</p>
+     </div>
+   </div>
+
+   =============================================== */
+
+.bb-page-title {
+  background-color: #252626 !important;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 48px 96px !important;
+  position: relative;
+  width: 100% !important;
+  height: auto;
+}
+
+.bb-page-title-text {
+  flex: 1;
+  font-family: "Behind The Nineties", sans-serif !important;
+  font-size: 128px !important;
+  color: #f9fafa !important;
+  font-weight: 400 !important;
+  position: relative;
+  min-width: 0;
+}
+
+.bb-page-title-text p {
+  line-height: 136px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* ===============================================
+   PAGE TITLE RESPONSIVE DESIGN
+   =============================================== */
+
+/* Keep desktop size for now to debug */
+
+/* ===============================================
+   PAGE TITLE VARIANTS
+   =============================================== */
+
+/* Light variant for light backgrounds */
+.bb-page-title--light {
+  background: var(--bb-surface-neutral-page);
+}
+
+.bb-page-title--light .bb-page-title-text {
+  color: var(--bb-text-neutral-display);
+}
+
+/* Primary variant */
+.bb-page-title--primary {
+  background: var(--bb-surface-primary-default);
+}
+
+.bb-page-title--primary .bb-page-title-text {
+  color: var(--bb-text-neutral-inverse);
+}
+
+/* Secondary variant */
+.bb-page-title--secondary {
+  background: var(--bb-surface-secondary-default);
+}
+
+.bb-page-title--secondary .bb-page-title-text {
+  color: var(--bb-text-neutral-display);
+}
+
+/* ===============================================
+   ACCESSIBILITY
+   =============================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bb-page-title {
+    border: var(--bb-stroke-width-sm) solid var(--bb-border-neutral-default);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .bb-page-title * {
+    transition: none;
+  }
+}

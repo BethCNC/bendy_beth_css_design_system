@@ -33,6 +33,14 @@
 }
 
 @font-face {
+  font-family: 'Behind The Nineties';
+  src: url('../public/fonts/Behind-The-Nineties-Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Overused Grotesk';
   src: url('../public/fonts/OverusedGrotesk-SemiBold.otf') format('opentype');
   font-weight: 600;
@@ -282,3 +290,9 @@ select:focus-visible {
 .bb-animate-bounce {
   animation: bb-bounce 1s infinite;
 }
+
+/* ===============================================
+   COMPONENT IMPORTS
+   =============================================== */
+
+@import url('./components/page-title.css');

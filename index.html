@@ -115,6 +115,41 @@
       margin-top: var(--bb-spacing-8);
     }
 
+    /* Page Title Styles - Using ONLY semantic tokens */
+    .bb-page-title {
+      background-color: var(--bb-surface-neutral-inverse) !important;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      padding: var(--bb-spacing-6) var(--bb-spacing-12) !important;
+      position: relative;
+      width: 100% !important;
+      height: auto;
+    }
+
+    .bb-page-title-text {
+      flex: 1;
+      font-family: var(--bb-font-display) !important;
+      font-size: var(--bb-type-display) !important;
+      color: var(--bb-text-neutral-inverse) !important;
+      font-weight: var(--bb-font-weight-regular) !important;
+      position: relative;
+      min-width: 0;
+    }
+
+    .bb-page-title-text p {
+      line-height: var(--bb-line-height-tight) !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      color: inherit !important;
+      font-weight: inherit !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
     .feature-card {
       padding: var(--bb-spacing-6);
       background: var(--bb-surface-neutral-elevated);
@@ -206,6 +241,14 @@
         grid-template-columns: 1fr;
         gap: var(--bb-spacing-4);
       }
+
+      .bb-page-title {
+        padding: var(--bb-spacing-4) var(--bb-spacing-8) !important;
+      }
+
+      .bb-page-title-text {
+        font-size: var(--bb-type-h1) !important;
+      }
     }
 
     @media (max-width: 480px) {
@@ -222,6 +265,14 @@
         right: var(--bb-spacing-2);
         padding: var(--bb-spacing-1) var(--bb-spacing-2);
         font-size: var(--bb-type-font-size-sm);
+      }
+
+      .bb-page-title {
+        padding: var(--bb-spacing-3) var(--bb-spacing-4) !important;
+      }
+
+      .bb-page-title-text {
+        font-size: var(--bb-type-h2) !important;
       }
     }
 
@@ -295,94 +346,14 @@
       </nav>
     </section>
 
-    <!-- Main Content -->
-    <main class="homepage-main" role="main">
-      <!-- Hero Section -->
-      <section class="content-section hero-section">
-        <h1 class="hero-title">Welcome to bendybethc</h1>
-        <p class="hero-subtitle">
-          Creative solutions, thoughtful design, and innovative development
-        </p>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="content-section">
-        <h2>About Me</h2>
-        <p>
-          I'm Beth, a passionate designer and developer who loves creating beautiful,
-          functional experiences that make a difference. With expertise in both
-          design and development, I bridge the gap between creativity and technology.
-        </p>
-        <p>
-          My work focuses on user-centered design, accessibility, and creating
-          systems that scale. I believe in the power of good design to solve
-          complex problems and make technology more human.
-        </p>
-      </section>
-
-      <!-- Features/Services Section -->
-      <section class="content-section">
-        <h2>What I Do</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <i data-lucide="palette" class="feature-icon"></i>
-            <h3 class="feature-title">Design Systems</h3>
-            <p class="feature-description">
-              Creating cohesive, scalable design systems that ensure consistency
-              across all touchpoints and empower teams to build better products.
-            </p>
-          </div>
-          <div class="feature-card">
-            <i data-lucide="code" class="feature-icon"></i>
-            <h3 class="feature-title">Frontend Development</h3>
-            <p class="feature-description">
-              Building responsive, accessible, and performant web applications
-              using modern technologies and best practices.
-            </p>
-          </div>
-          <div class="feature-card">
-            <i data-lucide="users" class="feature-icon"></i>
-            <h3 class="feature-title">User Experience</h3>
-            <p class="feature-description">
-              Researching, designing, and testing user experiences that are
-              intuitive, inclusive, and delightful to use.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Blog Preview Section -->
-      <section id="blog" class="content-section">
-        <h2>Latest from the Blog</h2>
-        <p>
-          I write about design, development, and the intersection of creativity
-          and technology. Check out my latest thoughts on building better digital experiences.
-        </p>
-        <p>
-          <strong>Coming soon:</strong> Blog posts about design systems, accessibility
-          best practices, and modern web development techniques.
-        </p>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="content-section">
-        <h2>Let's Connect</h2>
-        <p>
-          Interested in working together or just want to say hello? I'd love to
-          hear from you. Let's create something amazing together.
-        </p>
-        <p>
-          Drop me a line and let's start a conversation about your next project.
-        </p>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="homepage-footer" role="contentinfo">
-      <div class="footer-content">
-        <p>&copy; 2024 bendybethc. Built with love and semantic tokens.</p>
+    <!-- Page Title Section -->
+    <div class="bb-page-title">
+      <div class="bb-page-title-text">
+        <p>Hello Bendy Friends!</p>
       </div>
-    </footer>
+    </div>
+
+
   </div>
 
   <script>
