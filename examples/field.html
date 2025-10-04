@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Component - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/label.css">
+    <link rel="stylesheet" href="../src/components/field.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-card);
+            border-radius: var(--bb-radius-md);
+        }
+
+        .demo-title {
+            font-size: var(--bb-type-font-size-lg);
+            font-weight: var(--bb-fontweights-overused-grotesk-5);
+            margin-bottom: 1.5rem;
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-item {
+            padding: 1.5rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-sm);
+            border: 1px solid var(--bb-border-neutral-default);
+        }
+
+        .demo-label {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-bottom: 1rem;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--bb-spacing-2) var(--bb-spacing-3);
+            background: var(--bb-surface-primary-default);
+            color: var(--bb-text-neutral-inverse);
+            border: none;
+            border-radius: var(--bb-radius-sm);
+            cursor: pointer;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .form-demo {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-md);
+            border: 1px solid var(--bb-border-neutral-default);
+        }
+
+        .code-example {
+            background: var(--bb-surface-neutral-inverse);
+            color: var(--bb-text-neutral-inverse);
+            padding: 1rem;
+            border-radius: var(--bb-radius-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: var(--bb-type-font-size-xs);
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div style="padding: 2rem;">
+        <h1 style="text-align: center; margin-bottom: 3rem; font-size: var(--bb-type-font-size-xl); font-weight: var(--bb-fontweights-overused-grotesk-6);">
+            Field Component Examples
+        </h1>
+
+        <!-- Basic Field Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Basic Fields</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Text Input</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Full Name</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Email Input</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" placeholder="Enter your email">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Password Input</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Password</div>
+                        </label>
+                        <input class="bb-field-input" type="password" placeholder="Enter password">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Textarea</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Message</div>
+                        </label>
+                        <textarea class="bb-field-input bb-field-textarea" placeholder="Enter your message"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Required and Optional Fields -->
+        <div class="demo-section">
+            <h2 class="demo-title">Required & Optional Fields</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Required Field</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Optional Field</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Company Name</div>
+                            <div class="bb-label-optional">(optional)</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Enter company name">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Field with Help Tooltip</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Username</div>
+                            <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Enter username">
+                        <div class="bb-field-help">Must be 3-20 characters, letters and numbers only</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Complete Field (Required + Help)</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Password</div>
+                            <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                        </label>
+                        <input class="bb-field-input" type="password" placeholder="Create a strong password">
+                        <div class="bb-field-help">Must be at least 8 characters with uppercase, lowercase, and numbers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Field States -->
+        <div class="demo-section">
+            <h2 class="demo-title">Field States</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Default State</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" placeholder="Enter your email">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Error State</div>
+                    <div class="bb-field bb-field--error">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" value="invalid-email" placeholder="Enter your email">
+                        <div class="bb-field-error">Please enter a valid email address</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Success State</div>
+                    <div class="bb-field bb-field--success">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" value="user@example.com" placeholder="Enter your email">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Warning State</div>
+                    <div class="bb-field bb-field--warning">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Password Strength</div>
+                        </label>
+                        <input class="bb-field-input" type="password" value="weak123" placeholder="Enter password">
+                        <div class="bb-field-help">Password strength: Weak. Consider adding uppercase letters and symbols</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Disabled State</div>
+                    <div class="bb-field bb-field--disabled">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Account ID</div>
+                        </label>
+                        <input class="bb-field-input" type="text" value="ACC-12345" disabled>
+                        <div class="bb-field-help">This field cannot be modified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Field Sizes -->
+        <div class="demo-section">
+            <h2 class="demo-title">Field Sizes</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Small Size</div>
+                    <div class="bb-field bb-field--sm">
+                        <label class="bb-label bb-label--sm">
+                            <div class="bb-label-text">Small Field</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Small input">
+                        <div class="bb-field-help">Small helper text</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Medium Size (Default)</div>
+                    <div class="bb-field bb-field--md">
+                        <label class="bb-label bb-label--md">
+                            <div class="bb-label-text">Medium Field</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Medium input">
+                        <div class="bb-field-help">Medium helper text</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Large Size</div>
+                    <div class="bb-field bb-field--lg">
+                        <label class="bb-label bb-label--lg">
+                            <div class="bb-label-text">Large Field</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Large input">
+                        <div class="bb-field-help">Large helper text</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fields with Icons -->
+        <div class="demo-section">
+            <h2 class="demo-title">Fields with Icons</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Left Icon</div>
+                    <div class="bb-field bb-field--with-icon bb-field--with-icon-left">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Search</div>
+                        </label>
+                        <i data-lucide="search" class="bb-field-icon bb-field-icon--left"></i>
+                        <input class="bb-field-input" type="text" placeholder="Search...">
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Right Icon</div>
+                    <div class="bb-field bb-field--with-icon bb-field--with-icon-right">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Email</div>
+                        </label>
+                        <input class="bb-field-input" type="email" placeholder="Enter email">
+                        <i data-lucide="mail" class="bb-field-icon bb-field-icon--right"></i>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Password with Toggle</div>
+                    <div class="bb-field bb-field--with-icon bb-field--with-icon-right">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Password</div>
+                        </label>
+                        <input class="bb-field-input" type="password" placeholder="Enter password">
+                        <i data-lucide="eye" class="bb-field-icon bb-field-icon--right" style="cursor: pointer;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Fields -->
+        <div class="demo-section">
+            <h2 class="demo-title">Select Fields</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Basic Select</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Country</div>
+                        </label>
+                        <div class="bb-field-select">
+                            <select class="bb-field-input">
+                                <option value="">Select a country</option>
+                                <option value="us">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="ca">Canada</option>
+                                <option value="au">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Required Select</div>
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Department</div>
+                        </label>
+                        <div class="bb-field-select">
+                            <select class="bb-field-input" required>
+                                <option value="">Choose department</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="design">Design</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="sales">Sales</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkbox and Radio Fields -->
+        <div class="demo-section">
+            <h2 class="demo-title">Checkbox & Radio Fields</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Checkbox</div>
+                    <div class="bb-field bb-field--checkbox">
+                        <input class="bb-field-input" type="checkbox" id="agree">
+                        <label class="bb-label" for="agree">
+                            <div class="bb-label-text">I agree to the terms and conditions</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Radio Group</div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bb-field bb-field--radio">
+                            <input class="bb-field-input" type="radio" id="plan1" name="plan" value="basic">
+                            <label class="bb-label" for="plan1">
+                                <div class="bb-label-text">Basic Plan</div>
+                            </label>
+                        </div>
+                        <div class="bb-field bb-field--radio">
+                            <input class="bb-field-input" type="radio" id="plan2" name="plan" value="pro">
+                            <label class="bb-label" for="plan2">
+                                <div class="bb-label-text">Pro Plan</div>
+                            </label>
+                        </div>
+                        <div class="bb-field bb-field--radio">
+                            <input class="bb-field-input" type="radio" id="plan3" name="plan" value="enterprise">
+                            <label class="bb-label" for="plan3">
+                                <div class="bb-label-text">Enterprise Plan</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete Form Example -->
+        <div class="demo-section">
+            <h2 class="demo-title">Complete Form Example</h2>
+            <div class="form-demo">
+                <h3 style="margin-top: 0; margin-bottom: 2rem;">User Registration Form</h3>
+
+                <form class="bb-field-group">
+                    <div class="bb-field-group--inline">
+                        <div class="bb-field">
+                            <label class="bb-label">
+                                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                                <div class="bb-label-text">First Name</div>
+                            </label>
+                            <input class="bb-field-input" type="text" placeholder="Enter first name" required>
+                        </div>
+
+                        <div class="bb-field">
+                            <label class="bb-label">
+                                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                                <div class="bb-label-text">Last Name</div>
+                            </label>
+                            <input class="bb-field-input" type="text" placeholder="Enter last name" required>
+                        </div>
+                    </div>
+
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Email Address</div>
+                        </label>
+                        <input class="bb-field-input" type="email" placeholder="Enter your email address" required>
+                        <div class="bb-field-help">We'll never share your email with anyone else</div>
+                    </div>
+
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">Password</div>
+                            <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                        </label>
+                        <input class="bb-field-input" type="password" placeholder="Create a strong password" required>
+                        <div class="bb-field-help">Must be at least 8 characters with uppercase, lowercase, and numbers</div>
+                    </div>
+
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Company</div>
+                            <div class="bb-label-optional">(optional)</div>
+                        </label>
+                        <input class="bb-field-input" type="text" placeholder="Enter company name">
+                    </div>
+
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Country</div>
+                        </label>
+                        <div class="bb-field-select">
+                            <select class="bb-field-input">
+                                <option value="">Select your country</option>
+                                <option value="us">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="ca">Canada</option>
+                                <option value="au">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bb-field">
+                        <label class="bb-label">
+                            <div class="bb-label-text">Bio</div>
+                            <div class="bb-label-optional">(optional)</div>
+                        </label>
+                        <textarea class="bb-field-input bb-field-textarea" placeholder="Tell us about yourself"></textarea>
+                        <div class="bb-field-help">Maximum 500 characters</div>
+                    </div>
+
+                    <div class="bb-field bb-field--checkbox">
+                        <input class="bb-field-input" type="checkbox" id="newsletter" required>
+                        <label class="bb-label" for="newsletter">
+                            <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                            <div class="bb-label-text">I agree to the terms and conditions</div>
+                        </label>
+                    </div>
+
+                    <div class="bb-field bb-field--checkbox">
+                        <input class="bb-field-input" type="checkbox" id="marketing">
+                        <label class="bb-label" for="marketing">
+                            <div class="bb-label-text">Send me marketing emails</div>
+                            <div class="bb-label-optional">(optional)</div>
+                        </label>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" style="
+                            background: var(--bb-surface-primary-default);
+                            color: var(--bb-text-neutral-inverse);
+                            padding: var(--bb-spacing-3) var(--bb-spacing-6);
+                            border: none;
+                            border-radius: var(--bb-radius-sm);
+                            font-size: var(--bb-type-font-size-sm);
+                            font-weight: var(--bb-fontweights-overused-grotesk-4);
+                            cursor: pointer;
+                        ">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Usage Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Code Examples</h2>
+
+            <h3>Basic Field</h3>
+            <div class="code-example">
+&lt;div class="bb-field"&gt;
+  &lt;label class="bb-label"&gt;
+    &lt;div class="bb-label-text"&gt;Email Address&lt;/div&gt;
+  &lt;/label&gt;
+  &lt;input class="bb-field-input" type="email" placeholder="Enter email"&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Required Field with Help</h3>
+            <div class="code-example">
+&lt;div class="bb-field"&gt;
+  &lt;label class="bb-label"&gt;
+    &lt;i data-lucide="asterisk" class="bb-label-asterisk"&gt;&lt;/i&gt;
+    &lt;div class="bb-label-text"&gt;Password&lt;/div&gt;
+    &lt;i data-lucide="help-circle" class="bb-label-tooltip"&gt;&lt;/i&gt;
+  &lt;/label&gt;
+  &lt;input class="bb-field-input" type="password" placeholder="Enter password"&gt;
+  &lt;div class="bb-field-help"&gt;Must be at least 8 characters&lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Error State Field</h3>
+            <div class="code-example">
+&lt;div class="bb-field bb-field--error"&gt;
+  &lt;label class="bb-label"&gt;
+    &lt;i data-lucide="asterisk" class="bb-label-asterisk"&gt;&lt;/i&gt;
+    &lt;div class="bb-label-text"&gt;Email&lt;/div&gt;
+  &lt;/label&gt;
+  &lt;input class="bb-field-input" type="email" value="invalid-email"&gt;
+  &lt;div class="bb-field-error"&gt;Please enter a valid email&lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = newTheme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+        }
+
+        // Add form validation examples
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submitted! (This is just a demo)');
+                });
+            }
+
+            // Password visibility toggle
+            const passwordToggles = document.querySelectorAll('.bb-field-icon--right[data-lucide="eye"]');
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input[type="password"], input[type="text"]');
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        this.setAttribute('data-lucide', 'eye-off');
+                    } else {
+                        input.type = 'password';
+                        this.setAttribute('data-lucide', 'eye');
+                    }
+                    lucide.createIcons();
+                });
+            });
+        });
+
+        console.log('🎯 Field Component Examples Loaded');
+        console.log('Total fields found:', document.querySelectorAll('.bb-field').length);
+    </script>
+</body>
+</html>

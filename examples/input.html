@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Component - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/input.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-card);
+            border-radius: var(--bb-radius-md);
+        }
+
+        .demo-title {
+            font-size: var(--bb-type-font-size-lg);
+            font-weight: var(--bb-fontweights-overused-grotesk-5);
+            margin-bottom: 1.5rem;
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-item {
+            padding: 1.5rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-sm);
+            border: 1px solid var(--bb-border-neutral-default);
+        }
+
+        .demo-label {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-bottom: 1rem;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--bb-spacing-2) var(--bb-spacing-3);
+            background: var(--bb-surface-primary-default);
+            color: var(--bb-text-neutral-inverse);
+            border: none;
+            border-radius: var(--bb-radius-sm);
+            cursor: pointer;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+            z-index: 1000;
+        }
+
+        .form-demo {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-md);
+            border: 1px solid var(--bb-border-neutral-default);
+        }
+
+        .code-example {
+            background: var(--bb-surface-neutral-inverse);
+            color: var(--bb-text-neutral-inverse);
+            padding: 1rem;
+            border-radius: var(--bb-radius-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: var(--bb-type-font-size-xs);
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-card);
+            border-radius: var(--bb-radius-md);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div style="padding: 2rem;">
+        <div class="intro-section">
+            <h1 style="margin-bottom: 1rem; font-size: var(--bb-type-font-size-xl); font-weight: var(--bb-fontweights-overused-grotesk-6);">
+                Input Component - Unified Label & Field
+            </h1>
+            <p style="font-size: var(--bb-type-font-size-md); color: var(--bb-text-neutral-disabled); max-width: 600px; margin: 0 auto;">
+                The bb-input component combines the label and field into a single, cohesive component that follows Figma specifications.
+            </p>
+        </div>
+
+        <!-- Basic Input Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Basic Inputs</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Text Input</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Full Name</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Enter your full name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Email Input</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Password Input</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Password</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="password" placeholder="Enter password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Textarea</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Message</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <textarea class="bb-input-control bb-input-textarea" placeholder="Enter your message"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Required and Optional Inputs -->
+        <div class="demo-section">
+            <h2 class="demo-title">Required & Optional Inputs</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Required Input</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Optional Input</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Company Name</div>
+                            <div class="bb-input-label-optional">(optional)</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Enter company name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Input with Help Tooltip</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Username</div>
+                            <i data-lucide="help-circle" class="bb-input-label-tooltip"></i>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Enter username">
+                        </div>
+                        <div class="bb-input-help">Must be 3-20 characters, letters and numbers only</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Complete Input (Required + Help)</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Password</div>
+                            <i data-lucide="help-circle" class="bb-input-label-tooltip"></i>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="password" placeholder="Create a strong password">
+                        </div>
+                        <div class="bb-input-help">Must be at least 8 characters with uppercase, lowercase, and numbers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input States -->
+        <div class="demo-section">
+            <h2 class="demo-title">Input States</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Default State</div>
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Error State</div>
+                    <div class="bb-input bb-input--error">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" value="invalid-email" placeholder="Enter your email">
+                        </div>
+                        <div class="bb-input-error">Please enter a valid email address</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Success State</div>
+                    <div class="bb-input bb-input--success">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" value="user@example.com" placeholder="Enter your email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Warning State</div>
+                    <div class="bb-input bb-input--warning">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Password Strength</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="password" value="weak123" placeholder="Enter password">
+                        </div>
+                        <div class="bb-input-help">Password strength: Weak. Consider adding uppercase letters and symbols</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Disabled State</div>
+                    <div class="bb-input bb-input--disabled">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Account ID</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" value="ACC-12345" disabled>
+                        </div>
+                        <div class="bb-input-help">This field cannot be modified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Sizes -->
+        <div class="demo-section">
+            <h2 class="demo-title">Input Sizes</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Small Size</div>
+                    <div class="bb-input bb-input--sm">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Small Input</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Small input">
+                        </div>
+                        <div class="bb-input-help">Small helper text</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Medium Size (Default)</div>
+                    <div class="bb-input bb-input--md">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Medium Input</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Medium input">
+                        </div>
+                        <div class="bb-input-help">Medium helper text</div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Large Size</div>
+                    <div class="bb-input bb-input--lg">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Large Input</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Large input">
+                        </div>
+                        <div class="bb-input-help">Large helper text</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inputs with Icons -->
+        <div class="demo-section">
+            <h2 class="demo-title">Inputs with Icons</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Left Icon</div>
+                    <div class="bb-input bb-input--with-icon-left">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Search</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <i data-lucide="search" class="bb-input-icon bb-input-icon--left"></i>
+                            <input class="bb-input-control" type="text" placeholder="Search...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Right Icon</div>
+                    <div class="bb-input bb-input--with-icon-right">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Email</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" placeholder="Enter email">
+                            <i data-lucide="mail" class="bb-input-icon bb-input-icon--right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Password with Toggle</div>
+                    <div class="bb-input bb-input--with-icon-right">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Password</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="password" placeholder="Enter password">
+                            <i data-lucide="eye" class="bb-input-icon bb-input-icon--right" style="cursor: pointer; pointer-events: auto;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Select Inputs -->
+        <div class="demo-section">
+            <h2 class="demo-title">Select Inputs</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Basic Select</div>
+                    <div class="bb-input bb-input--select">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Country</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <select class="bb-input-control">
+                                <option value="">Select a country</option>
+                                <option value="us">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="ca">Canada</option>
+                                <option value="au">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Required Select</div>
+                    <div class="bb-input bb-input--select">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Department</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <select class="bb-input-control" required>
+                                <option value="">Choose department</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="design">Design</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="sales">Sales</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkbox and Radio Inputs -->
+        <div class="demo-section">
+            <h2 class="demo-title">Checkbox & Radio Inputs</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Checkbox</div>
+                    <div class="bb-input bb-input--checkbox">
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="checkbox" id="agree">
+                        </div>
+                        <label class="bb-input-label" for="agree">
+                            <div class="bb-input-label-text">I agree to the terms and conditions</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Radio Group</div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bb-input bb-input--radio">
+                            <div class="bb-input-field">
+                                <input class="bb-input-control" type="radio" id="plan1" name="plan" value="basic">
+                            </div>
+                            <label class="bb-input-label" for="plan1">
+                                <div class="bb-input-label-text">Basic Plan</div>
+                            </label>
+                        </div>
+                        <div class="bb-input bb-input--radio">
+                            <div class="bb-input-field">
+                                <input class="bb-input-control" type="radio" id="plan2" name="plan" value="pro">
+                            </div>
+                            <label class="bb-input-label" for="plan2">
+                                <div class="bb-input-label-text">Pro Plan</div>
+                            </label>
+                        </div>
+                        <div class="bb-input bb-input--radio">
+                            <div class="bb-input-field">
+                                <input class="bb-input-control" type="radio" id="plan3" name="plan" value="enterprise">
+                            </div>
+                            <label class="bb-input-label" for="plan3">
+                                <div class="bb-input-label-text">Enterprise Plan</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete Form Example -->
+        <div class="demo-section">
+            <h2 class="demo-title">Complete Form Example - Unified Input Components</h2>
+            <div class="form-demo">
+                <h3 style="margin-top: 0; margin-bottom: 2rem;">User Registration Form</h3>
+
+                <form class="bb-input-group">
+                    <div class="bb-input-group--inline">
+                        <div class="bb-input">
+                            <label class="bb-input-label">
+                                <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                                <div class="bb-input-label-text">First Name</div>
+                            </label>
+                            <div class="bb-input-field">
+                                <input class="bb-input-control" type="text" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+
+                        <div class="bb-input">
+                            <label class="bb-input-label">
+                                <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                                <div class="bb-input-label-text">Last Name</div>
+                            </label>
+                            <div class="bb-input-field">
+                                <input class="bb-input-control" type="text" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Email Address</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="email" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="bb-input-help">We'll never share your email with anyone else</div>
+                    </div>
+
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">Password</div>
+                            <i data-lucide="help-circle" class="bb-input-label-tooltip"></i>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="password" placeholder="Create a strong password" required>
+                        </div>
+                        <div class="bb-input-help">Must be at least 8 characters with uppercase, lowercase, and numbers</div>
+                    </div>
+
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Company</div>
+                            <div class="bb-input-label-optional">(optional)</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="text" placeholder="Enter company name">
+                        </div>
+                    </div>
+
+                    <div class="bb-input bb-input--select">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Country</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <select class="bb-input-control">
+                                <option value="">Select your country</option>
+                                <option value="us">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="ca">Canada</option>
+                                <option value="au">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bb-input">
+                        <label class="bb-input-label">
+                            <div class="bb-input-label-text">Bio</div>
+                            <div class="bb-input-label-optional">(optional)</div>
+                        </label>
+                        <div class="bb-input-field">
+                            <textarea class="bb-input-control bb-input-textarea" placeholder="Tell us about yourself"></textarea>
+                        </div>
+                        <div class="bb-input-help">Maximum 500 characters</div>
+                    </div>
+
+                    <div class="bb-input bb-input--checkbox">
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="checkbox" id="terms" required>
+                        </div>
+                        <label class="bb-input-label" for="terms">
+                            <i data-lucide="asterisk" class="bb-input-label-asterisk"></i>
+                            <div class="bb-input-label-text">I agree to the terms and conditions</div>
+                        </label>
+                    </div>
+
+                    <div class="bb-input bb-input--checkbox">
+                        <div class="bb-input-field">
+                            <input class="bb-input-control" type="checkbox" id="marketing">
+                        </div>
+                        <label class="bb-input-label" for="marketing">
+                            <div class="bb-input-label-text">Send me marketing emails</div>
+                            <div class="bb-input-label-optional">(optional)</div>
+                        </label>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" style="
+                            background: var(--bb-surface-primary-default);
+                            color: var(--bb-text-neutral-inverse);
+                            padding: var(--bb-spacing-3) var(--bb-spacing-6);
+                            border: none;
+                            border-radius: var(--bb-radius-sm);
+                            font-size: var(--bb-type-font-size-sm);
+                            font-weight: var(--bb-fontweights-overused-grotesk-4);
+                            cursor: pointer;
+                        ">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Code Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Code Examples</h2>
+
+            <h3>Basic Input</h3>
+            <div class="code-example">
+&lt;div class="bb-input"&gt;
+  &lt;label class="bb-input-label"&gt;
+    &lt;div class="bb-input-label-text"&gt;Email Address&lt;/div&gt;
+  &lt;/label&gt;
+  &lt;div class="bb-input-field"&gt;
+    &lt;input class="bb-input-control" type="email" placeholder="Enter email"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Required Input with Help</h3>
+            <div class="code-example">
+&lt;div class="bb-input"&gt;
+  &lt;label class="bb-input-label"&gt;
+    &lt;i data-lucide="asterisk" class="bb-input-label-asterisk"&gt;&lt;/i&gt;
+    &lt;div class="bb-input-label-text"&gt;Password&lt;/div&gt;
+    &lt;i data-lucide="help-circle" class="bb-input-label-tooltip"&gt;&lt;/i&gt;
+  &lt;/label&gt;
+  &lt;div class="bb-input-field"&gt;
+    &lt;input class="bb-input-control" type="password" placeholder="Enter password"&gt;
+  &lt;/div&gt;
+  &lt;div class="bb-input-help"&gt;Must be at least 8 characters&lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Error State Input</h3>
+            <div class="code-example">
+&lt;div class="bb-input bb-input--error"&gt;
+  &lt;label class="bb-input-label"&gt;
+    &lt;i data-lucide="asterisk" class="bb-input-label-asterisk"&gt;&lt;/i&gt;
+    &lt;div class="bb-input-label-text"&gt;Email&lt;/div&gt;
+  &lt;/label&gt;
+  &lt;div class="bb-input-field"&gt;
+    &lt;input class="bb-input-control" type="email" value="invalid-email"&gt;
+  &lt;/div&gt;
+  &lt;div class="bb-input-error"&gt;Please enter a valid email&lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = newTheme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+        }
+
+        // Add form validation examples
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Form submitted! (This is just a demo)');
+                });
+            }
+
+            // Password visibility toggle
+            const passwordToggles = document.querySelectorAll('.bb-input-icon--right[data-lucide="eye"]');
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input[type="password"], input[type="text"]');
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        this.setAttribute('data-lucide', 'eye-off');
+                    } else {
+                        input.type = 'password';
+                        this.setAttribute('data-lucide', 'eye');
+                    }
+                    lucide.createIcons();
+                });
+            });
+        });
+
+        console.log('🎯 Input Component Examples Loaded');
+        console.log('Total inputs found:', document.querySelectorAll('.bb-input').length);
+        console.log('Unified label + field components working together');
+    </script>
+</body>
+</html>

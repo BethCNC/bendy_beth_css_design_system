@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Navigation Test - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/nav-item.css">
+    <link rel="stylesheet" href="../src/components/nav-bar.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bb-surface-neutral-card);
+            padding: 2rem;
+            border-radius: var(--bb-radius-lg);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--bb-spacing-2) var(--bb-spacing-3);
+            background: var(--bb-surface-primary-default);
+            color: var(--bb-text-neutral-inverse);
+            border: none;
+            border-radius: var(--bb-radius-sm);
+            cursor: pointer;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+            z-index: 1000;
+        }
+
+        .test-section {
+            margin-bottom: 3rem;
+        }
+
+        .test-title {
+            font-size: var(--bb-type-font-size-lg);
+            font-weight: var(--bb-fontweights-overused-grotesk-5);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .viewport-test {
+            border: 2px solid var(--bb-border-neutral-default);
+            border-radius: var(--bb-radius-md);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .viewport-desktop {
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .viewport-tablet {
+            width: 600px;
+            margin: 0 auto;
+            min-height: 300px;
+        }
+
+        .viewport-mobile {
+            width: 375px;
+            margin: 0 auto;
+            min-height: 300px;
+        }
+
+        .content-area {
+            padding: 2rem;
+            text-align: center;
+            color: var(--bb-text-neutral-disabled);
+            background: var(--bb-surface-neutral-page);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div class="demo-container">
+        <h1 style="text-align: center; margin-bottom: 2rem; font-size: var(--bb-type-font-size-xl);">
+            Figma Navigation Design Test
+        </h1>
+
+        <!-- Desktop View -->
+        <div class="test-section">
+            <h2 class="test-title">Desktop View</h2>
+            <div class="viewport-test viewport-desktop">
+                <nav class="bb-nav-bar">
+                    <div class="bb-nav-bar-brand">
+                        <span class="bb-nav-bar-title">bendybethc</span>
+                    </div>
+                    <ul class="bb-nav-bar-items">
+                        <li><a class="bb-nav-item bb-nav-item--active" href="/home">Home</a></li>
+                        <li><a class="bb-nav-item" href="/about">About Me</a></li>
+                        <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+                        <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+                        <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+                        <li><a class="bb-nav-item" href="/links">Links</a></li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <p>Desktop content area - navigation items display in a row</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tablet View -->
+        <div class="test-section">
+            <h2 class="test-title">Tablet View (600px)</h2>
+            <div class="viewport-test viewport-tablet">
+                <nav class="bb-nav-bar">
+                    <div class="bb-nav-bar-brand">
+                        <span class="bb-nav-bar-title">bendybethc</span>
+                    </div>
+                    <ul class="bb-nav-bar-items">
+                        <li><a class="bb-nav-item bb-nav-item--active" href="/home">Home</a></li>
+                        <li><a class="bb-nav-item" href="/about">About Me</a></li>
+                        <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+                        <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+                        <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+                        <li><a class="bb-nav-item" href="/links">Links</a></li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <p>Tablet content area - navigation items wrap naturally</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile View -->
+        <div class="test-section">
+            <h2 class="test-title">Mobile View (375px)</h2>
+            <div class="viewport-test viewport-mobile">
+                <nav class="bb-nav-bar">
+                    <div class="bb-nav-bar-brand">
+                        <span class="bb-nav-bar-title">bendybethc</span>
+                    </div>
+                    <ul class="bb-nav-bar-items">
+                        <li><a class="bb-nav-item bb-nav-item--active" href="/home">Home</a></li>
+                        <li><a class="bb-nav-item" href="/about">About Me</a></li>
+                        <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+                        <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+                        <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+                        <li><a class="bb-nav-item" href="/links">Links</a></li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <p>Mobile content area - navigation items wrap in multiple rows</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Variant -->
+        <div class="test-section">
+            <h2 class="test-title">Compact Variant</h2>
+            <div class="viewport-test viewport-desktop">
+                <nav class="bb-nav-bar bb-nav-bar--compact">
+                    <div class="bb-nav-bar-brand">
+                        <span class="bb-nav-bar-title">bendybethc</span>
+                    </div>
+                    <ul class="bb-nav-bar-items">
+                        <li><a class="bb-nav-item bb-nav-item--active" href="/home">Home</a></li>
+                        <li><a class="bb-nav-item" href="/about">About Me</a></li>
+                        <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+                        <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+                        <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+                        <li><a class="bb-nav-item" href="/links">Links</a></li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <p>Compact navigation with reduced spacing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elevated Variant -->
+        <div class="test-section">
+            <h2 class="test-title">Elevated Variant</h2>
+            <div class="viewport-test viewport-desktop">
+                <nav class="bb-nav-bar bb-nav-bar--elevated">
+                    <div class="bb-nav-bar-brand">
+                        <span class="bb-nav-bar-title">bendybethc</span>
+                    </div>
+                    <ul class="bb-nav-bar-items">
+                        <li><a class="bb-nav-item bb-nav-item--active" href="/home">Home</a></li>
+                        <li><a class="bb-nav-item" href="/about">About Me</a></li>
+                        <li><a class="bb-nav-item" href="/blog">Blog</a></li>
+                        <li><a class="bb-nav-item" href="/resources">Resources</a></li>
+                        <li><a class="bb-nav-item" href="/contact">Contact Me</a></li>
+                        <li><a class="bb-nav-item" href="/links">Links</a></li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <p>Elevated navigation with shadow and no border</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--bb-surface-neutral-subtle); border-radius: var(--bb-radius-md); text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Design Features</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; color: var(--bb-text-neutral-disabled);">
+                <li>✅ Centered branding and navigation items</li>
+                <li>✅ Responsive flex-wrap behavior</li>
+                <li>✅ Semantic token architecture</li>
+                <li>✅ Clean, minimal design matching Figma</li>
+                <li>✅ Light and dark theme support</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+        }
+    </script>
+</body>
+</html>

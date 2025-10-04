@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Component - Figma Structure - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/label.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .test-section {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--bb-radius-md);
+            border: 1px solid var(--bb-border-neutral-default);
+            margin-bottom: 2rem;
+        }
+
+        .test-item {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-sm);
+        }
+
+        .test-label {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-bottom: 0.5rem;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .dimensions {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-top: 0.5rem;
+        }
+
+        .figma-spec {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: var(--bb-radius-sm);
+            margin-bottom: 2rem;
+            font-family: monospace;
+            font-size: var(--bb-type-font-size-sm);
+        }
+
+        /* Icon placeholder styles for testing */
+        .test-asterisk {
+            width: 12px;
+            height: 12px;
+            background: var(--bb-icon-error-default);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .test-tooltip {
+            width: 18px;
+            height: 18px;
+            background: var(--bb-icon-info-default);
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Label Component - Figma HTML Structure</h1>
+
+    <div class="figma-spec">
+        <strong>Figma HTML Structure:</strong><br>
+        &lt;div class="label"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="label2"&gt;Label&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;img class="tool-tip-icon" alt=""&gt;<br>
+        &nbsp;&nbsp;&lt;div class="optional"&gt;(optional)&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;img class="asterisk-icon" alt=""&gt;<br>
+        &lt;/div&gt;
+    </div>
+
+    <div class="test-section">
+        <h2>Exact Figma Structure Replication</h2>
+
+        <div class="test-item">
+            <div class="test-label">Basic Label</div>
+            <div class="bb-label">
+                <div class="bb-label-text">Label</div>
+            </div>
+            <div class="dimensions">Just text element</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Required Label (asterisk before text)</div>
+            <div class="bb-label">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+            </div>
+            <div class="dimensions">Asterisk icon + text</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Label with Tooltip (tooltip after text)</div>
+            <div class="bb-label">
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+            </div>
+            <div class="dimensions">Text + tooltip icon</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Optional Label (optional text after main text)</div>
+            <div class="bb-label">
+                <div class="bb-label-text">Label</div>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+            <div class="dimensions">Text + optional text</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Complete Label (all elements)</div>
+            <div class="bb-label">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+            <div class="dimensions">Asterisk + text + tooltip + optional</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Required + Tooltip (common pattern)</div>
+            <div class="bb-label">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+            </div>
+            <div class="dimensions">Asterisk + text + tooltip</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Optional + Tooltip</div>
+            <div class="bb-label">
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+            <div class="dimensions">Text + tooltip + optional</div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Size Variations</h2>
+
+        <div class="test-item">
+            <div class="test-label">Small Size</div>
+            <div class="bb-label bb-label--sm">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Medium Size (Default)</div>
+            <div class="bb-label bb-label--md">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Large Size</div>
+            <div class="bb-label bb-label--lg">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Variant Colors</h2>
+
+        <div class="test-item">
+            <div class="test-label">Primary Variant</div>
+            <div class="bb-label bb-label--primary">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Success Variant</div>
+            <div class="bb-label bb-label--success">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Error Variant</div>
+            <div class="bb-label bb-label--error">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Disabled State</div>
+            <div class="bb-label bb-label--disabled">
+                <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                <div class="bb-label-text">Label</div>
+                <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                <div class="bb-label-optional">(optional)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Form Integration</h2>
+
+        <div style="max-width: 400px;">
+            <div style="margin-bottom: 1rem;">
+                <label class="bb-label bb-label--form" for="email">
+                    <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                    <div class="bb-label-text">Email Address</div>
+                </label>
+                <input type="email" id="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                <span class="bb-label-help">We'll never share your email with anyone else.</span>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label class="bb-label bb-label--form" for="company">
+                    <div class="bb-label-text">Company Name</div>
+                    <div class="bb-label-optional">(optional)</div>
+                </label>
+                <input type="text" id="company" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label class="bb-label bb-label--form" for="password">
+                    <i data-lucide="asterisk" class="bb-label-asterisk"></i>
+                    <div class="bb-label-text">Password</div>
+                    <i data-lucide="help-circle" class="bb-label-tooltip"></i>
+                </label>
+                <input type="password" id="password" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                <span class="bb-label-error">Password must be at least 8 characters long.</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Measure elements for debugging
+        function measureElements() {
+            const labels = document.querySelectorAll('.bb-label');
+            labels.forEach((label, index) => {
+                const rect = label.getBoundingClientRect();
+                console.log(`Label ${index + 1}: ${Math.round(rect.width)}px × ${Math.round(rect.height)}px`);
+            });
+        }
+
+        window.addEventListener('load', measureElements);
+        console.log('🎯 Figma Structure Label Test Loaded');
+        console.log('Structure: asterisk(order:-1) + text + tooltip + optional');
+    </script>
+</body>
+</html>

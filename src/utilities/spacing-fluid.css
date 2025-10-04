@@ -50,6 +50,7 @@
 .bb-pt-section { padding-top: var(--bb-fluid-spacing-fluid-section); }
 
 .bb-pb-section { padding-bottom: var(--bb-fluid-spacing-fluid-section); }
+
 .bb-py-section {
   padding-top: var(--bb-fluid-spacing-fluid-section);
   padding-bottom: var(--bb-fluid-spacing-fluid-section);
@@ -65,6 +66,7 @@
 .bb-pt-component { padding-top: var(--bb-fluid-spacing-fluid-component); }
 
 .bb-pb-component { padding-bottom: var(--bb-fluid-spacing-fluid-component); }
+
 .bb-py-component {
   padding-top: var(--bb-fluid-spacing-fluid-component);
   padding-bottom: var(--bb-fluid-spacing-fluid-component);
@@ -80,6 +82,7 @@
 .bb-pt-element { padding-top: var(--bb-fluid-spacing-fluid-element); }
 
 .bb-pb-element { padding-bottom: var(--bb-fluid-spacing-fluid-element); }
+
 .bb-py-element {
   padding-top: var(--bb-fluid-spacing-fluid-element);
   padding-bottom: var(--bb-fluid-spacing-fluid-element);

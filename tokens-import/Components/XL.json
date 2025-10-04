@@ -47,7 +47,7 @@
       "type": "dimension"
     },
     "Radius": {
-      "value": "{FULL}",
+      "value": "{radius.full}",
       "type": "dimension"
     },
     "Icon Size": {
@@ -55,15 +55,15 @@
       "type": "dimension"
     },
     "Icon Border Width": {
-      "value": "{MD}",
+      "value": "{stroke-width.md}",
       "type": "dimension"
     },
     "Border Width": {
-      "value": "{MD}",
+      "value": "{stroke-width.md}",
       "type": "dimension"
     },
     "Focus border width": {
-      "value": "{LG}",
+      "value": "{stroke-width.lg}",
       "type": "dimension"
     }
   }

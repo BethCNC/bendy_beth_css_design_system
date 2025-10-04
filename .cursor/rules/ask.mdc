@@ -1,0 +1,7 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Always ask questions instead of assuming, guessing or hallucinating if you are not sure.
+If you can not connect to the mcp server, tell me so i can fix the issues instead of continuing on without it.  

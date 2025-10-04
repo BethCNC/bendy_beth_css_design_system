@@ -63,6 +63,8 @@
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  box-shadow: none;
+  border: none;
   height: 100%;
   flex: 1;
   border-right: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);

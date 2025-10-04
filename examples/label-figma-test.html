@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Figma Design Test - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/label.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .figma-test {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--bb-radius-md);
+            border: 1px solid var(--bb-border-neutral-default);
+            max-width: 600px;
+        }
+
+        .test-item {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-sm);
+        }
+
+        .test-label {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-bottom: 0.5rem;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .dimensions {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-top: 0.5rem;
+        }
+
+        .figma-spec {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: var(--bb-radius-sm);
+            margin-bottom: 2rem;
+            font-family: monospace;
+            font-size: var(--bb-type-font-size-sm);
+        }
+    </style>
+</head>
+<body>
+    <h1>Label Component - Figma Design Test</h1>
+
+    <div class="figma-spec">
+        <strong>Figma Specifications:</strong><br>
+        • Layout: Horizontal flow<br>
+        • Gap: 4px (--bb-spacing-1)<br>
+        • Dimensions: 123px × 24px (hug content)<br>
+        • Colors: Text/Neutral/heading, Icon/Info/default, Text/Neutral/disabled, Icon/Error/default
+    </div>
+
+    <div class="figma-test">
+        <h2>Exact Figma Replications</h2>
+
+        <div class="test-item">
+            <div class="test-label">Required Label (with pink asterisk)</div>
+            <span class="bb-label bb-label--required">Label</span>
+            <div class="dimensions">Should show: * Label</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Optional Label (with gray "optional" text)</div>
+            <span class="bb-label bb-label--optional">Label</span>
+            <div class="dimensions">Should show: Label (optional)</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Help Label (with blue circle help icon)</div>
+            <span class="bb-label bb-label--help">Label</span>
+            <div class="dimensions">Should show: Label ?</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Combined: Required + Help (from Figma screenshot)</div>
+            <span class="bb-label bb-label--required bb-label--help">Label</span>
+            <div class="dimensions">Should show: * Label ?</div>
+        </div>
+
+        <div class="test-item">
+            <div class="test-label">Combined: Optional + Help</div>
+            <span class="bb-label bb-label--optional bb-label--help">Label</span>
+            <div class="dimensions">Should show: Label (optional) ?</div>
+        </div>
+
+        <h3>Element Measurements</h3>
+        <div class="test-item">
+            <div class="test-label">Basic Label (measure this)</div>
+            <span class="bb-label" id="measure-target">Label</span>
+            <div class="dimensions">
+                <span id="measurements">Measuring...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Measure the label component
+        function measureElement() {
+            const target = document.getElementById('measure-target');
+            const measurements = document.getElementById('measurements');
+
+            if (target) {
+                const rect = target.getBoundingClientRect();
+                const computedStyle = window.getComputedStyle(target);
+
+                measurements.innerHTML = `
+                    Width: ${Math.round(rect.width)}px |
+                    Height: ${Math.round(rect.height)}px |
+                    Gap: ${computedStyle.gap} |
+                    Font: ${computedStyle.fontSize}
+                `;
+            }
+        }
+
+        // Measure after load
+        window.addEventListener('load', measureElement);
+        window.addEventListener('resize', measureElement);
+
+        console.log('🎯 Figma Label Test Loaded');
+        console.log('Expected: 4px gap, hug content sizing, proper color mapping');
+    </script>
+</body>
+</html>

@@ -48,6 +48,8 @@
   position: relative;
   border-top: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);
   border-bottom: var(--bb-stroke-width-md) solid var(--bb-border-neutral-dark);
+  box-shadow: none;
+  outline: none;
 }
 
 

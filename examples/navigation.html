@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Components - Bendy Beth Design System</title>
+    <link rel="stylesheet" href="../build/primitives.css">
+    <link rel="stylesheet" href="../build/semantic.css">
+    <link rel="stylesheet" href="../build/alias.css">
+    <link rel="stylesheet" href="../src/components/nav-item.css">
+    <link rel="stylesheet" href="../src/components/nav-bar.css">
+    <link rel="stylesheet" href="../src/components/button.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--bb-type-family-overused-grotesk, sans-serif);
+            background: var(--bb-surface-neutral-page);
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-card);
+            border-radius: var(--bb-radius-md);
+        }
+
+        .demo-title {
+            font-size: var(--bb-type-font-size-lg);
+            font-weight: var(--bb-fontweights-overused-grotesk-5);
+            margin-bottom: 1.5rem;
+            color: var(--bb-text-neutral-title);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-item {
+            padding: 1.5rem;
+            background: var(--bb-surface-neutral-elevated);
+            border-radius: var(--bb-radius-sm);
+            border: 1px solid var(--bb-border-neutral-default);
+        }
+
+        .demo-label {
+            font-size: var(--bb-type-font-size-xs);
+            color: var(--bb-text-neutral-disabled);
+            margin-bottom: 1rem;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--bb-spacing-2) var(--bb-spacing-3);
+            background: var(--bb-surface-primary-default);
+            color: var(--bb-text-neutral-inverse);
+            border: none;
+            border-radius: var(--bb-radius-sm);
+            cursor: pointer;
+            font-weight: var(--bb-fontweights-overused-grotesk-4);
+            z-index: 1000;
+        }
+
+        .nav-demo {
+            margin-bottom: 3rem;
+            border: 1px solid var(--bb-border-neutral-default);
+            border-radius: var(--bb-radius-md);
+            overflow: hidden;
+        }
+
+        .nav-demo-content {
+            padding: 3rem;
+            text-align: center;
+            background: var(--bb-surface-neutral-page);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bb-text-neutral-disabled);
+        }
+
+        .nav-items-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-items-vertical {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bb-surface-neutral-card);
+            border-radius: var(--bb-radius-md);
+        }
+
+        .code-example {
+            background: var(--bb-surface-neutral-inverse);
+            color: var(--bb-text-neutral-inverse);
+            padding: 1rem;
+            border-radius: var(--bb-radius-sm);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: var(--bb-type-font-size-xs);
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        .spacer {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bb-surface-neutral-subtle);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div style="padding: 2rem;">
+        <div class="intro-section">
+            <h1 style="margin-bottom: 1rem; font-size: var(--bb-type-font-size-xl); font-weight: var(--bb-fontweights-overused-grotesk-6);">
+                Navigation Components
+            </h1>
+            <p style="font-size: var(--bb-type-font-size-md); color: var(--bb-text-neutral-disabled); max-width: 600px; margin: 0 auto;">
+                Interactive navigation components including nav items and complete navigation bars with responsive mobile support.
+            </p>
+        </div>
+
+        <!-- Complete Navigation Bar Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Complete Navigation Bars</h2>
+
+            <div style="margin-bottom: 2rem;">
+                <div class="demo-label">Basic Navigation Bar</div>
+                <div class="nav-demo">
+                    <nav class="bb-nav-bar">
+                        <div class="bb-nav-bar-brand">
+                            <div style="width: var(--bb-spacing-8); height: var(--bb-spacing-8); background: var(--bb-surface-primary-default); border-radius: var(--bb-radius-sm); display: flex; align-items: center; justify-content: center; color: var(--bb-text-neutral-inverse); font-weight: var(--bb-fontweights-overused-grotesk-5);">BB</div>
+                            <span class="bb-nav-bar-title">Bendy Beth</span>
+                        </div>
+                        <ul class="bb-nav-bar-items">
+                            <li><a class="bb-nav-item bb-nav-item--active" href="/">Home</a></li>
+                            <li><a class="bb-nav-item" href="/about">About</a></li>
+                            <li><a class="bb-nav-item" href="/services">Services</a></li>
+                            <li><a class="bb-nav-item" href="/contact">Contact</a></li>
+                        </ul>
+                        <div class="bb-nav-bar-actions">
+                            <button class="bb-button bb-button--primary">Sign In</button>
+                        </div>
+                        <button class="bb-nav-bar-toggle" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+                            <i data-lucide="menu" class="bb-nav-bar-toggle-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="nav-demo-content">
+                        <p>Page content goes here...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <div class="demo-label">Sticky Navigation Bar</div>
+                <div class="nav-demo">
+                    <nav class="bb-nav-bar bb-nav-bar--sticky">
+                        <div class="bb-nav-bar-brand">
+                            <i data-lucide="zap" style="width: var(--bb-spacing-8); height: var(--bb-spacing-8); color: var(--bb-icon-primary-default);"></i>
+                            <span class="bb-nav-bar-title">Sticky App</span>
+                        </div>
+                        <ul class="bb-nav-bar-items">
+                            <li><a class="bb-nav-item" href="/">
+                                <i data-lucide="home" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Home</span>
+                            </a></li>
+                            <li><a class="bb-nav-item bb-nav-item--active" href="/dashboard">
+                                <i data-lucide="layout-dashboard" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Dashboard</span>
+                            </a></li>
+                            <li><a class="bb-nav-item" href="/settings">
+                                <i data-lucide="settings" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Settings</span>
+                            </a></li>
+                        </ul>
+                        <div class="bb-nav-bar-actions">
+                            <a class="bb-nav-item bb-nav-item--sm" href="/profile">
+                                <i data-lucide="user" class="bb-nav-item-icon"></i>
+                            </a>
+                            <a class="bb-nav-item bb-nav-item--sm" href="/notifications">
+                                <i data-lucide="bell" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-badge">3</span>
+                            </a>
+                        </div>
+                        <button class="bb-nav-bar-toggle" aria-label="Toggle navigation">
+                            <i data-lucide="menu" class="bb-nav-bar-toggle-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="nav-demo-content">
+                        <p>This navigation bar will stick to the top when scrolling</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <div class="demo-label">Primary Navigation Bar</div>
+                <div class="nav-demo">
+                    <nav class="bb-nav-bar bb-nav-bar--primary">
+                        <div class="bb-nav-bar-brand">
+                            <span class="bb-nav-bar-title">Primary App</span>
+                        </div>
+                        <ul class="bb-nav-bar-items">
+                            <li><a class="bb-nav-item bb-nav-item--ghost" href="/">Home</a></li>
+                            <li><a class="bb-nav-item bb-nav-item--ghost bb-nav-item--active" href="/features">Features</a></li>
+                            <li><a class="bb-nav-item bb-nav-item--ghost" href="/pricing">Pricing</a></li>
+                        </ul>
+                        <div class="bb-nav-bar-actions">
+                            <button class="bb-button bb-button--secondary">Learn More</button>
+                        </div>
+                        <button class="bb-nav-bar-toggle" aria-label="Toggle navigation">
+                            <i data-lucide="menu" class="bb-nav-bar-toggle-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="nav-demo-content">
+                        <p>Primary themed navigation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Item Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Navigation Items</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <div class="demo-label">Basic Nav Items</div>
+                    <div class="nav-items-demo nav-items-vertical">
+                        <a class="bb-nav-item" href="/">
+                            <span class="bb-nav-item-text">Home</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--active" href="/current">
+                            <span class="bb-nav-item-text">Current Page</span>
+                        </a>
+                        <a class="bb-nav-item" href="/about">
+                            <span class="bb-nav-item-text">About</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--disabled" href="/disabled">
+                            <span class="bb-nav-item-text">Disabled</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Nav Items with Icons</div>
+                    <div class="nav-items-demo nav-items-vertical">
+                        <a class="bb-nav-item" href="/dashboard">
+                            <i data-lucide="layout-dashboard" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Dashboard</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--active" href="/users">
+                            <i data-lucide="users" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Users</span>
+                        </a>
+                        <a class="bb-nav-item" href="/settings">
+                            <i data-lucide="settings" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Settings</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--expandable" href="/more" aria-expanded="false">
+                            <i data-lucide="folder" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">More Options</span>
+                            <i data-lucide="chevron-right" class="bb-nav-item-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Nav Item Variants</div>
+                    <div class="nav-items-demo nav-items-vertical">
+                        <a class="bb-nav-item bb-nav-item--primary" href="/primary">
+                            <i data-lucide="star" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Primary</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--secondary" href="/secondary">
+                            <i data-lucide="bookmark" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Secondary</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--ghost" href="/ghost">
+                            <i data-lucide="eye" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Ghost</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Nav Item Sizes</div>
+                    <div class="nav-items-demo nav-items-vertical">
+                        <a class="bb-nav-item bb-nav-item--sm" href="/small">
+                            <i data-lucide="minimize-2" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Small</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--md" href="/medium">
+                            <i data-lucide="square" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Medium</span>
+                        </a>
+                        <a class="bb-nav-item bb-nav-item--lg" href="/large">
+                            <i data-lucide="maximize-2" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Large</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Nav Items with Badges</div>
+                    <div class="nav-items-demo nav-items-vertical">
+                        <a class="bb-nav-item" href="/messages">
+                            <i data-lucide="mail" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Messages</span>
+                            <span class="bb-nav-item-badge">12</span>
+                        </a>
+                        <a class="bb-nav-item" href="/notifications">
+                            <i data-lucide="bell" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Notifications</span>
+                            <span class="bb-nav-item-badge">3</span>
+                        </a>
+                        <a class="bb-nav-item" href="/tasks">
+                            <i data-lucide="check-square" class="bb-nav-item-icon"></i>
+                            <span class="bb-nav-item-text">Tasks</span>
+                            <span class="bb-nav-item-badge">•</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <div class="demo-label">Horizontal Nav Items</div>
+                    <div class="nav-items-demo">
+                        <a class="bb-nav-item" href="/home">Home</a>
+                        <a class="bb-nav-item bb-nav-item--active" href="/about">About</a>
+                        <a class="bb-nav-item" href="/services">Services</a>
+                        <a class="bb-nav-item" href="/contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar Variants -->
+        <div class="demo-section">
+            <h2 class="demo-title">Navigation Bar Variants</h2>
+
+            <div style="margin-bottom: 2rem;">
+                <div class="demo-label">Compact Navigation</div>
+                <div class="nav-demo">
+                    <nav class="bb-nav-bar bb-nav-bar--compact">
+                        <div class="bb-nav-bar-brand">
+                            <i data-lucide="circle" style="width: var(--bb-spacing-6); height: var(--bb-spacing-6); color: var(--bb-icon-primary-default);"></i>
+                            <span class="bb-nav-bar-title">Compact</span>
+                        </div>
+                        <ul class="bb-nav-bar-items">
+                            <li><a class="bb-nav-item bb-nav-item--sm" href="/">Home</a></li>
+                            <li><a class="bb-nav-item bb-nav-item--sm bb-nav-item--active" href="/dashboard">Dashboard</a></li>
+                            <li><a class="bb-nav-item bb-nav-item--sm" href="/profile">Profile</a></li>
+                        </ul>
+                        <div class="bb-nav-bar-actions">
+                            <a class="bb-nav-item bb-nav-item--sm" href="/search">
+                                <i data-lucide="search" class="bb-nav-item-icon"></i>
+                            </a>
+                        </div>
+                        <button class="bb-nav-bar-toggle" aria-label="Toggle navigation">
+                            <i data-lucide="menu" class="bb-nav-bar-toggle-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="nav-demo-content">
+                        <p>Compact navigation for tight spaces</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <div class="demo-label">Large Navigation</div>
+                <div class="nav-demo">
+                    <nav class="bb-nav-bar bb-nav-bar--large bb-nav-bar--elevated">
+                        <div class="bb-nav-bar-brand">
+                            <i data-lucide="hexagon" style="width: var(--bb-spacing-10); height: var(--bb-spacing-10); color: var(--bb-icon-primary-default);"></i>
+                            <span class="bb-nav-bar-title">Large Brand</span>
+                        </div>
+                        <ul class="bb-nav-bar-items">
+                            <li><a class="bb-nav-item bb-nav-item--lg" href="/">
+                                <i data-lucide="home" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Home</span>
+                            </a></li>
+                            <li><a class="bb-nav-item bb-nav-item--lg bb-nav-item--active" href="/features">
+                                <i data-lucide="layers" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Features</span>
+                            </a></li>
+                            <li><a class="bb-nav-item bb-nav-item--lg" href="/pricing">
+                                <i data-lucide="dollar-sign" class="bb-nav-item-icon"></i>
+                                <span class="bb-nav-item-text">Pricing</span>
+                            </a></li>
+                        </ul>
+                        <div class="bb-nav-bar-actions">
+                            <button class="bb-button bb-button--secondary">Learn More</button>
+                            <button class="bb-button bb-button--primary">Get Started</button>
+                        </div>
+                        <button class="bb-nav-bar-toggle" aria-label="Toggle navigation">
+                            <i data-lucide="menu" class="bb-nav-bar-toggle-icon"></i>
+                        </button>
+                    </nav>
+                    <div class="nav-demo-content">
+                        <p>Large navigation with elevated styling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Demo for Sticky Navigation -->
+        <div class="spacer">
+            <p style="color: var(--bb-text-neutral-disabled); text-align: center;">
+                Scroll up to see the sticky navigation behavior
+            </p>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="bb-nav-bar-mobile" id="mobileNav" aria-hidden="true">
+        <div class="bb-nav-bar-mobile-content">
+            <div class="bb-nav-bar-mobile-header">
+                <div class="bb-nav-bar-brand">
+                    <div style="width: var(--bb-spacing-8); height: var(--bb-spacing-8); background: var(--bb-surface-primary-default); border-radius: var(--bb-radius-sm); display: flex; align-items: center; justify-content: center; color: var(--bb-text-neutral-inverse); font-weight: var(--bb-fontweights-overused-grotesk-5);">BB</div>
+                    <span class="bb-nav-bar-title">Bendy Beth</span>
+                </div>
+                <button class="bb-nav-bar-toggle" aria-label="Close navigation" onclick="toggleMobileNav()">
+                    <i data-lucide="x" class="bb-nav-bar-toggle-icon"></i>
+                </button>
+            </div>
+            <ul class="bb-nav-bar-mobile-items">
+                <li><a class="bb-nav-item bb-nav-item--active" href="/">
+                    <i data-lucide="home" class="bb-nav-item-icon"></i>
+                    <span class="bb-nav-item-text">Home</span>
+                </a></li>
+                <li><a class="bb-nav-item" href="/about">
+                    <i data-lucide="info" class="bb-nav-item-icon"></i>
+                    <span class="bb-nav-item-text">About</span>
+                </a></li>
+                <li><a class="bb-nav-item" href="/services">
+                    <i data-lucide="briefcase" class="bb-nav-item-icon"></i>
+                    <span class="bb-nav-item-text">Services</span>
+                </a></li>
+                <li><a class="bb-nav-item" href="/contact">
+                    <i data-lucide="mail" class="bb-nav-item-icon"></i>
+                    <span class="bb-nav-item-text">Contact</span>
+                </a></li>
+            </ul>
+            <div class="bb-nav-bar-mobile-actions">
+                <button class="bb-button bb-button--secondary">Learn More</button>
+                <button class="bb-button bb-button--primary">Sign In</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+        }
+
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            const isHidden = mobileNav.getAttribute('aria-hidden') === 'true';
+            mobileNav.setAttribute('aria-hidden', (!isHidden).toString());
+
+            // Update all toggle buttons
+            document.querySelectorAll('.bb-nav-bar-toggle').forEach(button => {
+                button.setAttribute('aria-expanded', isHidden.toString());
+            });
+        }
+
+        // Close mobile nav when clicking outside
+        document.getElementById('mobileNav').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleMobileNav();
+            }
+        });
+
+        // Expandable nav item functionality
+        document.querySelectorAll('.bb-nav-item--expandable').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', (!isExpanded).toString());
+            });
+        });
+
+        // Close mobile nav on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const mobileNav = document.getElementById('mobileNav');
+                if (mobileNav.getAttribute('aria-hidden') === 'false') {
+                    toggleMobileNav();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
